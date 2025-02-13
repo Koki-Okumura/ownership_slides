@@ -1,0 +1,7050 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamersize{text margin left=10pt,text margin right=10pt} 
+
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+
+\definecolor{blue}{RGB}{39, 116, 174}
+\definecolor{red}{RGB}{255, 0, 165}
+\definecolor{green}{RGB}{0, 255, 135}
+\setbeamercolor{title}{fg=blue} 
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamercolor{structure}{fg=blue}
+\setbeamercolor{block title}{fg=blue}
+\setbeamercolor{item}{fg=blue}
+\setbeamercolor{enumerate item}{fg=blue}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+%\usepackage{subcaption}
+
+\AtBeginSection[]{}
+\mode<presentation>{\useoutertheme{smoothbars}}
+\end_preamble
+\options aspectratio=169
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding iso8859-15
+\fontencoding T1
+\font_roman "times" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 90 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\bullet 0 0 10 -1
+\bullet 1 0 10 -1
+\bullet 2 0 10 -1
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ownership Structure and Economic Growth:
+ 
+\begin_inset Newline newline
+\end_inset
+
+ A Network Approach
+\end_layout
+
+\begin_layout Author
+Koki Okumura
+\end_layout
+
+\begin_layout Institute
+UCLA
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ownership Structure 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Economic Growth?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+US:
+ BlackRock,
+ Vanguard,
+ and State Street control a quarter of votes of S&P 500 firms
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Korea:
+ In the mid-1990s,
+ the top five chaebols accounted for 10% of the GDP 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chang2003-bo"
+literal "false"
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Japan:
+ In the early 1900s,
+ the top three zaibatsu held 30% of total assets within the top 100 manufacturing firms 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Takeda2020"
+literal "false"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ownership structure (common ownership / cross ownership / M&A) 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ economic growth?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Business stealing
+\end_layout
+
+\begin_layout Itemize
+Technology spillovers
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Framework:
+ Growth 
+\begin_inset Formula $+$
+\end_inset
+
+ IO 
+\begin_inset Formula $+$
+\end_inset
+
+ Ownership
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantitative endogenous growth 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hopenhayn2024-ya"
+literal "false"
+
+\end_inset
+
+ with ownership structure
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dynamic R&D involving many oligopolists
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Existing models:
+ a few firms in each industry (mostly monopoly or duopoly) 
+\end_layout
+
+\begin_layout Itemize
+Public patenting firms in the US (
+\begin_inset Formula $\simeq$
+\end_inset
+
+ 1000 firms)
+\end_layout
+
+\begin_layout Itemize
+Match to data at firm (pair) level
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Quantify Three Networks
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ownership structure
+\end_layout
+
+\begin_layout Itemize
+Product market rivalry 
+\end_layout
+
+\begin_layout Itemize
+Technology spillovers
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Quantify the Impact of Common Ownership and Policy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Common ownership in production:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Appropriability of returns from innovation 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dispersed ownership 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Observed common ownership:
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ by 0.027% in 2017
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Common ownership in R&D:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Internalization of business stealing 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Internalization of technology spillover 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dispersed ownership 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Observed common ownership:
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ by 0.084% in 2017
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Uniform R&D subsidy 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Optimal rate in 2017 is 
+\begin_inset Formula $s=32\%$
+\end_inset
+
+,
+ which increases 
+\begin_inset Formula $g$
+\end_inset
+
+ by 0.25% 
+\end_layout
+
+\begin_layout Itemize
+CE welfare loss relative to optimal R&D allocation:
+ 0.7% (
+\begin_inset Formula $s=0\%$
+\end_inset
+
+) 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 0.1% (
+\begin_inset Formula $s=30\%$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Literature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Competition & innovation:
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "d-Aspremont1988-je,Aghion2001-yc,Aghion2005-vw,Acemoglu2012-bj,Aghion2013-nq,Bloom2013-pn,Lopez2019-sl,Peters2020-sd,Akcigit2021-ns,Akcigit2023-zl,Liu2022-iw,Cavenaile2023-lo,Anton2023-ej,Anton2024-pw,Kini2024-kd"
+literal "false"
+
+\end_inset
+
+
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\color blue
+Quantitative endogenous growth model matched to firm-(pair-)level data
+\end_layout
+
+\begin_layout Itemize
+Hedonic demand / empirical IO:
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lancaster1966-sg,Rosen1974-ep,Epple1987-ru,Berry1995-lx,Nevo2001-ja,Pellegrino2024-dn,Ederer2024-rw"
+literal "false"
+
+\end_inset
+
+
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\color blue
+Dynamic general equilibrium
+\end_layout
+
+\begin_layout Itemize
+Oligopoly / Common ownership / market power:
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rubinstein1983-pi,Rotemberg1984-jz,Neary2003-sn,Atkeson2008-zc,Gutierrez2017-wl,He2017-ix,Azar2018-cc,Azar2022-cn,Autor2020-mr,Baqaee2020-eb,De_Loecker2020-jn,Azar2021-uh,Edmond2023-bg"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Setting
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overview of Framework and Estimation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firms compete to maximize shareholders' returns 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firms partially consider the profits of other firms owned by the same shareholders
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Overlapping ownership among firms that are close in ...
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color blue
+product
+\color inherit
+ space 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ internalize business stealing effect 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ R&D 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+technology
+\color inherit
+ space 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ internalize technology spillover 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ R&D 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Networks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Measurement
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ownership structure
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investor holdings in 13f filings 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Backus2021-yt"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product market rivalry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product proximity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hoberg2016-jm"
+literal "false"
+
+\end_inset
+
+:
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Text analysis of product description in 10k filings 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technology spillover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technology proximity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bloom2013-pn"
+literal "false"
+
+\end_inset
+
+:
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Patent classification
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalized Hedonic-Linear Demand 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pellegrino2024-dn"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $i\in\left\{ 1,2,...,n\right\} $
+\end_inset
+
+:
+ firms / products
+\end_layout
+
+\begin_layout Itemize
+1 unit of product 
+\begin_inset Formula $i$
+\end_inset
+
+ provides
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+1 unit of idiosyncratic characteristic 
+\begin_inset Formula $i\in\left\{ 1,2,...,n\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula ${\color{blue}\psi{}_{k,i}}$
+\end_inset
+
+ unit of common characteristic 
+\begin_inset Formula $k\in\left\{ n+1,n+2,...,n+n_{k}\right\} $
+\end_inset
+
+ where 
+\begin_inset Formula $\sum_{k}{\color{blue}\psi_{k,i}^{2}}=1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Aggregate each characteristic:
+\begin_inset Formula 
+\[
+y_{k,t}=\begin{cases}
+q_{k,t} & k=1,2,...,n\\
+\sum_{i}{\color{blue}\psi{}_{k,i}}q_{i,t} & k=n+1,n+2,...,n+n_{k}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Linear quadratic aggregator over characteristics:
+\begin_inset Formula 
+\[
+Y_{t}=\left(1-\alpha\right)\sum_{k=1}^{n}\left(\underbrace{\hat{b}_{k,t}y_{k,t}-\frac{1}{2}y_{k,t}^{2}}_{\text{idiosyncratic characteristic}}\right)+\alpha\sum_{k=n+1}^{n+n_{k}}\left(\underbrace{\hat{b}_{k,t}y_{k,t}-\frac{1}{2}y_{k,t}^{2}}_{\text{common characteristic}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Substitutability 
+\begin_inset Formula $\propto$
+\end_inset
+
+ Cosine Similarity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pellegrino2024-dn"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{demand}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y_{t}=\mathbf{q}_{t}^{T}\underbrace{\mathbf{b}_{t}}_{\text{quality}}-\frac{1}{2}\mathbf{q}_{t}^{T}{\color{red}\Sigma}\mathbf{q}_{t}\ $
+\end_inset
+
+ where
+\begin_inset Formula $\underbrace{{\color{red}\sigma_{ij}}}_{\text{{\color{red}substitutabiliy}}}=\alpha\underbrace{\sum_{k}{\color{blue}\psi{}_{k,i}\psi{}_{k,j}}}_{{\color{blue}\text{cosine similarity}}}$
+\end_inset
+
+ 
+\begin_inset Formula $\left(i\neq j\right)\ $
+\end_inset
+
+ and 
+\begin_inset Formula $\underbrace{\sigma_{ii}}_{\text{diagonal}}=1$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{elasticity}{
+\backslash
+beamerbutton{elasticity}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=3.5]
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Define the coordinates for the unit circle
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw[domain=0:90] plot ({cos(
+\backslash
+x)},
+ {sin(
+\backslash
+x)});
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Axes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw[->] (0,
+ 0) -- (1.2,
+ 0) node[right] {Characteristic 1};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw[->] (0,
+ 0) -- (0,
+ 1.2) node[above] {Characteristic 2};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Points
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+coordinate (a1) at (0.8,
+ 0.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+coordinate (a2) at (0.3,
+ 0.95);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Labels for points
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+fill[black] (a1) circle (0.5pt) node[right] {$
+\backslash
+ 
+\backslash
+left( {
+\backslash
+color{blue}
+\backslash
+psi_{1,1}},
+ {
+\backslash
+color{blue}
+\backslash
+psi_{2,1}} 
+\backslash
+right):
+ 
+\backslash
+text{Product 1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+fill[black] (a2) circle (0.5pt) node[right] {$
+\backslash
+ 
+\backslash
+left({
+\backslash
+color{blue}
+\backslash
+psi_{1,2}},
+ {
+\backslash
+color{blue}
+\backslash
+psi_{2,2}} 
+\backslash
+right):
+  
+\backslash
+text{Product 2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Connecting lines
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw[dashed] (0,
+ 0) -- (a1);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw[dashed] (0,
+ 0) -- (a2);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     % Angle arc
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node at (0.1,
+ 0.15) {$
+\backslash
+theta$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node at (1.7,
+ 0.3) {$
+\backslash
+sum_{k}{
+\backslash
+color{blue}
+\backslash
+psi{}_{k,i}
+\backslash
+psi{}_{k,j}} = 
+\backslash
+cos(
+\backslash
+theta)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Technology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Production technology:
+ 
+\begin_inset Formula $q_{i,t}=a_{i,t}l_{i,t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Firms allocate their knowledge capital to improve product quality and labor productivity:
+\begin_inset Formula 
+\[
+\underbrace{\zeta a_{i,t}}_{\text{productivity}}+\underbrace{b_{i,t}}_{\text{quality}}=\underbrace{z_{i,t}}_{\text{knowledge capital}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Knowledge capital follows geometric Brownian motion:
+\begin_inset Formula 
+\[
+d\mathbf{z}_{t}=\left(\underbrace{\Omega\mathbf{z}_{t}}_{\text{technology spillover}}+\underbrace{\mu\mathbf{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\mathbf{z}_{t}dW_{t}}_{\text{shocks}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Omega=\left[\omega_{ij}\right]$
+\end_inset
+
+:
+ technology spillover matrix
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mu$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\gamma$
+\end_inset
+
+:
+ positive scalars
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Market Clearing and Preference
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inelastic labor supply:
+\begin_inset Formula 
+\[
+L=\sum_{i}l_{i,t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Final good market clearing:
+\begin_inset Formula 
+\[
+C_{t}+\underbrace{\sum_{i}x_{i,t}^{2}}_{\text{R\&D input}}=Y_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Innovation elasticity is 0.5
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Risk neutral representative household:
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\exp\left(-\rho t\right)C_{t}dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Static Equilibrium
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Common Ownership Weights
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $z\in\left\{ 1,2,...,n_{z}\right\} $
+\end_inset
+
+:
+ funds
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s_{iz}$
+\end_inset
+
+:
+ the proportion of shares in firm 
+\begin_inset Formula $i$
+\end_inset
+
+ owned by fund 
+\begin_inset Formula $z$
+\end_inset
+
+ where 
+\begin_inset Formula $\sum_{z}s_{iz}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{V}_{i,t}$
+\end_inset
+
+:
+ value of firm 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\widetilde{V}_{z,t}\equiv\sum_{i}s_{iz}\hat{V}_{i,t}$
+\end_inset
+
+:
+ value of fund 
+\begin_inset Formula $z$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Firms' objective:
+\begin_inset Formula 
+\[
+\sum_{z}s_{iz}\widetilde{V}_{z,t}\propto\sum_{j}\kappa_{ij}\hat{V}_{j,t}\quad\text{where}\quad\kappa_{ij}\equiv\frac{\mathbf{s}_{i}^{T}\mathbf{s}_{j}}{\mathbf{s}_{i}^{T}\mathbf{s}_{i}}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace -5mm
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{s}_{i}\equiv\left[s_{i1},...,s_{iz},...,s_{in_{z}}\right]^{T}$
+\end_inset
+
+:
+ firm 
+\begin_inset Formula $i$
+\end_inset
+
+'s ownership structure
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $K=\left[\kappa_{ij}\right]$
+\end_inset
+
+:
+ common ownership weights 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rotemberg1984-jz,Ederer2024-rw"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All diagonal elements are 
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+All off-diagonal elements are 
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftrightarrow$
+\end_inset
+
+ firm profit maximization
+\end_layout
+
+\begin_layout Itemize
+All elements are 
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftrightarrow$
+\end_inset
+
+ monopoly
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cournot Competition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firm 
+\begin_inset Formula $i$
+\end_inset
+
+'s real gross profit:
+\begin_inset Formula 
+\begin{align*}
+\pi_{i,t} & =\frac{p_{i,t}}{P_{t}}q_{i,t}-\frac{w_{t}}{P_{t}}l_{i,t}\\
+ & =\left(b_{i,t}-\frac{1}{a_{i,t}}\frac{w_{t}}{P_{t}}-\sum_{j}\sigma_{ij}q_{j,t}\right)q_{i,t}\quad\text{where}\quad\zeta a_{i,t}+b_{i,t}=z_{i,t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Given 
+\begin_inset Formula $w_{t}/P_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $z_{i,t}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\left\{ q_{j,t}\right\} _{j\neq i}$
+\end_inset
+
+,
+ firm 
+\begin_inset Formula $i$
+\end_inset
+
+ chooses 
+\begin_inset Formula $a_{i,t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $b_{i,t}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $q_{i,t}$
+\end_inset
+
+ to maximize 
+\begin_inset Formula $\sum_{j}\kappa_{ij}\pi_{j,t}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cournot-Nash Equilibrium
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firms choose labor productivity and product quality:
+ 
+\begin_inset Formula $\zeta a_{i,t}=\sqrt{\zeta\frac{w_{t}}{P_{t}}}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $b_{i,t}=z_{i,t}-\sqrt{\zeta\frac{w_{t}}{P_{t}}}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Quantity is a linear function of knowledge capital:
+ 
+\begin_inset Formula 
+\[
+\mathbf{q}_{t}=\left\{ \underbrace{2\frac{\zeta}{L}J}_{\text{labor cost}}+\underbrace{\Sigma}_{\text{substitutability}}+\underbrace{K\circ\Sigma}_{\text{ownership weight}\times\text{substitutability}}\right\} ^{-1}\mathbf{z}_{t}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $J$
+\end_inset
+
+:
+ matrix with all elements equal to 1
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ownership-weighted gross profits are expressed in quadratic form:
+ 
+\begin_inset Formula $\sum_{j}\kappa_{ij}\pi_{j,t}=\mathbf{z}_{t}^{T}Q^{i}\mathbf{z}_{t}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dynamic Equilibrium
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+LQ Differential Game
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace -1mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Given other players' strategy 
+\begin_inset Formula $\left\{ x_{j,t}\right\} _{j\neq i,t\geq0}$
+\end_inset
+
+,
+ firm 
+\begin_inset Formula $i$
+\end_inset
+
+ chooses R&D effort 
+\begin_inset Formula $\left\{ x_{i,t}\right\} _{t\geq0}$
+\end_inset
+
+ to maximize
+\begin_inset Formula 
+\[
+\max_{\left\{ x_{i,t}\right\} _{t\geq0}}\quad V^{i}\left(\text{\ensuremath{\mathbf{z}}}_{0}\right)\equiv\mathbb{E}_{0}\left[\int_{0}^{\infty}\exp\left(-\rho t\right)\left\{ \sum_{j}\kappa_{ij}\left(\pi_{j,t}-x_{j,t}^{2}\right)\right\} dt\right]
+\]
+
+\end_inset
+
+ subject to 
+\begin_inset Formula $d\mathbf{z}_{t}=\left(\beta\Omega\mathbf{z}_{t}+\mu\mathbf{x}_{t}\right)dt+\gamma\mathbf{z}_{t}dW_{t}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Firm 
+\begin_inset Formula $i$
+\end_inset
+
+'s HJB equation:
+ 
+\begin_inset Formula 
+\[
+\rho V^{i}\left(\mathbf{z}\right)=\max_{x_{i}}\left\{ \mathbf{z}^{T}Q^{i}\mathbf{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\mathbf{z}}^{i}\left(\mathbf{z}\right)\left[\Omega\mathbf{z}+\mu\mathbf{x}\right]+\frac{\gamma^{2}}{2}\mathbf{z}^{T}V_{\mathbf{zz}}^{i}\left(\mathbf{z}\right)\mathbf{z}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HJB Equations 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Riccati Equations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{hjb}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Guess and verify
+\begin_inset Formula $V^{i}\left(\mathbf{z}\right)=\mathbf{z}^{T}X^{i}\mathbf{z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X^{i}$
+\end_inset
+
+ is the solution of stacked algebraic Riccati equations 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{riccati}{
+\backslash
+beamerbutton{Riccati}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+All public patenting firms in the US in our dataset 
+\begin_inset Formula $\simeq$
+\end_inset
+
+1000 firms 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $1000^{3}=1$
+\end_inset
+
+ billion undetermined coefficients
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oligopolistic 
+\end_layout
+
+\begin_layout Plain Layout
+Schumpeterian growth model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Computation time
+\end_layout
+
+\begin_layout Plain Layout
+(
+\begin_inset Formula $n$
+\end_inset
+
+ firms)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of 
+\end_layout
+
+\begin_layout Plain Layout
+firms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Space of
+\end_layout
+
+\begin_layout Plain Layout
+productivity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Cavenaile2023-lo"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O\left(2^{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 grids
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Our model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O\left(n^{4}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Around 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continuous
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BGP Equilibrium
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+R&D strategy:
+ 
+\begin_inset Formula $x_{i,t}=\left(\mu X_{i}^{i}\right)^{T}\mathbf{z}_{t}$
+\end_inset
+
+ where 
+\begin_inset Formula $X_{i}^{i}$
+\end_inset
+
+ is the 
+\begin_inset Formula $i$
+\end_inset
+
+ th column of 
+\begin_inset Formula $X^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The law of motion is rewritten as 
+\begin_inset Formula $d\mathbf{z}_{t}=\Phi\mathbf{z}_{t}dt+\gamma\mathbf{z}_{t}dW_{t}$
+\end_inset
+
+ where 
+\begin_inset Formula 
+\[
+\underbrace{\Phi}_{\text{technology transition matrix}}\equiv\underbrace{\beta\Omega}_{\text{spillover}}+\underbrace{\mu^{2}\left[\begin{array}{ccc}
+X_{1}^{1} & \cdots & X_{n}^{n}\end{array}\right]^{T}}_{\text{R\&D}}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace -5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Consider the deterministic economy (
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+).
+ If the technology transition matrix 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ is irreducible,
+\end_layout
+
+\begin_layout Theorem*
+(i) there exists a largest positive eigenvalue of 
+\begin_inset Formula $\Phi$
+\end_inset
+
+,
+ 
+\begin_inset Formula $g$
+\end_inset
+
+,
+ and associated strictly positive eigenvector,
+ 
+\begin_inset Formula $\mathbf{z}^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+(ii) there exists a globally stable BGP such that the productivity growth rate of all firms is 
+\begin_inset Formula $g$
+\end_inset
+
+ and productivity distribution is a scalar multiple of 
+\begin_inset Formula $\mathbf{z}^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Proof:
+ Perron–Frobenius Theorem
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\Phi$
+\end_inset
+
+ is irreducible
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftrightarrow$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+All firms are directly or indirectly connected technologically
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Aggregation:
+ Output and Expected Utility
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{aggregation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Output is expressed in quadratic form:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{summary}{
+\backslash
+beamerbutton{Equilibrium Summary}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Y_{t}=\mathbf{q}_{t}^{T}\mathbf{b}_{t}-\frac{1}{2}\mathbf{q}_{t}^{T}\Sigma\mathbf{q}_{t}=\mathbf{z}_{t}^{T}Q\mathbf{z}_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{a}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\mathbf{b}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\mathbf{z}_{t}$
+\end_inset
+
+ ,
+ and 
+\begin_inset Formula $\mathbf{q}_{t}$
+\end_inset
+
+ grow at the same rate on BGP in deterministic economy (
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+).
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Expected utility is expressed in quadratic form:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{X}{
+\backslash
+beamerbutton{X}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbb{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\mathbf{z}_{t}\right]=\mathbf{z}_{t}^{T}X\mathbf{z}_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Solve the equilibrium once 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Can compute expected utility for any 
+\begin_inset Formula $\mathbf{z}_{t}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Expected utility under social optimum is also expressed in quadratic form 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{optimal}{
+\backslash
+beamerbutton{Social Optimum}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Identification
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Common Ownership Weight:
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Backus2021-yt"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $\kappa_{ij}\equiv\frac{\mathbf{s}_{i}^{T}\mathbf{s}_{j}}{\mathbf{s}_{i}^{T}\mathbf{s}_{i}}$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbf{s}_{i}$
+\end_inset
+
+ is firm 
+\begin_inset Formula $i$
+\end_inset
+
+'s ownership structure
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figures/kappa.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Product Substitutability
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset VSpace -10mm
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\underbrace{\sigma_{ij}}_{\text{substitutabiliy}}=\alpha\underbrace{\sum_{k}\psi{}_{k,i}\psi{}_{k,j}}_{\text{product cosine similarity}}\left(i\neq j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hoberg2016-jm"
+literal "false"
+
+\end_inset
+
+ estimates product similarity using product descriptions in 10-K
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pellegrino2024-dn"
+literal "false"
+
+\end_inset
+
+ estimates 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ to align with the cross-price elasticity of demand
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figures/sigma.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Technological Proximity:
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bloom2013-pn"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $T_{i}$
+\end_inset
+
+:
+ the vector representing the share of patents held by firm 
+\begin_inset Formula $i$
+\end_inset
+
+ in each technology class
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(i) subclass-level (
+\begin_inset Formula $\approx600$
+\end_inset
+
+) or (ii) group-level (
+\begin_inset Formula $\approx4000$
+\end_inset
+
+) classifications
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jaffe1986-yz"
+literal "false"
+
+\end_inset
+
+ measure:
+ 
+\begin_inset Formula 
+\[
+\tilde{\omega}_{ij}=\frac{T_{i}T_{j}^{\prime}}{\left(T_{i}T_{i}^{\prime}\right)^{1/2}\left(T_{j}T_{j}^{\prime}\right)^{1/2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assumption:
+ Spillovers exist only within the same technology classes
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mahalanobis measure for robustness
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Accounts for spillovers between technology classes
+\end_layout
+
+\begin_layout Itemize
+Based on frequency with which patents are taken out in different classes within firm
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Technological Proximity:
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bloom2013-pn"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Group-level patent classification,
+ Jaffe measure,
+ Stack for 5 years
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figures/omega.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Initial Distribution of Knowledge Capital
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Profit 
+\begin_inset Formula $\pi_{i,t}$
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Revenue
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $-$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Costs of goods sold
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Quantity 
+\begin_inset Formula $\mathbf{q}_{t}$
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\pi_{i,t}/P_{t}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $P_{t}$
+\end_inset
+
+ is measured by GDP deflator
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\zeta/L$
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+ match the total cost
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Knowledge capital 
+\begin_inset Formula $\mathbf{z}_{t}$
+\end_inset
+
+ 
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{q}_{t}=\left\{ 2\frac{\zeta}{L}J+\Sigma+K\circ\Sigma\right\} ^{-1}\mathbf{z}_{t}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Distributions of Estimated Knowledge Capital and Quantity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/log_q_density.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Log of Quantity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/log_z_density.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Log of Knowledge Capital
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimation of the Law of Motion 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset VSpace -10mm
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{regression}
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset Formula 
+\[
+z_{i,t+1}-z_{i,t}=\beta\sum_{j\neq i}\tilde{\omega}_{ij,t}z_{j,t}+\text{Year FE}_{t}+\epsilon_{i,t}
+\]
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(3)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $z_{i,t+1}-\text{z_{i,t}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $z_{i,t+1}-\text{z_{i,t}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $z_{i,t+1}-\text{z_{i,t}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\sum_{j\neq i}\tilde{\omega}_{ij,t}z_{j,t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\begin{array}{c}
+0.000191^{***}\\
+(0.000035)
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\begin{array}{c}
+0.0000152^{***}\\
+(0.000035)
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\begin{array}{c}
+0.000140^{***}\\
+(0.000039)
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\sqrt{\text{R\&D Expenditure}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\begin{array}{c}
+.037^{**}\\
+(0.021)
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Year Fixed Effects
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+IV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+IV 1st Stage F-statistics
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+4176
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Patent Classification
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Group
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Group
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Group
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Technological Proximity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Jaffe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Jaffe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Jaffe
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No.
+ observations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+16,324
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+15,173
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+14,181
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\size footnotesize
+SEs clustered by years and 4-digit naics industries are reported in parentheses.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\size footnotesize
+* 
+\begin_inset Formula $p<0.1$
+\end_inset
+
+,
+ **
+\begin_inset Formula $p<0.05$
+\end_inset
+
+,
+ *** 
+\begin_inset Formula $p<0.01$
+\end_inset
+
+.
+ 
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{first_stage}{
+\backslash
+beamerbutton{First Stage}}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+IV:
+ User cost of R&D,
+ driven by state-level tax variations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wilson2009-ri,Bloom2013-pn"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Identification:
+ Summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Publicly available data 
+\begin_inset Formula $+$
+\end_inset
+
+ Compustat
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Notation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Source
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi^{T}\Psi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product proximity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Form 10-K,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hoberg2016-jm"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $\widetilde{\Omega}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technological proximity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+USPTO,
+ Patent classification
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $K$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Common ownership weights
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Form 13F,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Backus2021-yt"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product proximity 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Substitutability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pellegrino2024-dn"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technological proximity 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Spillover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.00014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estimate the law of motion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+St.d.
+ of idiosyncratic shocks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.027
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estimate the law of motion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\zeta/L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor augmentation efficiency
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.0063
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Compustat,
+ Cost of goods sold
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Discount rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R&D efficiency
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.6% economic growth rate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Goodness of Fit b/w Model and Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Model (
+\begin_inset Formula $x$
+\end_inset
+
+-axis) vs Data (
+\begin_inset Formula $y$
+\end_inset
+
+-axis) :
+ firm-level profits (targeted),
+ sales and R&D expenditures
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/OO_profit_vs_data.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Log of Profit (Targeted)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/OO_sales_vs_data.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Log of Sales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/OO_r_and_d_vs_data.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Log of R&D Expenditure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Exercise
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Different Ownership Structure:
+ R&D Expenditure and Growth Rate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset VSpace -10mm
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ownership_r_and_d.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R&D Expenditure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ownership_growth.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Growth Rate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Concentration in production:
+ appropriability of return from innovation 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Concentration in R&D:
+ internalization of business stealing 
+\begin_inset Formula $>$
+\end_inset
+
+ technology spillover 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g\downarrow$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Different Ownership Structure:
+ Output and Social Welfare 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset VSpace -10mm
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ownership_output.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Total Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ownership_welfare.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Social Welfare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ownership concentration in both R&D and production tends to reduce welfare
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trends of Growth Rates 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{Y_process}{
+\backslash
+beamerbutton{Stochastic process of $
+\backslash
+log Y_{t}$}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{growth_trend}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Growth_Rates.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Economic Growth Rates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/R_and_D_Growth.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Growth Due to R&D
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Tech_Spill.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Growth Due to Tech Spillover
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Economic growth rate under common ownership deviates from that under dispersed ownership and approaches that under monopoly
+\end_layout
+
+\begin_layout Itemize
+Dispersed ownership 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Observed common ownership:
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ by 0.043% in 2017
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trends of Growth Rates (Only Ownership Structure of R&D Differs)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Growth_Rates2.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Economic Growth Rates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/R_and_D_Growth2.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Growth Due to R&D
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Tech_Spill2.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Growth Due to Tech Spillover
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Economic growth rate under common ownership deviates from that under dispersed ownership and approaches that under monopoly 
+\end_layout
+
+\begin_layout Itemize
+Dispersed ownership 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Observed common ownership:
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ by 0.084% in 2017
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Uniform R&D Subsidy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset VSpace -10mm
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/subsidy_growth.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Growth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/subsidy_welfare.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Social Welfare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal rate in 2017 is 
+\begin_inset Formula $s=33\%$
+\end_inset
+
+,
+ which increases 
+\begin_inset Formula $g$
+\end_inset
+
+ by 0.25% 
+\end_layout
+
+\begin_layout Itemize
+CE welfare loss relative to optimal R&D allocation:
+ 0.7% (
+\begin_inset Formula $s=0\%$
+\end_inset
+
+) 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 0.1% (
+\begin_inset Formula $s=30\%$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Alternative Corporate Governance Models:
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ederer2024-rw"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Super-proportional influence:
+ 
+\begin_inset Formula $\tilde{\kappa}_{ij}=\frac{\sum_{z=1}^{Z}s_{iz}\gamma_{iz}s_{jz}}{\sum_{z=1}^{Z}s_{iz}\gamma_{iz}s_{iz}}$
+\end_inset
+
+ where 
+\begin_inset Formula $\gamma_{iz}=\sqrt{s_{iz}}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Blockholder influence:
+ 
+\begin_inset Formula $\tilde{\kappa}_{ij}=\frac{\sum_{z=1}^{Z}s_{iz}b_{iz}s_{jz}}{\sum_{z=1}^{Z}s_{iz}s_{jz}}\quad(i\neq j),$
+\end_inset
+
+ where 
+\begin_inset Formula $b_{iz}=1$
+\end_inset
+
+ if 
+\begin_inset Formula $s_{iz}>5\%$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Rational investor inattention
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gilje2020-pa"
+literal "false"
+
+\end_inset
+
+ (GGL) estimate the probability that an investor votes against Institutional Shareholders Service recommendations
+\end_layout
+
+\begin_layout Itemize
+Utilize the estimate to capture the investor’s level of attention
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Governance frictions and entrenchment
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Azar2021-mb"
+literal "false"
+
+\end_inset
+
+ (AR) estimate an objective function where the manager of firm 
+\begin_inset Formula $i$
+\end_inset
+
+ discounts other firms' profit by 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Alternative Corporate Governance Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset VSpace -10mm
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Growth_Rates4.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Growth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Social_Welfare4.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Social Welfare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conclusion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quantitative endogenous growth model with ownership structure
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Match to data at firm (pair) level
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Common ownership in production:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Appropriability of returns from innovation 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dispersed ownership 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Observed common ownership:
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ by 0.027% in 2017
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Common ownership in R&D:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Internalization of business stealing 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Internalization of technology spillover 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dispersed ownership 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Observed common ownership:
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ by 0.084% in 2017
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Uniform R&D subsidy 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Optimal rate in 2017 is 
+\begin_inset Formula $s=32\%$
+\end_inset
+
+,
+ which increases 
+\begin_inset Formula $g$
+\end_inset
+
+ by 0.25% 
+\end_layout
+
+\begin_layout Itemize
+CE welfare loss relative to optimal R&D allocation:
+ 0.7% (
+\begin_inset Formula $s=0\%$
+\end_inset
+
+) 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 0.1% (
+\begin_inset Formula $s=30\%$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalized Hedonic-Linear Demand 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pellegrino2024-dn"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{elasticity}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Quality:
+ 
+\begin_inset Formula 
+\[
+b_{i}=\left(1-\alpha\right)\hat{b}_{i}+\alpha\sum_{k=n+1}^{n+n_{k}}\psi_{k}\hat{b}_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inverse demand:
+ 
+\begin_inset Formula 
+\[
+\frac{\mathbf{p}}{P}=\mathbf{b}-\Sigma\mathbf{q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inverse cross price elasticity of demand:
+ 
+\begin_inset Formula 
+\[
+\frac{\partial\log p_{i}}{\partial\log q_{j}}=-\frac{q_{j}}{p_{i}}\cdot\sigma_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cross price elasticity of demand:
+ 
+\begin_inset Formula 
+\[
+\frac{\partial\log q_{i}}{\partial\log p_{j}}=-\frac{p_{j}}{q_{i}}(\Sigma^{-1})_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{demand}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Static Profits
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Real gross profit:
+ 
+\begin_inset Formula $\frac{\pi_{i,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Labor market clearing:
+ 
+\begin_inset Formula $L=\sum_{i}\frac{q_{i,t}}{a_{i,t}}$
+\end_inset
+
+ 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\begin_inset Formula $\sqrt{\zeta\frac{w_{t}}{P_{t}}}=\frac{\zeta}{L}\sum_{i}q_{i,t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{q}_{t}=N\mathbf{z}_{t}$
+\end_inset
+
+ where 
+\begin_inset Formula $N\equiv\left\{ 2\frac{\zeta}{L}J+\Sigma+K\circ\Sigma\right\} ^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{i}$
+\end_inset
+
+:
+ the 
+\begin_inset Formula $i$
+\end_inset
+
+ th row of 
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ownership weighted profit:
+\begin_inset Formula 
+\[
+\sum_{j}\kappa_{ij}\frac{\pi_{j,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sum_{h}\kappa_{jh}\sigma_{jh}q_{j,t}q_{h,t}=\mathbf{z}_{t}^{T}Q^{i}\mathbf{z}_{t}
+\]
+
+\end_inset
+
+ where
+\begin_inset Formula 
+\[
+Q^{i}=\frac{1}{2}\sum_{j}\kappa_{ij}\sum_{h}\kappa_{jh}\sigma_{jh}\left(N_{j}^{T}N_{h}+N_{h}^{T}N_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Riccati Equations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{riccati}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V^{i}\left(\mathbf{z}\right)=\mathbf{z}^{T}X^{i}\mathbf{z}$
+\end_inset
+
+ where 
+\begin_inset Formula $X^{i}$
+\end_inset
+
+ is the solution of the stacked Riccati equation
+\begin_inset Formula 
+\[
+0=Q^{i}-\mu^{2}\sum_{j}\kappa_{ij}X_{j}^{j}\left(X_{j}^{j}\right)^{T}+\left(\Phi-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)^{T}X^{i}+X^{i}\left(\Phi-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $X_{i}^{i}\equiv$
+\end_inset
+
+ the 
+\begin_inset Formula $i$
+\end_inset
+
+ th column of 
+\begin_inset Formula $X^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi\equiv\Omega+\mu^{2}\left[\begin{array}{ccc}
+X_{1}^{1} & \cdots & X_{n}^{n}\end{array}\right]^{T}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Algorithm:
+ Given 
+\begin_inset Formula $\left[\begin{array}{ccc}
+X_{\tau}^{1} & \cdots & X_{\tau}^{n}\end{array}\right]$
+\end_inset
+
+,
+ update 
+\begin_inset Formula $\left[\begin{array}{ccc}
+X_{\tau-\Delta}^{1} & \cdots & X_{\tau-\Delta}^{n}\end{array}\right]$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+-\frac{X_{\tau}^{i}-X_{\tau-\Delta}^{i}}{\Delta}=Q^{i}-\mu^{2}\sum_{j}\kappa_{ij}X_{j,\tau}^{j}\left(X_{j,\tau}^{j}\right)^{T}+\left(\Phi_{\tau}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)^{T}X_{\tau}^{i}+X_{\tau}^{i}\left(\Phi_{\tau}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{hjb}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary of Equilibrium
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{summary}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Expression
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Production strategy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{q}_{t}=N\mathbf{z}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R&D strategy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{x}_{t}=\mu\tilde{X}\mathbf{z}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Law of motion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d\mathbf{z}_{t}=\left(\Omega\mathbf{z}_{t}+\mu\mathbf{x}_{t}\right)dt+\gamma\mathbf{z}_{t}dW_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profit of final producers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Pi_{t}^{F}/P_{t}=\mathbf{q}_{t}^{T}\left(\frac{1}{2}\Sigma\right)\mathbf{q}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total operating profit of firms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Pi_{t}/P_{t}=\mathbf{q}_{t}^{T}\left(\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)\right)\mathbf{q}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor income
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{t}L/P_{t}=\mathbf{q}_{t}^{T}\left(\frac{\zeta}{L}J\right)\mathbf{q}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y_{t}=\mathbf{q}_{t}^{T}\left(\frac{\zeta}{L}J+\frac{1}{2}\Sigma+\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)\right)\mathbf{q}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{t}=Y_{t}-\mathbf{x}_{t}^{T}\mathbf{x}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{aggregation}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Output and Expected Utility 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{X}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Output:
+ 
+\begin_inset Formula $Y_{t}=\mathbf{q}_{t}^{T}Q\mathbf{q}_{t}$
+\end_inset
+
+ where
+\begin_inset Formula 
+\[
+Q=\frac{\zeta}{L}J+\frac{1}{2}\Sigma+\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Expected utility:
+ 
+\begin_inset Formula 
+\[
+V\left(\mathbf{z}_{t}\right)\equiv\mathbb{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\mathbf{z}_{t}\right]=\mathbf{z}_{t}^{T}X\mathbf{z}_{t}
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $X$
+\end_inset
+
+ is the solution of the Lyapunov equation (obtained from households' HJB equation):
+\begin_inset Formula 
+\[
+0=Q-\mu^{2}\tilde{X}^{T}\tilde{X}+X\left(\Phi-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)+\left(\Phi-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)^{T}X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{aggregation}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Social Optimum 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{optimal}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Static optimal allocation:
+ 
+\begin_inset Formula $\mathbf{q}_{t}^{*}=N^{*}\mathbf{z}_{t}\quad\text{where}\quad N^{*}\equiv\left\{ 2\frac{\zeta}{L}J+\Sigma\right\} ^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal output:
+ 
+\begin_inset Formula $Y_{t}^{*}=\mathbf{z}_{t}^{T}Q^{*}\mathbf{z}_{t}$
+\end_inset
+
+ where 
+\begin_inset Formula $Q^{*}=\frac{1}{2}N^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal expected utility:
+\begin_inset Formula 
+\[
+V^{*}\left(\mathbf{z}_{t}\right)\equiv\mathbb{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\mathbf{z}_{t}\right]=\mathbf{z}_{t}^{T}X^{*}\mathbf{z}_{t},
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ is the solution of the Riccati equation (obtained from planner's HJB equation):
+\begin_inset Formula 
+\[
+0=Q^{*}-\mu^{2}\left(X^{*}\right)^{2}+X^{*}\left(\Phi^{*}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)+\left(\Phi^{*}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)X^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal R&D:
+ 
+\begin_inset Formula $\mathbf{x}_{t}^{*}=\mu X^{*}\mathbf{z}_{t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal technology transition matrix:
+ 
+\begin_inset Formula $\Phi^{*}=\Omega+\mu^{2}X^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{aggregation}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stochastic Process of Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{Y_process}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Applying Itô's lemma,
+ 
+\size small
+
+\begin_inset Formula 
+\[
+d\log Y_{t}=\left[\frac{\mathbf{z}_{t}^{T}\left(Q\Phi+\Phi^{T}Q\right)\mathbf{z}_{t}}{Y_{t}}+\gamma^{2}\left\{ \frac{\sum_{i}z_{i,t}^{2}Q_{ii}}{Y_{t}}-\frac{2\mathbf{z}_{t}^{T}Q\ \text{diag}\left(\mathbf{z}_{t}^{2}\right)Q\mathbf{z}_{t}}{Y_{t}^{2}}\right\} \right]dt+\frac{2\gamma\mathbf{z}_{t}^{T}Q\ \text{diag}\left(\mathbf{z}_{t}\right)}{Y_{t}}dW_{t}
+\]
+
+\end_inset
+
+
+\size default
+where 
+\begin_inset Formula $Y_{t}=\mathbf{z}_{t}^{T}Q\mathbf{z}_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Phi=\Omega+\mu^{2}\tilde{X}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+ Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Expression
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tech Spillover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{z}_{t}^{T}\left(Q\Omega+\Omega Q\right)\mathbf{z}_{t}/Y_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R&D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu^{2}\mathbf{z}_{t}^{T}\left(Q\tilde{X}+\tilde{X}^{T}Q\right)\mathbf{z}_{t}/Y_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ito
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma^{2}\left\{ \sum_{i}z_{i,t}^{2}Q_{ii}/Y_{t}-2\mathbf{z}_{t}^{T}Q\text{diag}\left(\mathbf{z}_{t}^{2}\right)Q\mathbf{z}_{t}/Y_{t}^{2}\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbb{E}\left[d\log Y_{t}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{growth_trend}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+First Stage 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{regression}{
+\backslash
+beamerbutton{Back}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size footnotesize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{first_stage}
+\end_layout
+
+\end_inset
+
+
+\size default
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dependent Variable:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{z_{i,t}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User cost of R&D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+-39.495^{***}\\
+(4.7044)
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Year Fixed Effects
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No.
+ observations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12,947
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\size footnotesize
+SEs clustered by years and 4-digit naics industries are reported in parentheses.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trends of Social Welfare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Social_Welfare.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Different Ownership
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Social_Welfare2.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Different Ownership (R&D Only)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Social_Welfare3.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison with Social Optimum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trends of Firm Value Share
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subfigure}{0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Firm_Value_Share.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Different Ownership
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Firm_Value_Share2.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Different Ownership (R&D Only)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Firm_Value_Share3.png
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison with Social Optimum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "bibtex"
+options "econ-aea"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
