@@ -1,6 +1,6 @@
 \documentclass[
   aspectratio=169,  % 16:9 slides
-  handout           % remove for on‑screen version
+  %handout           % remove for on‑screen version
 ]{beamer}
 
 % =====================================================================
@@ -92,7 +92,7 @@
           and exports in Korea
     %\item Domestic firms held 70\% of shares in Japan in 1990 \hfill \hyperlink{ownership_japan}{\beamerbutton{Japan}}
     \medskip{} \pause
-    \item Firms maximizing shareholder values $\Longrightarrow$ \\
+    \item Firms maximize shareholder values $\Longrightarrow$ \\
           Partially internalize externalities for commonly owned firm
     \medskip{} \pause
     \item Ownership structure (common ownership, cross ownership, M\&A, FDI, ...) $\Longrightarrow$ \\
@@ -136,9 +136,7 @@
   \begin{itemize}
     \item Competition \& Innovation: \\
           {\footnotesize\citet{d-Aspremont1988-je,Aghion2001-yc,Aghion2005-vw,Acemoglu2012-bj,Aghion2013-nq,Bloom2013-pn,Lopez2019-sl,Peters2020-sd,Akcigit2021-ns,Akcigit2023-zl,Liu2022-iw,Cavenaile2023-lo,Anton2023-ej,Anton2024-pw,Kini2024-kd,Hopenhayn2024-ya}}\\
-          \textcolor{uclaBlue}{Quantitative endogenous growth models matched to firm-(pair-)level
-            data}\\
-          \textcolor{uclaBlue}{Ownership structure $\Longrightarrow$ economic growth.}
+          \textcolor{uclaBlue}{Quantitative Schumpeterian growth model with ownership structure}\\
     \item Hedonic Demand / Empirical IO: \\
           {\footnotesize\citet{Lancaster1966-sg,Rosen1974-ep,Berry1995-lx,Nevo2001-ja,Pellegrino2024-dn,Ederer2024-rw}}\\
           \textcolor{uclaBlue}{Dynamic general equilibrium / R\&D}
@@ -157,7 +155,7 @@
           \medskip{}
     \item Inverse demand: $\symbf{p}(\symbf{q}) = \symbf{b} - \symbf{\Sigma} \symbf{q}$\medskip{}
     \item CRS production technology with marginal cost: $\symbf{m}(\symbf{x}) = \symbf{a} - \symbf{\Omega} \symbf{x}$\medskip{}
-    \item Cost of R\&D: $c_i(x_i) = \frac{1}{2}x_i^2$
+    \item Cost of R\&D: $c(x_i) = \frac{1}{2}x_i^2$
   \end{itemize}
 \end{frame}
 
@@ -180,8 +178,8 @@
   \begin{itemize}
     \item Firm $i$'s profit:
     \begin{align*}
-      \pi_{i}(\symbf{q}, \symbf{x}) & = q_{i} [p_i - m_i] - c_i(x_i) \\
-                                     & = q_{i} \left[ b_{i} - \sum_{j=1}^{n} \sigma_{ij} q_{j} - a_{i} + \sum_{j=1}^{n} \omega_{ij} x_{j} \right] - \frac{1}{2}x_{i}^{2}
+      \pi_{i}(\symbf{q}, \symbf{x}) & = [p_i - m_i]q_{i}  - c(x_i) \\
+                                     & = \left[ b_{i} - \sum_{j=1}^{n} \sigma_{ij} q_{j} - a_{i} + \sum_{j=1}^{n} \omega_{ij} x_{j} \right]q_{i} - \frac{1}{2}x_{i}^{2}
   \end{align*}
     \item  Given $\left\{ q_{j}, x_{j}\right\} _{j\neq i}$,
     firm $i$ chooses $q_{i}$ and $x_{i}$ to maximize
@@ -229,7 +227,7 @@
 \end{frame}
 
 \section{Growth Model}
-\begin{frame}{Oligopolistic Schumpeterian Growth Model}
+\begin{frame}{Schumpeterian Growth Model}
 
   \begin{itemize}
     \item Linear quadratic aggregator (final good):
@@ -240,7 +238,7 @@
           \[
             \symbf{p}_{t}=\symbf{b}_{t}-\symbf{\Sigma}\symbf{q}_{t}
           \]
-    \item CRS production technology: $q_{i,t}=a_{i,t}l_{i,t}$\medskip{}
+    \item CRS production technology (intermediate good): \[q_{i,t}=a_{i,t}l_{i,t}\]
     \item Each firm has knowledge capital $z_{i,t}$\medskip{}
     \item Each firm allocates knowledge capital to improve labor productivity
           and product quality:
@@ -252,7 +250,7 @@
 %
 \begin{frame}{Law of Motion of Knowledge Capital}
   \[
-    d\symbf{z}_{t}=\left(\underbrace{\symbf{\Omega}\symbf{z}_{t}}_{\text{technology spillover}}+\underbrace{\mu\symbf{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\symbf{z}_{t}dW_{t}}_{\text{shocks}}
+    d\symbf{z}_{t}=\left(\underbrace{\symbf{\Omega}\symbf{z}_{t}}_{\text{tech spillover}}+\underbrace{\mu\symbf{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\symbf{z}_{t}dW_{t}}_{\text{shocks}}
   \]
   \begin{itemize}
     \item $\symbf{\Omega}=\left[\omega_{ij}\right]$: technology spillover matrix\medskip{}
@@ -290,18 +288,18 @@
     \item \label{cournot}Firm $i$'s gross profit before subtracting dynamic
           R\&D cost:
           \begin{align*}
-            \pi_{i,t} & =p_{i,t}q_{i,t}-w_{t}l_{i,t}=\left(b_{i,t}-\frac{1}{a_{i,t}}w_{t}-\sum_{j}\sigma_{ij}q_{j,t}\right)q_{i,t}\quad\text{where}\quad\zeta a_{i,t}+b_{i,t}=z_{i,t}
+            \pi_{i,t} & =p_{i,t}q_{i,t}-w_{t}l_{i,t}=\left(b_{i,t}-\frac{w_{t}}{a_{i,t}}-\sum_{j}\sigma_{ij}q_{j,t}\right)q_{i,t}\quad\text{where}\quad\zeta a_{i,t}+b_{i,t}=z_{i,t}
           \end{align*}
     \item Given $w_{t}$, $z_{i,t}$, and $\left\{ q_{j,t}\right\} _{j\neq i}$,
           firm $i$ chooses $a_{i,t}$, $b_{i,t}$, and $q_{i,t}$ to maximize
           $\sum_{j}\kappa_{ij}\pi_{j,t}$\pause\medskip{}
     \item Quantity is a linear function of knowledge capital:
           \[
-            \symbf{q}_{t}=\left\{ \underbrace{2\frac{\zeta}{L}\symbf{J}}_{\text{labor cost}}+\underbrace{\symbf{\Sigma}}_{\text{substitutability}}+\underbrace{\symbf{K}\circ\symbf{\Sigma}}_{\text{ownership weight}\times\text{substitutability}}\right\} ^{-1}\symbf{z}_{t}
+            \symbf{q}_{t}=\left\{ \underbrace{2\frac{\zeta}{L}\symbf{J}}_{\text{labor cost}}+\underbrace{\symbf{\Sigma}}_{\text{substitutability}}+\underbrace{\symbf{K}\circ\symbf{\Sigma}}_{\text{ownership}\times\text{substitutability}}\right\} ^{-1}\symbf{z}_{t}
           \]
 
           \begin{itemize}
-            \item $\symbf{J}$: matrix with all elements equal to 1\medskip{}
+            \item $\symbf{J}=[1]$ \medskip{}
           \end{itemize}
     \item Ownership-weighted gross profits are expressed in quadratic form:
           $\sum_{j}\kappa_{ij}\pi_{j,t}=\symbf{z}_{t}^{T}\symbf{Q}^{i}\symbf{z}_{t}$
@@ -336,10 +334,8 @@
           (for any $\symbf{z}$)
     \item $\symbf{X}^{i}$ is the solution of stacked algebraic Riccati equations \hyperlink{riccati}{\beamerbutton{Riccati}}
     \item All public patenting firms in the US in our dataset $\simeq$1000
-          firms $\Longrightarrow$
-          \begin{itemize}
-            \item $1000^{3}=1$ billion undetermined coefficients\medskip{}
-          \end{itemize}
+          firms $\Longrightarrow$ \\
+          $1000^{3}=1$ billion undetermined coefficients (20 seconds on my laptop)\medskip{}
   \end{itemize}
   \begin{center}
     \begin{tabular}{@{}p{5cm}ccc@{}}
@@ -347,31 +343,30 @@
       Oligopolistic Schumpeterian                                       & Computation time & \# of firms    & Productivity space \\
       \midrule
       \citet{Cavenaile2023-lo}                    & $O(2^n)$         & 4              & 6-point grid       \\
-      Our model                                   & $O(n^4)$         & $\approx1000$  & Continuous         \\
+      Our model                                   & $O(n^4)$         & $\approx$1000  & Continuous         \\
       \bottomrule
     \end{tabular}
   \end{center}
 
 \end{frame}
 %
-\begin{frame}{BGP in Deterministic Economy}
+\begin{frame}{BGP}
   \begin{itemize}
     \item R\&D strategy: $x_{i,t}=\left(\mu \symbf{X}_{i}^{i}\right)^{T}\symbf{z}_{t}$
           where $\symbf{X}_{i}^{i}$ is the $i$ th column of $\symbf{X}^{i}$
-    \item The law of motion is rewritten as $d\symbf{z}_{t}=\symbf{\Phi}\symbf{z}_{t}dt+\gamma\symbf{z}_{t}dW_{t}$
+    \item The law of motion is rewritten as $d\symbf{z}_{t}=\textcolor{uclaBlue}{\symbf{\Phi}}\symbf{z}_{t}dt+\gamma\symbf{z}_{t}dW_{t}$
           where
           \[
-            \underbrace{\symbf{\Phi}}_{\text{technology transition matrix}}\equiv\underbrace{\symbf{\Omega}}_{\text{spillover}}+\underbrace{\mu^{2}\left[\begin{array}{ccc}
-              \symbf{X}_{1}^{1} & \cdots & \symbf{X}_{n}^{n}\end{array}\right]^{T}}_{\text{R\&D}}
+            \textcolor{uclaBlue}{\symbf{\Phi}}\equiv\underbrace{\symbf{\Omega}}_{\text{spillover}}+\underbrace{\mu^{2}\left[
+              \symbf{X}_{1}^{1} \ \cdots \ \symbf{X}_{n}^{n}\right]^{T}}_{\text{R\&D}}
           \]
           \vspace{-5mm}
   \end{itemize}
   \begin{thm*}
-    Consider the deterministic economy ($\gamma=0$). If the technology
-    transition matrix $\symbf{\Phi}$ is irreducible, then:
+    Consider the deterministic economy ($\gamma=0$). If \textcolor{uclaBlue}{$\symbf{\Phi}$} is irreducible, then:
 
-    (i) There exists largest positive eigenvalue of $\symbf{\Phi}$, $g$, and
-    associated strictly positive eigenvector, $\symbf{z}^{*}$.
+    (i) There exists largest positive eigenvalue of \textcolor{uclaBlue}{$\symbf{\Phi}$}, $g$, and
+    associated positive eigenvector, $\symbf{z}^{*}$.
 
     (ii) There exists a globally stable BGP such that the knowledge capital
     growth rate of all firms is $g$, and the knowledge capital distribution
@@ -379,14 +374,14 @@
   \end{thm*}
   \begin{itemize}
     \item Proof: Perron--Frobenius Theorem
-    \item ``$\symbf{\Phi}$ is irreducible'' $\Longleftrightarrow$ ``All firms are
+    \item ``\textcolor{uclaBlue}{$\symbf{\Phi}$} is irreducible'' $\Longleftrightarrow$ ``All firms are
           directly or indirectly connected technologically''
   \end{itemize}
 \end{frame}
 %
-\begin{frame}{BGP in Deterministic Economy}
+\begin{frame}{BGP}
   \begin{itemize}
-    \item In BGP, \textcolor{uclaBlue}{$\symbf{a}_{t}$}, ${\color{uclaBlue}\symbf{b}_{t}}$,
+    \item On BGP, \textcolor{uclaBlue}{$\symbf{a}_{t}$}, ${\color{uclaBlue}\symbf{b}_{t}}$,
           \textcolor{uclaBlue}{$\symbf{z}_{t}$}, and ${\color{uclaBlue}\symbf{q}_{t}}$
           grow at the same rate
   \end{itemize}
@@ -411,9 +406,9 @@
 
   \label{aggregation}
   \begin{itemize}
-    \item Apply Ito's lemma to \hfill \hyperlink{Y_process}{\beamerbutton{Decomposition}}
+    \item Apply Ito's lemma:\hfill \hyperlink{Y_process}{\beamerbutton{Decomposition}}
     \[
-    \begin{array}{cc}
+    \begin{array}{cl}
     \log Y_{t} & =\log\left(\symbf{z}_{t}^{T}\symbf{Q}\symbf{z}_{t}\right)\\
     d\symbf{z}_{t} & =\symbf{\Phi}\symbf{z}_{t}dt+\gamma\symbf{z}_{t}dW_{t}
     \end{array}
@@ -486,6 +481,30 @@
     \item Knowledge capital $\symbf{z}_{t}$ $\Longleftarrow$ $\symbf{q}_{t}=\left\{ 2\frac{\zeta}{L}J+\Sigma+K\circ\Sigma\right\} ^{-1}\symbf{z}_{t}$
   \end{enumerate}
 \end{frame}
+
+\begin{frame}{Initial Distribution of Knowledge Capital}
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{cl}
+      \toprule
+     Variables & Identification \\
+      \midrule
+      $\pi_{i,t}$ 
+        & Gross profit (before R\&D cost) 
+          $=$ Revenue $-$ Cost of goods sold \\[6pt]
+      $\mathbf{q}_t$
+        &
+          $\pi_{i,t}=\displaystyle\sum_{j}\kappa_{ij}\,\sigma_{ij}\,q_{i,t}\,q_{j,t}$ \\[6pt]
+      $\zeta/L$
+        & Matches sample firms’ cost share \\[6pt]
+      $\mathbf{z}_t$
+        &
+          $\displaystyle \mathbf{q}_{t}
+           =\bigl\{2\frac{\zeta}{L}J+\Sigma+K\circ\Sigma\bigr\}^{-1}\mathbf{z}_{t}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
 %
 \begin{frame}{Technology Spillover $\Omega=\beta\times$Technology Proximity $\tilde{\Omega}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
   
@@ -542,9 +561,9 @@
     \begin{tabular}{clcl}
       Notation                            & Description                                      & Value  & Source\tabularnewline
       \hline
-      $\Psi^{T}\Psi$                      & Product proximity                                &        & Form 10-K, \citet{Hoberg2016-jm}\tabularnewline
-      {\footnotesize$\widetilde{\Omega}$} & Technological proximity                          &        & USPTO, Patent classification\tabularnewline
-      $K$                                 & Common ownership weights                         &        & Form 13F, \citet{Backus2021-yt}\tabularnewline
+      $\symbf{\Sigma}$                      & Product proximity                                &        & Form 10-K, \citet{Hoberg2016-jm}\tabularnewline
+      $\symbf{\widetilde{\Omega}}$ & Technological proximity                          &        & USPTO, Patent classification\tabularnewline
+      $\symbf{K}$                                 & Common ownership weights                         &        & Form 13F, \citet{Backus2021-yt}\tabularnewline
       $\alpha$                            & Product proximity $\rightarrow$ Substitutability & .12    & \citet{Pellegrino2024-dn}\tabularnewline
       $\beta$                             & Technological proximity $\rightarrow$ Spillover  & .00014 & Estimate the law of motion\tabularnewline
       $\gamma$                            & St.d. of idiosyncratic shocks                    & .027   & Estimate the law of motion\tabularnewline
@@ -813,7 +832,7 @@
 
 \begin{frame}{When Common Ownership Affects only R\&D Decisions}
   \begin{itemize}
-    \item Investors may only influence R\&D decisions \citep{d-Aspremont1988-je}
+    \item Common ownership only influence R\&D decisions \citep{d-Aspremont1988-je}
   \end{itemize}
   \begin{center}
     \setlength{\tabcolsep}{3pt}
@@ -858,9 +877,9 @@
     \end{figure}
     \par\end{center}
   \begin{itemize}
-    \item Optimal rate is $s=33\%$, which increases $g$ by 0.25 pp (14\%)
+    \item Optimal rate is $s=$33\%, which increases $g$ by 0.25 pp (14\%)
     \item CE Welfare loss relative to optimal R\&D allocation is reduced to
-          $0.1\%$ (Initially $0.7\%$)
+          0.1\% (Initially 0.7\%)
   \end{itemize}
 \end{frame}
 %
@@ -870,7 +889,7 @@
   \begin{itemize}
     \item Quantitative Schumpeterian growth model with ownership structure
           \begin{itemize}
-            \item Match to data at firm (pair) level\medskip{}
+            \item Utilize micro data and computational capability
           \end{itemize}
           \medskip{}
     \item Common ownership in the US:
