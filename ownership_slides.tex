@@ -42,16 +42,15 @@
 \setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
 \setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
 
-\mode<presentation>{
-  \useoutertheme{smoothbars}
-}
+\useoutertheme{smoothbars}
 
-\mode<handout>{
-  \useoutertheme{default}            % Remove header
-  \setbeamertemplate{headline}{      % Overwrite headline template
-    \vskip1.3cm                      % Adjust to the same height as smoothbars
-  }
-}
+% \mode<handout>{
+%   \useoutertheme{default}            % Remove header
+%   \setbeamertemplate{headline}{      % Overwrite headline template
+%     \vskip1.3cm                      % Adjust to the same height as smoothbars
+%   }
+% }
+
 
 % =====================================================================
 % COLORS
@@ -111,19 +110,16 @@
       \item Lack of strategic interaction (e.g., monopolistic competition)
       \item Very few firms in Markov perfect equilibrium
     \end{itemize}
-    \pause
+    \medskip{}
     \item This paper: Many oligopolists $+$ Ownership structure
-    \begin{itemize}
-      \item Exercise: Public patenting firms in the US ($\simeq$ 1000 firms)
-    \end{itemize}
-    \pause
-    \item Quantify three inter-firm networks:
+    \medskip{}\pause
+    \item Quantify three inter-firm networks for publicly listed patenting firms in the US ($\simeq$ 1000 firms)
     \begin{itemize}
       \item Ownership structure
       \item Product market rivalry
       \item Technology spillover
     \end{itemize}
-    \pause
+    \medskip{}\pause
     \item Common ownership in the US:
     \begin{itemize}
       \item Internalization of business stealing $\Longrightarrow$ $g$ $\downarrow \downarrow$
@@ -146,23 +142,23 @@
   \end{itemize}
 \end{frame}
 
-\section{Static Model}
+\section{Simple Model}
 
 % モデルの設定
 \begin{frame}{Simple Static Partial Equilibrium Model}
   \begin{itemize}
     \item Firm $i\in \left\{1,\ldots, n\right\}$ chooses quantity $q_i$ and R\&D effort $x_i$
           \medskip{}
-    \item Inverse demand: $\symbf{p}(\symbf{q}) = \symbf{b} - \symbf{\Sigma} \symbf{q}$\medskip{}
+    \item Linear inverse demand: $\symbf{p}(\symbf{q}) = \symbf{b} - \symbf{\Sigma} \symbf{q}$\medskip{}
     \item CRS production technology with marginal cost: $\symbf{m}(\symbf{x}) = \symbf{a} - \symbf{\Omega} \symbf{x}$\medskip{}
-    \item Cost of R\&D: $c(x_i) = \frac{1}{2}x_i^2$
+    \item Quadratic cost of R\&D: $c(x_i) = \frac{1}{2}x_i^2$
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Common Ownership Weights}
   \label{ownership_weight}
   \begin{itemize}
-    \item $\symbf{K}=\left[\kappa_{ij}\right]$: common ownership weights that firm $i$ places on the profit of firm $j$
+    \item $\symbf{K}=\left[\kappa_{ij}\right]$: common ownership weights that firm $i$ places on the value of firm $j$
     \medskip{}
     \item More overlapping ownership b/w firm $i$ and $j$ $\Longrightarrow$ Higher $\kappa_{ij}$ \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influece}}
     \medskip{}
@@ -210,7 +206,7 @@
         \begin{tabular}{lV{\linewidth}}
           Networks                              & Measurement\tabularnewline
           \hline\hline
-          Common ownership weight $\symbf{K}$         & Institutional investor holdings in 13f filings
+          Common ownership $\symbf{K}$         & Institutional investor holdings in 13f filings
           
           \citep{Backus2021-yt} \tabularnewline
           \hline
@@ -218,7 +214,7 @@
 
           Text analysis of business description in 10k filings \tabularnewline
           \hline
-          Technology spillover $\symbf{\Omega}$   & Technology proximity \citep{Bloom2013-pn}:
+          Technology spillover $\symbf{\Omega}$   & Technology proximity \citep{Jaffe1986-yz,Bloom2013-pn}:
 
           Patent classification\tabularnewline
         \end{tabular}
@@ -295,7 +291,7 @@
           $\sum_{j}\kappa_{ij}\pi_{j,t}$\pause\medskip{}
     \item Quantity is a linear function of knowledge capital:
           \[
-            \symbf{q}_{t}=\left\{ \underbrace{2\frac{\zeta}{L}\symbf{J}}_{\text{labor cost}}+\underbrace{\symbf{\Sigma}}_{\text{substitutability}}+\underbrace{\symbf{K}\circ\symbf{\Sigma}}_{\text{ownership}\times\text{substitutability}}\right\} ^{-1}\symbf{z}_{t}
+            \symbf{q}_{t}(\symbf{z}_{t})=\left\{ \underbrace{2\frac{\zeta}{L}\symbf{J}}_{\text{labor cost}}+\underbrace{\symbf{\Sigma}}_{\text{substitutability}}+\underbrace{\symbf{K}\circ\symbf{\Sigma}}_{\text{ownership}\times\text{substitutability}}\right\} ^{-1}\symbf{z}_{t}
           \]
 
           \begin{itemize}
@@ -330,7 +326,7 @@
 
   \label{hjb}
   \begin{itemize}
-    \item Guess and verify$V^{i}\left(\symbf{z}\right)=\symbf{z}^{T}\symbf{X}^{i}\symbf{z}$
+    \item Guess and verify $V^{i}\left(\symbf{z}\right)=\symbf{z}^{T}\symbf{X}^{i}\symbf{z}$
           (for any $\symbf{z}$)
     \item $\symbf{X}^{i}$ is the solution of stacked algebraic Riccati equations \hyperlink{riccati}{\beamerbutton{Riccati}}
     \item All public patenting firms in the US in our dataset $\simeq$1000
@@ -342,7 +338,7 @@
       \toprule
       Oligopolistic Schumpeterian                                       & Computation time & \# of firms    & Productivity space \\
       \midrule
-      \citet{Cavenaile2023-lo}                    & $O(2^n)$         & 4              & 6-point grid       \\
+      \citet{Cavenaile2023-lo}                    & $O(2^n)$         & 4              & 6 grid       \\
       Our model                                   & $O(n^4)$         & $\approx$1000  & Continuous         \\
       \bottomrule
     \end{tabular}
@@ -350,7 +346,7 @@
 
 \end{frame}
 %
-\begin{frame}{BGP}
+\begin{frame}{Balance Growth Path}
   \begin{itemize}
     \item R\&D strategy: $x_{i,t}=\left(\mu \symbf{X}_{i}^{i}\right)^{T}\symbf{z}_{t}$
           where $\symbf{X}_{i}^{i}$ is the $i$ th column of $\symbf{X}^{i}$
@@ -379,7 +375,7 @@
   \end{itemize}
 \end{frame}
 %
-\begin{frame}{BGP}
+\begin{frame}{Intuition of the Existence of BGP}
   \begin{itemize}
     \item On BGP, \textcolor{uclaBlue}{$\symbf{a}_{t}$}, ${\color{uclaBlue}\symbf{b}_{t}}$,
           \textcolor{uclaBlue}{$\symbf{z}_{t}$}, and ${\color{uclaBlue}\symbf{q}_{t}}$
@@ -412,7 +408,7 @@
     \log Y_{t} & =\log\left(\symbf{z}_{t}^{T}\symbf{Q}\symbf{z}_{t}\right)\\
     d\symbf{z}_{t} & =\symbf{\Phi}\symbf{z}_{t}dt+\gamma\symbf{z}_{t}dW_{t}
     \end{array}
-    \Longrightarrow \quad g_{t}
+    \Longrightarrow \quad \symbf{E}_{t}\left[\left.g_{t}\right|\symbf{z}_{t}\right]
     \]
     \item Expected utility is expressed in quadratic form: \hfill \hyperlink{X}{\beamerbutton{X}}
           \[
@@ -425,7 +421,7 @@
 
 \section{Identification}
 
-\begin{frame}{Common Ownership Weight}
+\begin{frame}{Common Ownership $\symbf{K}$}
   \begin{itemize}
     \item \citet{Backus2021-yt} construct a dataset on investors' holdings
           based on Form 13F
@@ -436,7 +432,7 @@
   \end{center}
 \end{frame}
 %
-\begin{frame}{Product Substitutability}
+\begin{frame}{Product Market Rivalry $\symbf{\Sigma}$} 
 
   \begin{itemize}
     \item \citet{Hoberg2016-jm} estimates product similarity using business
@@ -447,18 +443,18 @@
   \end{itemize}
   \medskip{}
   \[
-    \underbrace{\sigma_{ij}}_{\text{substitutabiliy}}=\alpha\times\text{product similarity b/w }i\text{ and }j\quad\left(i\neq j\right)
+    \underbrace{\sigma_{ij}}_{\text{substitutability}}=\alpha\times\text{product similarity b/w }i\text{ and }j\quad\left(i\neq j\right)
   \]
 
 \end{frame}
 %
-\begin{frame}{Technological Proximity}
+\begin{frame}{Technological Proximity $\widetilde{\symbf{\Omega}}$}
   \begin{itemize}
     \item Technological profile of firm $i$
           \begin{itemize}
             \item The vector of the share of patents held by firm
             $i$ in each technology class
-            \item Baseline: group-level classifications ($\approx4000$)\medskip{}
+            \item Baseline: group-level patent classifications ($\approx4000$)\medskip{}
           \end{itemize}
           \medskip{}
     \item \citet{Jaffe1986-yz} technology proximity measure $\tilde{\omega}_{ij}$:
@@ -467,22 +463,8 @@
       \end{itemize}
   \end{itemize}
 \end{frame}
-
 %
-\begin{frame}{Initial Distribution of Knowledge Capital}
-  \begin{enumerate}
-    \item Gross profit (before subtracting R\&D cost) $\pi_{i,t}$ $\Longleftarrow$
-          ``Revenue'' $-$ ``Costs of goods sold''
-          \begin{itemize}
-            \item Deflated by GDP deflator for inter-temporal comparison\medskip{}
-          \end{itemize}
-    \item Quantity $\symbf{q}_{t}$ $\Longleftarrow$ $\pi_{i,t}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$\medskip{}
-    \item $\zeta/L$ $\Longleftarrow$ match the cost share of the sample firms\medskip{}
-    \item Knowledge capital $\symbf{z}_{t}$ $\Longleftarrow$ $\symbf{q}_{t}=\left\{ 2\frac{\zeta}{L}J+\Sigma+K\circ\Sigma\right\} ^{-1}\symbf{z}_{t}$
-  \end{enumerate}
-\end{frame}
-
-\begin{frame}{Initial Distribution of Knowledge Capital}
+\begin{frame}{Distribution of Knowledge Capital}
   \begin{table}[htbp]
     \centering
     \begin{tabular}{cl}
@@ -492,21 +474,21 @@
       $\pi_{i,t}$ 
         & Gross profit (before R\&D cost) 
           $=$ Revenue $-$ Cost of goods sold \\[6pt]
-      $\mathbf{q}_t$
+      $\symbf{q}_t$
         &
           $\pi_{i,t}=\displaystyle\sum_{j}\kappa_{ij}\,\sigma_{ij}\,q_{i,t}\,q_{j,t}$ \\[6pt]
       $\zeta/L$
         & Matches sample firms’ cost share \\[6pt]
-      $\mathbf{z}_t$
+      $\symbf{z}_t$
         &
-          $\displaystyle \mathbf{q}_{t}
-           =\bigl\{2\frac{\zeta}{L}J+\Sigma+K\circ\Sigma\bigr\}^{-1}\mathbf{z}_{t}$ \\
+          $\displaystyle \symbf{q}_{t}
+           =\left\{2\frac{\zeta}{L}\symbf{J}+\symbf{\Sigma}+\symbf{K}\circ\symbf{\Sigma}\right\}^{-1}\symbf{z}_{t}$ \\
       \bottomrule
     \end{tabular}
   \end{table}
 \end{frame}
 %
-\begin{frame}{Technology Spillover $\Omega=\beta\times$Technology Proximity $\tilde{\Omega}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
+\begin{frame}{Technology Spillover $\symbf{\Omega}=\beta\times$Technology Proximity $\symbf{\widetilde{\Omega}}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
   
   {\footnotesize
   \vspace{-5mm}
@@ -549,7 +531,7 @@
   SEs clustered by years and 4-digit naics industries are reported in parentheses. 
   {*} $p<\text{0.1}$, {**} $p<\text{0.05}$, {***} $p<\text{0.01}$.}
 \begin{itemize}
-  \item IV: User cost of R\&D, driven by state-level tax variations \citep{Wilson2009-ri,Bloom2013-pn}
+  \item IV: Firm-specific tax price of R\&D from federal and state-specific rules \citep{Bloom2013-pn}
 \end{itemize}
 \end{frame}
 %
@@ -580,7 +562,7 @@
     \item Model ($x$-axis) vs Data ($y$-axis) : firm-level profits (targeted),
           sales and R\&D expenditures
   \end{itemize}
-  \bigskip{}
+  \medskip{}
   \begin{center}
     \begin{figure}
       \centering{}\setcounter{subfigure}{0}\subfloat[Log of Profit (Targeted)]{\begin{centering}
@@ -599,13 +581,30 @@
 
 \section{Exercise}
 
-
+\begin{frame}{Exercise: Different Ownership Structures}
+   \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % 行間を広げる
+    \begin{tabular}{ll}
+      \toprule
+      Ownership Structure & Description \\
+      \midrule
+      Baseline            & Common ownership weights in 2017 \\
+      Dispersed           & $\symbf{K}^D=\symbf{I}$ \\
+      Mean$=$1999         & $\kappa_{ij,2017}^{M1999}=\text{const}\times\kappa_{ij,2017}$ and $\symbf{E}\left[\kappa_{ij,2017}^{M1999}\right]=\symbf{E}\left[\kappa_{ij,1999}\right]$ for $j\neq i$\\
+      Uniform             & $\kappa_{ij,2017}^U=\symbf{E}\left[\kappa_{ij, 2017}\right]$ for $j\neq i$ \\
+      Monopoly            & $\symbf{K}^M=[1]$ \\
+      \bottomrule
+    \end{tabular}
+    \renewcommand{\arraystretch}{1.0} % デフォルトに戻す
+    \end{table}
+\end{frame}
 \begin{frame}{Total Output}
   \centering
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{@{} c *{5}{c} @{}} 
     \toprule
-    \multirow{2}{*}{\shortstack[t]{Total output \\ (Social Optimum: 100)}} 
+    \multirow{2}{*}{\shortstack[t]{Total Output in 2017 \\ (Social Optimum: 100)}} 
       & \multicolumn{5}{c}{Ownership (Baseline: 2017)} \\
     \cmidrule(lr){2-6}
       & Dispersed 
@@ -634,8 +633,8 @@
   \end{tabular}
   \medskip{}
   \begin{itemize}
-    \item Inelastic labor supply $\Longrightarrow$ changes in total output arise from misallocation
-    \item Common ownership worsens product misallocation
+    \item Inelastic labor supply $\Longrightarrow$ Changes arise from product misallocation
+    \item Common ownership exacerbates product misallocation
   \end{itemize}
 \end{frame}
 
@@ -644,7 +643,7 @@
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{@{} c *{5}{c} @{}} 
     \toprule
-    \multirow{2}{*}{\shortstack[t]{Total R\&D Expenditure \\ (Social Optimum: 100)}} 
+    \multirow{2}{*}{\shortstack[t]{Total R\&D in 2017 \\ (Social Optimum: 100)}} 
       & \multicolumn{5}{c}{Ownership (Baseline: 2017)} \\
     \cmidrule(lr){2-6}
       & Dispersed 
@@ -684,7 +683,7 @@
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{@{} c *{5}{c} @{}} 
     \toprule
-    \multirow{2}{*}{\shortstack[t]{Expected economic \\ growth rate (\%)}} 
+    \multirow{2}{*}{\shortstack[t]{Expected Economic \\ Growth Rate in 2017 (\%)}} 
       & \multicolumn{5}{c}{Ownership (Baseline: 2017)} \\
     \cmidrule(lr){2-6}
       & Dispersed 
@@ -713,7 +712,11 @@
   \end{tabular}
   \medskip{}
   \begin{itemize}
-    \item 0.043 pp (2.4\%) lower growth under common ownership compared to dispersed ownership
+    \item In baseline, the expected growth rate is
+    \begin{itemize}
+    \item 0.043 pp (2.4\%) lower compared to dispersed ownership, and
+    \item 0.040 pp (2.2\%) lower compared to common ownership level in 1999.
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -752,7 +755,11 @@
   \end{tabular}
   \medskip{}
   \begin{itemize}
-    \item 2.8\% CE welfare loss under common ownership compared to dispersed ownership
+    \item In baseline, consumption equivalent welfare loss is
+    \begin{itemize}
+    \item 2.8\% CE compared to dispersed ownership, and
+    \item 2.5\% CE compared to common ownership level in 1999.
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -764,7 +771,7 @@
 %           \item Ownership concentration reduces aggregate R\&D, and
 %           \item Appropriability effect is strong enough,
 %         \end{itemize}
-%         \bigskip{}
+%         \medskip{}
 % \end{itemize}
 % \centering
 % \begin{tikzpicture}[>=stealth, font=\normalsize]
@@ -797,7 +804,7 @@
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{@{} c *{5}{c} @{}} 
     \toprule
-    \multirow{2}{*}{\shortstack[t]{Firm value \\ share (\%)}} 
+    \multirow{2}{*}{\shortstack[t]{Firm Value \\ Share in 2017 (\%)}} 
       & \multicolumn{5}{c}{Ownership (Baseline: 2017)} \\
     \cmidrule(lr){2-6}
       & Dispersed 
@@ -807,7 +814,7 @@
       & Monopoly \\
     \midrule
     Baseline 
-      & 28.74  & 33.43 & 29.63  & 34.34 & 40.92 \\
+      & 28.74  & 29.63  & 33.43 & 33.34 & 40.92 \\
     \midrule
     \shortstack[t]{Only Business Steal \\ $\symbf{\Omega}=[0]$} 
       & \visible<2->{27.91} 
@@ -826,7 +833,11 @@
   \end{tabular}
   \medskip{}
   \begin{itemize}
-    \item Firm value share is 5.6\% lower under common ownership compared to dispersed ownership
+    \item In baseline, firm value share is
+    \begin{itemize}
+    \item 5.6\% lower compared to dispersed ownership, and
+    \item 4.7\% lower compared to common ownership level in 1999.
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -848,9 +859,9 @@
         & 91.30 & {\color{uclaBlue}91.30} & 89.08 \\
       \shortstack[l]{R\&D Expenditure (Social Optimum: 100)}
         & 26.17 & {\color{uclaBlue}19.76} & 22.36 \\
-      \shortstack[l]{Growth Rate (\%)} 
+      \shortstack[l]{Expected Growth Rate (\%)} 
         & 1.796 & {\color{uclaBlue}1.726} & 1.753 \\
-      \shortstack[l]{Social Welfare (Social Optimum: 100)}
+      \shortstack[l]{Expected Social Welfare (Social Optimum: 100)}
         & 87.72 & {\color{uclaBlue}87.49} & 85.25 \\
       \shortstack[l]{Firm Value Share (\%)}  
         & 28.74 & {\color{uclaBlue}29.04} & 34.34 \\
@@ -858,8 +869,8 @@
     \end{tabular}
   \end{center}
   \begin{itemize}
-      \item Lowest R\&D expenditure and growth rate
-      \item Intermediate social welfare
+      \item Lowest R\&D expenditure and expected growth rate
+      \item Intermediate social welfare and firm value share
   \end{itemize}
 \end{frame}
 
