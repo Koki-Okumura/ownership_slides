@@ -85,11 +85,13 @@
 \begin{frame}{Ownership Structure $\Longrightarrow$ Economic Growth?}
   \label{intro} % This frame's label already exists
   \begin{itemize}
+    \item Onwership structure is concentrated \hfill \hyperlink{share}{\beamerbutton{Share}}
+  \begin{itemize}
     \item BlackRock, Vanguard, State Street, and Fidelity control 30\% of votes
-          of S\&P 500 firms \hfill \hyperlink{share}{\beamerbutton{Share}}
+          of S\&P 500 firms
     \item Top 10 chaebols account for half of stock market capitalization
           and exports in Korea
-    %\item Domestic firms held 70\% of shares in Japan in 1990 \hfill \hyperlink{ownership_japan}{\beamerbutton{Japan}}
+  \end{itemize}
     \medskip{} \pause
     \item Firms maximize shareholder values $\Longrightarrow$ \\
           Partially internalize externalities for commonly owned firm
@@ -246,13 +248,13 @@
 %
 \begin{frame}{Law of Motion of Knowledge Capital}
   \[
-    d\symbf{z}_{t}=\left(\underbrace{\symbf{\Omega}\symbf{z}_{t}}_{\text{tech spillover}}+\underbrace{\mu\symbf{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\symbf{z}_{t}dW_{t}}_{\text{shocks}}
+    d\symbf{z}_{t}=\left(\underbrace{\symbf{\Omega}\symbf{z}_{t}}_{\text{tech spillover}}+\underbrace{\mu\symbf{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\symbf{z}_{t} \circ d\symbf{W}_{t}}_{\text{shocks}}
   \]
   \begin{itemize}
     \item $\symbf{\Omega}=\left[\omega_{ij}\right]$: technology spillover matrix\medskip{}
     \item $x_{i,t}=\sqrt{d_{i,t}}$
           \begin{itemize}
-            \item $d_{i,t}$: R\&D cost in terms of final good
+            \item $d_{i,t}$: R\&D input in terms of final good
             \item Innovation elasticity is 0.5\medskip{}
           \end{itemize}
     \item $\mu$, $\gamma$: positive scalars
@@ -267,7 +269,7 @@
           \]
     \item Final good market clearing:
           \[
-            C_{t}+\underbrace{\sum_{i}d_{i,t}}_{\text{R\&D cost}}=Y_{t}
+            C_{t}+\underbrace{\sum_{i}d_{i,t}}_{\text{R\&D input}}=Y_{t}
           \]
     \item Risk neutral representative household:
           \[
@@ -305,8 +307,6 @@
 %
 \begin{frame}{Linear-Quadratic Differential Game}
 
-  \vspace{-1mm}
-
   \begin{itemize}
     \item Given other players' strategy $\left\{ x_{j,t}\right\} _{j\neq i,t\geq0}$,
           firm $i$ chooses R\&D effort $\left\{ x_{i,t}\right\} _{t\geq0}$
@@ -314,7 +314,7 @@
           \[
             \max_{\left\{ x_{i,t}\right\} _{t\geq0}}\quad V^{i}\left(\text{\ensuremath{\symbf{z}}}_{0}\right)\equiv\symbf{E}_{0}\left[\int_{0}^{\infty}\exp\left(-\rho t\right)\left\{ \sum_{j}\kappa_{ij}\left(\pi_{j,t}-x_{j,t}^{2}\right)\right\} dt\right]
           \]
-          subject to $d\symbf{z}_{t}=\left(\symbf{\Omega}\symbf{z}_{t}+\mu\symbf{x}_{t}\right)dt+\gamma\symbf{z}_{t}dW_{t}$\medskip{}
+          subject to $d\symbf{z}_{t}=\left(\symbf{\Omega}\symbf{z}_{t}+\mu\symbf{x}_{t}\right)dt+\gamma\symbf{z}_{t} \circ d\symbf{W}_{t}$\pause\medskip{}
     \item Firm $i$'s HJB equation:
           \[
             \rho V^{i}\left(\symbf{z}\right)=\max_{x_{i}}\left\{ \symbf{z}^{T}\symbf{Q}^{i}\symbf{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\symbf{z}}^{i}\left(\symbf{z}\right)\left[\symbf{\Omega}\symbf{z}+\mu\symbf{x}\right]+\frac{\gamma^{2}}{2}\symbf{z}^{T}V_{\symbf{zz}}^{i}\left(\symbf{z}\right)\symbf{z}\right\}
@@ -350,10 +350,10 @@
   \begin{itemize}
     \item R\&D strategy: $x_{i,t}=\left(\mu \symbf{X}_{i}^{i}\right)^{T}\symbf{z}_{t}$
           where $\symbf{X}_{i}^{i}$ is the $i$ th column of $\symbf{X}^{i}$
-    \item The law of motion is rewritten as $d\symbf{z}_{t}=\textcolor{uclaBlue}{\symbf{\Phi}}\symbf{z}_{t}dt+\gamma\symbf{z}_{t}dW_{t}$
+    \item The law of motion is rewritten as $d\symbf{z}_{t}=\textcolor{uclaBlue}{\symbf{\Phi}}\symbf{z}_{t}dt+\gamma\symbf{z}_{t} \circ d\symbf{W}_{t}$
           where
           \[
-            \textcolor{uclaBlue}{\symbf{\Phi}}\equiv\underbrace{\symbf{\Omega}}_{\text{spillover}}+\underbrace{\mu^{2}\left[
+            \textcolor{uclaBlue}{\symbf{\Phi}}\equiv\underbrace{\symbf{\Omega}}_{\text{Tech Spillover}}+\underbrace{\mu^{2}\left[
               \symbf{X}_{1}^{1} \ \cdots \ \symbf{X}_{n}^{n}\right]^{T}}_{\text{R\&D}}
           \]
           \vspace{-5mm}
@@ -375,16 +375,16 @@
   \end{itemize}
 \end{frame}
 %
-\begin{frame}{Intuition of the Existence of BGP}
+\begin{frame}{Intuition of Why the Model Has the BGP}
   \begin{itemize}
-    \item On BGP, \textcolor{uclaBlue}{$\symbf{a}_{t}$}, ${\color{uclaBlue}\symbf{b}_{t}}$,
+    \item On the BGP, \textcolor{uclaBlue}{$\symbf{a}_{t}$}, ${\color{uclaBlue}\symbf{b}_{t}}$,
           \textcolor{uclaBlue}{$\symbf{z}_{t}$}, and ${\color{uclaBlue}\symbf{q}_{t}}$
           grow at the same rate
   \end{itemize}
     \begin{center}
       \renewcommand{\arraystretch}{1.3}  % Increases the row height by 30%
       \begin{tabular}{>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{6cm}}
-        Technology Choice: & $\zeta{\color{uclaBlue}a_{i,t}}+{\color{uclaBlue}b_{i,t}}={\color{uclaBlue}z_{i,t}}$ \\
+        Technological Choice: & $\zeta{\color{uclaBlue}a_{i,t}}+{\color{uclaBlue}b_{i,t}}={\color{uclaBlue}z_{i,t}}$ \\
         Linear Production Technology: & ${\color{uclaBlue}q_{i,t}}={\color{uclaBlue}a_{i,t}}l_{i,t}$ \\
         Inelastic Labor Supply: & $L=\sum_{i}l_{i,t}$ \\
       \end{tabular}
@@ -398,7 +398,7 @@
   \end{itemize}
 \end{frame}
 %
-\begin{frame}{Aggregation}
+\begin{frame}{Expected Growth Rate and Utility}
 
   \label{aggregation}
   \begin{itemize}
@@ -406,7 +406,7 @@
     \[
     \begin{array}{cl}
     \log Y_{t} & =\log\left(\symbf{z}_{t}^{T}\symbf{Q}\symbf{z}_{t}\right)\\
-    d\symbf{z}_{t} & =\symbf{\Phi}\symbf{z}_{t}dt+\gamma\symbf{z}_{t}dW_{t}
+    d\symbf{z}_{t} & =\symbf{\Phi}\symbf{z}_{t}dt+\gamma\symbf{z}_{t} \circ d\symbf{W}_{t}
     \end{array}
     \Longrightarrow \quad \symbf{E}_{t}\left[\left.g_{t}\right|\symbf{z}_{t}\right]
     \]
@@ -424,8 +424,8 @@
 \begin{frame}{Common Ownership $\symbf{K}$}
   \begin{itemize}
     \item \citet{Backus2021-yt} construct a dataset on investors' holdings
-          based on Form 13F
-    \item Baseline: \cite{Rotemberg1984-jz} proportional influence assumption \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influece}}
+          based on Form 13F.
+    \item Baseline: \citet{Rotemberg1984-jz} proportional influence assumption. \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influence}}
   \end{itemize}
   \begin{center}
     \includegraphics[width=7cm]{figures/kappa}
@@ -435,11 +435,11 @@
 \begin{frame}{Product Market Rivalry $\symbf{\Sigma}$} 
 
   \begin{itemize}
-    \item \citet{Hoberg2016-jm} estimates product similarity using business
+    \item \label{product_identification} \citet{Hoberg2016-jm} estimates product similarity using business
           descriptions in 10-K
           \medskip{}
     \item \citet{Pellegrino2024-dn} estimates $\alpha$ to align with the cross-price
-          elasticity of demand
+          elasticity of demand \hyperlink{micro_vs_ghl}{\beamerbutton{micro estimates}}
   \end{itemize}
   \medskip{}
   \[
@@ -457,14 +457,14 @@
             \item Baseline: group-level patent classifications ($\approx4000$)\medskip{}
           \end{itemize}
           \medskip{}
-    \item \citet{Jaffe1986-yz} technology proximity measure $\tilde{\omega}_{ij}$:
+    \item \citet{Jaffe1986-yz} technological proximity measure $\tilde{\omega}_{ij}$:
       \begin{itemize}
       \item Cosine similarity of the technological profiles b/w firm $i$ and $j$
       \end{itemize}
   \end{itemize}
 \end{frame}
 %
-\begin{frame}{Distribution of Knowledge Capital}
+\begin{frame}{Distribution of Knowledge Capital $\symbf{z}_t$}
   \begin{table}[htbp]
     \centering
     \begin{tabular}{cl}
@@ -478,7 +478,7 @@
         &
           $\pi_{i,t}=\displaystyle\sum_{j}\kappa_{ij}\,\sigma_{ij}\,q_{i,t}\,q_{j,t}$ \\[6pt]
       $\zeta/L$
-        & Matches sample firms’ cost share \\[6pt]
+        & Matches sample firms’ cost share (average markup) \\[6pt]
       $\symbf{z}_t$
         &
           $\displaystyle \symbf{q}_{t}
@@ -488,7 +488,7 @@
   \end{table}
 \end{frame}
 %
-\begin{frame}{Technology Spillover $\symbf{\Omega}=\beta\times$Technology Proximity $\symbf{\widetilde{\Omega}}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
+\begin{frame}{Technology Spillover $\symbf{\Omega}=\beta\times$Technological Proximity $\symbf{\widetilde{\Omega}}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
   
   {\footnotesize
   \vspace{-5mm}
@@ -500,33 +500,32 @@
       +\text{Year FE}_{t}
       +\epsilon_{i,t}
   \]
-  \begin{center}
-    \setlength{\tabcolsep}{3pt}
-    \begin{tabular}{cccc}
-      \hline\hline
-       & (1) & (2) & (3) \\ 
-       & $z_{i,t+1}-z_{i,t}$ 
-       & $z_{i,t+1}-z_{i,t}$ 
-       & $z_{i,t+1}-z_{i,t}$ \\
-      \hline
-      $\sum_{j\neq i}\tilde{\omega}_{ij,t}z_{j,t}$
-        & $\begin{array}{c}\text{0.000191}^{***}\\(\text{0.000035})\end{array}$
-        & $\begin{array}{c}\text{0.000152}^{***}\\(\text{0.000035})\end{array}$
-        & $\begin{array}{c}\text{0.000140}^{***}\\(\text{0.000039})\end{array}$ \\
+    \begin{center}
+      \setlength{\tabcolsep}{6pt} % Adjust column spacing
+      \begin{tabular}{lccc}
+        \hline\hline
+         & (1) & (2) & (3) \\ 
+         & $z_{i,t+1}-z_{i,t}$ 
+         & $z_{i,t+1}-z_{i,t}$ 
+         & $z_{i,t+1}-z_{i,t}$ \\
+        \hline
+        $\sum_{j\neq i}\tilde{\omega}_{ij,t}z_{j,t}$
+          & $\begin{array}{c}\text{0.000191}^{***}\\(\text{0.000035})\end{array}$
+          & $\begin{array}{c}\text{0.000152}^{***}\\(\text{0.000035})\end{array}$
+          & $\begin{array}{c}\text{0.000140}^{***}\\(\text{0.000039})\end{array}$ \\
 
-      $\sqrt{\text{R\&D Expenditure}}$
-        & 
-        & $\begin{array}{c}\text{.037}^{**}\\(\text{0.021})\end{array}$
-        &  \\
-
-      \hline
-      Year Fixed Effects                & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
-      IV                                &            &            & $\checkmark$ \\
-      IV 1st Stage F-statistics        &            &            & 4176        \\
-      No.\ observations                & 16,324     & 15,173     & 14,181      \\
-      \hline
-    \end{tabular}
-  \end{center}
+        $\sqrt{\text{R\&D Expenditure}}$
+          & 
+          & $\begin{array}{c}\text{0.037}^{**}\\(\text{0.021})\end{array}$
+          &  \\
+        \hline
+        Year Fixed Effects                & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+        IV                                &              &              & $\checkmark$ \\
+        IV 1st Stage F-statistics         &              &              & 4176         \\
+        No.\ observations                 & 16,324       & 15,173       & 14,181       \\
+        \hline\hline
+      \end{tabular}
+    \end{center}
 
   SEs clustered by years and 4-digit naics industries are reported in parentheses. 
   {*} $p<\text{0.1}$, {**} $p<\text{0.05}$, {***} $p<\text{0.01}$.}
@@ -534,33 +533,36 @@
   \item IV: Firm-specific tax price of R\&D from federal and state-specific rules \citep{Bloom2013-pn}
 \end{itemize}
 \end{frame}
+
 %
 \begin{frame}{Identification: Summary}
   \begin{itemize}
-    \item Publicly available data $+$ Compustat
+    \item Publicly available data + Compustat
   \end{itemize}
-  \begin{center}
-    \begin{tabular}{clcl}
-      Notation                            & Description                                      & Value  & Source\tabularnewline
-      \hline
-      $\symbf{\Sigma}$                      & Product proximity                                &        & Form 10-K, \citet{Hoberg2016-jm}\tabularnewline
-      $\symbf{\widetilde{\Omega}}$ & Technological proximity                          &        & USPTO, Patent classification\tabularnewline
-      $\symbf{K}$                                 & Common ownership weights                         &        & Form 13F, \citet{Backus2021-yt}\tabularnewline
-      $\alpha$                            & Product proximity $\rightarrow$ Substitutability & .12    & \citet{Pellegrino2024-dn}\tabularnewline
-      $\beta$                             & Technological proximity $\rightarrow$ Spillover  & .00014 & Estimate the law of motion\tabularnewline
-      $\gamma$                            & St.d. of idiosyncratic shocks                    & .027   & Estimate the law of motion\tabularnewline
-      $\zeta/L$                           & Labor augmentation efficiency                    & .0063  & Compustat, Cost of goods sold\tabularnewline
-      $\rho$                              & Discount rate                                    & .10    & \tabularnewline
-      $\mu$                               & R\&D efficiency                                  & .05    & 1.6\% economic growth rate\tabularnewline
-    \end{tabular}
-    \par\end{center}
-
+  \begin{table}[h]
+    \centering
+      \small % フォントサイズを小さくする
+      \begin{tabular}{llll}
+        \toprule
+        Notation                           & Description                                      & Value   & Source                                   \\
+        \midrule
+        $\symbf{\Sigma}$                   & Product proximity                                &         & Form 10-K, \citet{Hoberg2016-jm}          \\
+        $\symbf{\widetilde{\Omega}}$       & Technological proximity                          &         & USPTO, Patent classification             \\
+        $\symbf{K}$                        & Common ownership weights                         &         & Form 13F, \citet{Backus2021-yt}          \\
+        $\alpha$                           & Product proximity $\rightarrow$ Substitutability & 0.12    & \citet{Pellegrino2024-dn}                \\
+        $\beta$                            & Technological proximity $\rightarrow$ Spillover  & 0.00014 & Estimate the law of motion               \\
+        $\gamma$                           & St.d. of idiosyncratic shocks                    & 0.027   & Estimate the law of motion               \\
+        $\zeta/L$                          & Labor augmentation efficiency                    & 0.0063  & Compustat, Cost of goods sold            \\
+        $\rho$                             & Discount rate                                    & 0.10    & $>$ risk free rates, $<$ private R\&D returns \\
+        $\mu$                              & R\&D efficiency                                  & 0.05    & 1.7\% economic growth rate               \\
+        \bottomrule
+      \end{tabular}
+  \end{table}
 \end{frame}
-%
+
 \begin{frame}{Fit b/w Model and Data}
   \begin{itemize}
-    \item Model ($x$-axis) vs Data ($y$-axis) : firm-level profits (targeted),
-          sales and R\&D expenditures
+    \item Comparison of firm-level model-generated values ($x$-axis) with observed data ($y$-axis)
   \end{itemize}
   \medskip{}
   \begin{center}
@@ -581,7 +583,7 @@
 
 \section{Exercise}
 
-\begin{frame}{Exercise: Different Ownership Structures}
+\begin{frame}{Counterfactual Ownership Structures}
    \begin{table}[h]
     \centering
     \renewcommand{\arraystretch}{1.5} % 行間を広げる
@@ -589,7 +591,7 @@
       \toprule
       Ownership Structure & Description \\
       \midrule
-      Baseline            & Common ownership weights in 2017 \\
+      Baseline            & Observed ownership structure in 2017 \\
       Dispersed           & $\symbf{K}^D=\symbf{I}$ \\
       Mean$=$1999         & $\kappa_{ij,2017}^{M1999}=\text{const}\times\kappa_{ij,2017}$ and $\symbf{E}\left[\kappa_{ij,2017}^{M1999}\right]=\symbf{E}\left[\kappa_{ij,1999}\right]$ for $j\neq i$\\
       Uniform             & $\kappa_{ij,2017}^U=\symbf{E}\left[\kappa_{ij, 2017}\right]$ for $j\neq i$ \\
@@ -599,6 +601,7 @@
     \renewcommand{\arraystretch}{1.0} % デフォルトに戻す
     \end{table}
 \end{frame}
+
 \begin{frame}{Total Output}
   \centering
   \setlength{\tabcolsep}{3pt}
@@ -755,10 +758,10 @@
   \end{tabular}
   \medskip{}
   \begin{itemize}
-    \item In baseline, consumption equivalent welfare loss is
+    \item In the baseline, the consumption-equivalent welfare loss is
     \begin{itemize}
-    \item 2.8\% CE compared to dispersed ownership, and
-    \item 2.5\% CE compared to common ownership level in 1999.
+      \item 2.8\% compared to dispersed ownership, and
+      \item 2.5\% compared to the common ownership level in 1999.
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -909,7 +912,7 @@
             \item Internalization of technology spillover effect $\Longrightarrow$ $g$ $\uparrow$
           \end{enumerate}
           \medskip{}
-    \item Application:
+    \item Potential application:
           \begin{itemize}
             \item Chaebols in Korea
             \item Zaibatsu (pre-WWII) and cross-shareholding (late 20th century) in Japan
@@ -1247,7 +1250,7 @@
 %
 \begin{frame}{Static Profits}
   \begin{itemize}
-    \item \label{Q}Real gross profit: $\frac{\pi_{i,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$
+    \item \label{Q} Gross profit: $\frac{\pi_{i,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$
     \item Firms choose labor productivity and product quality: $\zeta a_{i,t}=\sqrt{\zeta\frac{w_{t}}{P_{t}}}$,
           $b_{i,t}=z_{i,t}-\sqrt{\zeta\frac{w_{t}}{P_{t}}}$
     \item Labor market clearing: $L=\sum_{i}\frac{q_{i,t}}{a_{i,t}}$ $\Longrightarrow$$\sqrt{\zeta\frac{w_{t}}{P_{t}}}=\frac{\zeta}{L}\sum_{i}q_{i,t}$
@@ -1269,10 +1272,8 @@
 \end{frame}
 %
 \begin{frame}{Riccati Equations}
-
-  \label{riccati}
   \begin{itemize}
-    \item $V^{i}\left(\symbf{z}\right)=\symbf{z}^{T}\symbf{X}^{i}\symbf{z}$ where
+    \item  \label{riccati} $V^{i}\left(\symbf{z}\right)=\symbf{z}^{T}\symbf{X}^{i}\symbf{z}$ where
           $\symbf{X}^{i}$ is the solution of the stacked Riccati equation
           {\small
           \[
@@ -1283,7 +1284,7 @@
             \item $\symbf{X}_{i}^{i}\equiv$ the $i$ th column of $\symbf{X}^{i}$
             \item $\symbf{\Phi}\equiv\symbf{\Omega}+\mu^{2}\left[\begin{array}{ccc}
               \symbf{X}_{1}^{1} & \cdots & \symbf{X}_{n}^{n}\end{array}\right]^{T}$
-          \end{itemize}
+          \end{itemize} \medskip{}
     \item Algorithm: Given $\left[\begin{array}{ccc}
                 \symbf{X}_{\tau}^{1} & \cdots & \symbf{X}_{\tau}^{n}\end{array}\right]$, update $\left[\begin{array}{ccc}
                 \symbf{X}_{\tau-\Delta}^{1} & \cdots & \symbf{X}_{\tau-\Delta}^{n}\end{array}\right]$ by
@@ -1420,6 +1421,51 @@
     \end{figure}
     \par\end{center}
 
+\end{frame}
+
+\begin{frame}[t]{Microeconometric Estimates vs.\ GHL \citep{Pellegrino2024-dn} (1/2)}
+  \label{micro_vs_ghl}
+  \begin{center}
+  \begin{tabular}{lllrr}
+    \toprule
+    Market      & Firm $i$           & Firm $j$           & \multicolumn{1}{c}{Micro Estimate} & \multicolumn{1}{c}{GHL}    \\
+    \midrule
+    Auto        & Ford               & Ford               & -4.320         & -5.197 \\
+    Auto        & Ford               & General Motors     &  0.034         &  0.056 \\
+    Auto        & Ford               & Toyota             &  0.007         &  0.017 \\
+    Auto        & General Motors     & Ford               &  0.065         &  0.052 \\
+    Auto        & General Motors     & General Motors     & -6.433         & -4.685 \\
+    Auto        & General Motors     & Toyota             &  0.008         &  0.005 \\
+    Auto        & Toyota             & Ford               &  0.018         &  0.025 \\
+    Auto        & Toyota             & General Motors     &  0.008         &  0.008 \\
+    Auto        & Toyota             & Toyota             & -3.085         & -4.851 \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \hyperlink{product_identification}{\beamerbutton{Back}}
+\end{frame}
+
+\begin{frame}[t]{Microeconometric Estimates vs.\ GHL \citep{Pellegrino2024-dn}  (2/2)}
+  \begin{center}
+  \begin{tabular}{lllrr}
+    \toprule
+    Market      & Firm $i$           & Firm $j$           & Micro Estimate & GHL    \\
+    \midrule
+    Cereals     & Kellogg's          & Kellogg's          & -3.231         & -1.770 \\
+    Cereals     & Kellogg's          & Quaker Oats        &  0.033         &  0.023 \\
+    Cereals     & Quaker Oats        & Kellogg's          &  0.046         &  0.031 \\
+    Cereals     & Quaker Oats        & Quaker Oats        & -3.031         & -1.941 \\
+    \addlinespace
+    Computers   & Apple              & Apple              & -11.979        & -8.945 \\
+    Computers   & Apple              & Dell               &  0.018         &  0.025 \\
+    Computers   & Dell               & Apple              &  0.027         &  0.047 \\
+    Computers   & Dell               & Dell               & -5.570         & -5.110 \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \hyperlink{product_identification}{\beamerbutton{Back}}
 \end{frame}
 
 \begin{frame}{First Stage \hyperlink{regression}{\beamerbutton{Back}}}
