@@ -1,17 +1,18 @@
 \documentclass[
-  10pt, % Font size
-  aspectratio=169,  % 16:9 slides
-  handout
+  10pt,               % Base font size
+  aspectratio=169,    % Widescreen aspect ratio
+  %handout             % Handout mode (no overlays)
 ]{beamer}
 
 % =====================================================================
-% ENCODING & FONTS  (pdfLaTeX-compatible)
+% ENCODING & FONT SETUP (pdfLaTeX-compatible)
 % =====================================================================
-\usepackage[T1]{fontenc}          % Modern output font encoding
-\usepackage[utf8]{inputenc}       % Source file encoding
-\usepackage{tgheros}              % TeX Gyre Heros (Helvetica clone)
-%\usepackage{newtxmath}
-\usepackage{amsbsy}
+\usepackage[T1]{fontenc}                 % Output font encoding
+\usepackage{tgheros}                     % TeX Gyre Heros
+\usepackage{newpxmath}                  % Palatino-like math font
+\usefonttheme{professionalfonts}        % Use text font for math where possible
+\usepackage{fix-cm}                      % Allow font size adjustments
+\usepackage{bm}                          % Bold math symbols
 
 % =====================================================================
 % THEOREM ENVIRONMENTS
@@ -22,12 +23,17 @@
 % =====================================================================
 % TABLES & LAYOUT UTILITIES
 % =====================================================================
-\usepackage{array,varwidth,multirow,booktabs,subcaption,tikz}
+\usepackage{array}                       % Table column customization
+\usepackage{varwidth}                   % Variable-width box
+\usepackage{multirow}                   % Multirow cells in tables
+\usepackage{booktabs}                   % Professional-quality tables
+\usepackage{subcaption}                 % Sub-figures and sub-tables
+\usepackage{tikz}                        % Graphics and diagrams
 
 % =====================================================================
 % BIBLIOGRAPHY
 % =====================================================================
-\usepackage[authoryear]{natbib}
+\usepackage[authoryear]{natbib}         % Author-year citation style
 
 % =====================================================================
 % BEAMER SETTINGS
@@ -64,6 +70,8 @@
 \setbeamercolor{block title}{fg=uclaBlue}
 \setbeamercolor{item}{fg=uclaBlue}
 \setbeamercolor{enumerate item}{fg=uclaBlue}
+\setbeamercolor{button}{bg=uclaBlue}
+\setbeamercolor{alerted text}{fg=uclaBlue}
 
 % =====================================================================
 % TITLE & AUTHOR
@@ -88,8 +96,7 @@
   \begin{itemize}
     \item BlackRock, Vanguard, State Street, and Fidelity control 30\% of votes
           of S\&P 500 firms
-    \item Top 10 chaebols account for half of stock market capitalization
-          and exports in Korea
+    \item Top 4 chaebols account for 70\% of stock market capitalization in Korea
   \end{itemize}
     \medskip{} \pause
     \item Firms maximize shareholder values $\Longrightarrow$ \\
@@ -108,7 +115,7 @@
   \begin{itemize}
     \item Existing Schumpeterian growth models:
     \begin{itemize}
-      \item Lack of strategic interaction (e.g., monopolistic competition)
+      \item Monopolistic competition (no strategic interaction)
       \item Very few firms in Markov perfect equilibrium
     \end{itemize}
     \medskip{}
@@ -132,11 +139,11 @@
 \begin{frame}{Literature}
   \begin{itemize}
     \item Competition \& Innovation: \\
-          {\footnotesize\citet{d-Aspremont1988-je,Aghion2001-yc,Aghion2005-vw,Acemoglu2012-bj,Aghion2013-nq,Bloom2013-pn,Lopez2019-sl,Peters2020-sd,Akcigit2021-ns,Akcigit2023-zl,Liu2022-iw,Cavenaile2023-lo,Anton2023-ej,Anton2024-pw,Kini2024-kd,Hopenhayn2024-ya}}\\
-          \textcolor{uclaBlue}{Quantitative Schumpeterian growth model with ownership structure}\\
-    \item Hedonic Demand / Empirical IO: \\
+          {\footnotesize\citet{d-Aspremont1988-je,Kamien1992-la,Aghion2001-yc,Aghion2005-vw,Acemoglu2012-bj,Aghion2013-nq,Bloom2013-pn,Lopez2019-sl,Peters2020-sd,Akcigit2021-ns,Akcigit2023-zl,Liu2022-iw,Cavenaile2023-lo,Anton2023-ej,Anton2024-pw,Kini2024-kd,Hopenhayn2024-ya}}\\
+          \alert{Quantitative Schumpeterian growth model with ownership structure}\\
+  \item Hedonic Demand / Empirical IO: \\
           {\footnotesize\citet{Lancaster1966-sg,Rosen1974-ep,Berry1995-lx,Nevo2001-ja,Pellegrino2024-dn,Ederer2024-rw}}\\
-          \textcolor{uclaBlue}{Dynamic general equilibrium / R\&D}
+          \alert{Dynamic general equilibrium / R\&D}
           %Epple1987-ru
     \item Oligopoly / Common Ownership / Market Power: \\
           {\footnotesize\citet{Rubinstein1983-pi,Rotemberg1984-jz,Neary2003-sn,Atkeson2008-zc,Gutierrez2017-wl,He2017-ix,Azar2018-cc,Azar2022-cn,Autor2020-mr,Baqaee2020-eb,De_Loecker2020-jn,Azar2021-uh,Edmond2023-bg}}
@@ -145,13 +152,18 @@
 
 \section{Simple Model}
 
-% モデルの設定
-\begin{frame}{Simple Static Partial Equilibrium Model}
+\begin{frame}{Simple Model}
   \begin{itemize}
+    \item Static partial equilibrium model of oligopolistic competition in production and R\&D \\
+    \begin{itemize}
+      \item {\footnotesize \citet{d-Aspremont1988-je,Kamien1992-la,Leahy1997-xr,Lopez2019-sl,Anton2024-pw}} % <<< Keep citations in one line
+    \end{itemize}
+          \medskip{}
     \item Firm $i\in \left\{1,\ldots, n\right\}$ chooses quantity $q_i$ and R\&D effort $x_i$
           \medskip{}
-    \item Linear inverse demand: $\boldsymbol{p}(\boldsymbol{q}) = \boldsymbol{b} - \boldsymbol{\Sigma} \boldsymbol{q}$\medskip{}
-    \item CRS production technology with marginal cost: $\boldsymbol{m}(\boldsymbol{x}) = \overline{\boldsymbol{m}} - \boldsymbol{\Omega} \boldsymbol{x}$\medskip{}
+    \item Linear inverse demand: $\bm{p}(\bm{q}) = \bm{b} - \bm{\Sigma} \bm{q} \quad (\sigma_{ii} = 1)$
+          \medskip{}
+    \item CRS production technology with marginal cost: $\bm{m}(\bm{x}) = \overline{\bm{m}} - \bm{\Omega} \bm{x}$\medskip{}
     \item Quadratic cost of R\&D: $c(x_i) = \frac{1}{2}x_i^2$
   \end{itemize}
 \end{frame}
@@ -159,15 +171,13 @@
 \begin{frame}{Common Ownership Weights}
   \label{ownership_weight}
   \begin{itemize}
-    \item $\boldsymbol{K}=\left[\kappa_{ij}\right]$: common ownership weights that firm $i$ places on the value of firm $j$
+    \item $\bm{K}=\left[\kappa_{ij}\right]$: common ownership weights that firm $i$ places on the value of firm $j$ $\quad (\kappa_{ii} = 1)$
     \medskip{}
     \item More overlapping ownership b/w firm $i$ and $j$ $\Longrightarrow$ Higher $\kappa_{ij}$ \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influece}}
     \medskip{}
-    \item Diagonal elements $\kappa_{ii}$ are normalized to $1$ for all firm $i$
+    \item $\bm{K}=\bm{I}$: dispersed ownership (each firm maximizes its own value)
     \medskip{}
-    \item $\boldsymbol{K}=\boldsymbol{I}$: dispersed ownership (each firm maximizes its own value)
-    \medskip{}
-    \item  $\boldsymbol{K=[1]}$: monopoly (maximizes total producer surplus)
+    \item  $\bm{K}=\bm{1}_{n \times n}$: monopoly (maximizes total producer surplus)
   \end{itemize}
 \end{frame}
 
@@ -175,12 +185,12 @@
   \begin{itemize}
     \item Firm $i$'s profit:
     \begin{align*}
-      \pi_{i}(\boldsymbol{q}, \boldsymbol{x}) & = [p_i - m_i]q_{i}  - c(x_i) \\
+      \pi_{i}(\bm{q}, \bm{x}) & = [p_i(\bm{q}) - m_i(\bm{x})]q_{i}  - c(x_i) \\
                                      & = \left[ b_{i} - \sum_{j=1}^{n} \sigma_{ij} q_{j} - \overline{m}_{i} + \sum_{j=1}^{n} \omega_{ij} x_{j} \right]q_{i} - \frac{1}{2}x_{i}^{2}
   \end{align*}
     \item  Given $\left\{ q_{j}, x_{j}\right\} _{j\neq i}$,
     firm $i$ chooses $q_{i}$ and $x_{i}$ to maximize
-    $\sum_{j}\kappa_{ij}\pi_{j}(\boldsymbol{q}, \boldsymbol{x}) $
+    $\sum_{j}\kappa_{ij}\pi_{j}(\bm{q}, \bm{x}) $
   \end{itemize}
 \end{frame}
 
@@ -194,28 +204,26 @@
             \item SOC: $2>\omega_{ii}^2$
           \end{itemize}
           \medskip{}
-    \item Internalize \textcolor{uclaBlue}{business stealing effect}: $\partial^2 x_{i}/\partial\kappa_{ij}\partial\textcolor{uclaBlue}{\sigma_{ij}}<0$
+    \item Internalize \alert{business stealing effect}: $\partial^2 x_{i}/\partial\kappa_{ij}\partial\textcolor{uclaBlue}{\sigma_{ij}}<0$
           \medskip{}
     \item Internalize \textcolor{uclaRed}{technology spillover effect}:  $\partial^2 x_{i}/\partial\kappa_{ij}\partial\textcolor{uclaRed}{\omega_{ij}}>0$
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Overview of Identification Strategy}
+\begin{frame}{Preview of Identification Strategy}
   \label{identification_overview} % <<< ラベルを追加
   \begin{center}
         \renewcommand{\arraystretch}{1.5} % 行間を広げる (1.0がデフォルト)
         \begin{tabular}{lV{\linewidth}}
           Networks                              & Measurement\tabularnewline
           \hline\hline
-          Common ownership $\boldsymbol{K}$         & Institutional investor holdings in 13f filings
-          
-          \citep{Backus2021-yt} \tabularnewline
+          Common ownership $\bm{K}$         & Institutional investor holdings \citep{Backus2021-yt} \tabularnewline
           \hline
-          Product market rivalry $\boldsymbol{\Sigma}$ & Product proximity \citep{Hoberg2016-jm}:
+          Product market rivalry $\bm{\Sigma}$ & Product proximity \citep{Hoberg2016-jm}:
 
-          Text analysis of business description in 10k filings \tabularnewline
+          Text analysis of business description \tabularnewline
           \hline
-          Technology spillover $\boldsymbol{\Omega}$   & Technology proximity \citep{Jaffe1986-yz,Bloom2013-pn}:
+          Technology spillover $\bm{\Omega}$   & Technology proximity \citep{Jaffe1986-yz,Bloom2013-pn}:
 
           Patent classification\tabularnewline
         \end{tabular}
@@ -229,14 +237,14 @@
   \begin{itemize}
     \item Linear quadratic aggregator (final good):
           \[
-            Y_{t}=\boldsymbol{q}_{t}^{T}\boldsymbol{b}_{t}-\frac{1}{2}\boldsymbol{q}_{t}^{T}\boldsymbol{\Sigma}\boldsymbol{q}_{t}
+            Y_{t}=\bm{q}_{t}^{T}\bm{b}_{t}-\frac{1}{2}\bm{q}_{t}^{T}\bm{\Sigma}\bm{q}_{t}
           \]
     \item Linear inverse demand:
           \[
-            \boldsymbol{p}_{t}=\boldsymbol{b}_{t}-\boldsymbol{\Sigma}\boldsymbol{q}_{t}
+            \bm{p}_{t}=\bm{b}_{t}-\bm{\Sigma}\bm{q}_{t}
           \]
     \item CRS production technology (intermediate good): \[q_{i,t}=a_{i,t}l_{i,t}\]
-    \item Each firm has knowledge capital $z_{i,t}$\medskip{}
+    \item Each firm has knowledge capital (state variable): $z_{i,t}$\medskip{}
     \item Each firm allocates knowledge capital to improve labor productivity
           and product quality:
           \[
@@ -247,10 +255,10 @@
 %
 \begin{frame}{Law of Motion of Knowledge Capital}
   \[
-    d\boldsymbol{z}_{t}=\left(\underbrace{\boldsymbol{\Omega}\boldsymbol{z}_{t}}_{\text{tech spillover}}+\underbrace{\mu\boldsymbol{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\boldsymbol{z}_{t} \circ d\boldsymbol{W}_{t}}_{\text{shocks}}
+    d\bm{z}_{t}=\left(\underbrace{\bm{\Omega}\bm{z}_{t}}_{\text{tech spillover}}+\underbrace{\mu\bm{x}_{t}}_{\text{R\&D}}\right)dt+\underbrace{\gamma\bm{z}_{t} \circ d\bm{W}_{t}}_{\text{shocks}}
   \]
   \begin{itemize}
-    \item $\boldsymbol{\Omega}=\left[\omega_{ij}\right]$: technology spillover matrix\medskip{}
+    \item $\bm{\Omega}=\left[\omega_{ij}\right]$: technology spillover matrix\medskip{}
     \item $x_{i,t}=\sqrt{d_{i,t}}$
           \begin{itemize}
             \item $d_{i,t}$: R\&D input in terms of final good
@@ -272,7 +280,7 @@
           \]
     \item Risk neutral representative household:
           \[
-            \max\ \boldsymbol{E}_{t}\left[\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right]
+            \max\ \bm{E}_{t}\left[\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right]
           \]
   \end{itemize}
 \end{frame}
@@ -281,25 +289,22 @@
 \section{Equilibrium}
 
 \begin{frame}{Cournot-Nash Equilibrium}
+  \label{cournot}
   \begin{itemize}
-    \item \label{cournot}Firm $i$'s gross profit before subtracting dynamic
-          R\&D cost:
+    \item Firm $i$'s gross profit before subtracting dynamic
+          R\&D cost: \hyperlink{diagram}{\beamerbutton{Diagram}}
           \begin{align*}
-            \pi_{i,t} & =p_{i,t}q_{i,t}-w_{t}l_{i,t}=\left(b_{i,t}-\frac{w_{t}}{a_{i,t}}-\sum_{j}\sigma_{ij}q_{j,t}\right)q_{i,t}\quad\text{where}\quad\zeta a_{i,t}+b_{i,t}=z_{i,t}
+            \pi_{i,t} & =p_{i,t}q_{i,t}-w_{t}l_{i,t}=\left(b_{i,t}-\sum_{j}\sigma_{ij}q_{j,t}-\frac{w_{t}}{a_{i,t}}\right)q_{i,t}\quad\text{where}\quad\zeta a_{i,t}+b_{i,t}=z_{i,t}
           \end{align*}
     \item Given $w_{t}$, $z_{i,t}$, and $\left\{ q_{j,t}\right\} _{j\neq i}$,
           firm $i$ chooses $a_{i,t}$, $b_{i,t}$, and $q_{i,t}$ to maximize
           $\sum_{j}\kappa_{ij}\pi_{j,t}$\pause\medskip{}
     \item Quantity is a linear function of knowledge capital:
           \[
-            \boldsymbol{q}_{t}(\boldsymbol{z}_{t})=\left\{ \underbrace{2\frac{\zeta}{L}\boldsymbol{J}}_{\text{labor cost}}+\underbrace{\boldsymbol{\Sigma}}_{\text{substitutability}}+\underbrace{\boldsymbol{K}\circ\boldsymbol{\Sigma}}_{\text{ownership}\times\text{substitutability}}\right\} ^{-1}\boldsymbol{z}_{t}
+            \bm{q}_{t}(\bm{z}_{t})=\left\{ \underbrace{2\frac{\zeta}{L}\bm{1}_{n \times n}}_{\text{labor cost}}+\underbrace{\bm{\Sigma}}_{\text{substitutability}}+\underbrace{\bm{K}\circ\bm{\Sigma}}_{\text{ownership}\times\text{substitutability}}\right\} ^{-1}\bm{z}_{t}
           \]
-
-          \begin{itemize}
-            \item $\boldsymbol{J}=[1]$ \medskip{}
-          \end{itemize}
     \item Ownership-weighted gross profits are expressed in quadratic form:
-          $\sum_{j}\kappa_{ij}\pi_{j,t}=\boldsymbol{z}_{t}^{T}\boldsymbol{Q}^{i}\boldsymbol{z}_{t}$
+          $\sum_{j}\kappa_{ij}\pi_{j,t}=\bm{z}_{t}^{T}\bm{Q}^{i}\bm{z}_{t}$
           \hyperlink{Q}{\beamerbutton{Q}}
   \end{itemize}
 \end{frame}
@@ -307,16 +312,16 @@
 \begin{frame}{Linear-Quadratic Differential Game}
 
   \begin{itemize}
-    \item Given other players' strategy $\left\{ x_{j,t}\right\} _{j\neq i,t\geq0}$,
-          firm $i$ chooses R\&D effort $\left\{ x_{i,t}\right\} _{t\geq0}$
+    \item Given other firms' R\&D $\left\{ x_{j,t}\right\} _{j\neq i,t\geq0}$,
+          firm $i$ chooses R\&D $\left\{ x_{i,t}\right\} _{t\geq0}$
           to maximize
           \[
-            \max_{\left\{ x_{i,t}\right\} _{t\geq0}}\quad V^{i}\left(\text{\ensuremath{\boldsymbol{z}}}_{0}\right)\equiv\boldsymbol{E}_{0}\left[\int_{0}^{\infty}\exp\left(-\rho t\right)\left\{ \sum_{j}\kappa_{ij}\left(\pi_{j,t}-x_{j,t}^{2}\right)\right\} dt\right]
+            \max_{\left\{ x_{i,t}\right\} _{t\geq0}}\quad V^{i}\left(\text{\ensuremath{\bm{z}}}_{0}\right)\equiv\bm{E}_{0}\left[\int_{0}^{\infty}\exp\left(-\rho t\right)\left\{ \sum_{j}\kappa_{ij}\left(\pi_{j,t}-x_{j,t}^{2}\right)\right\} dt\right]
           \]
-          subject to $d\boldsymbol{z}_{t}=\left(\boldsymbol{\Omega}\boldsymbol{z}_{t}+\mu\boldsymbol{x}_{t}\right)dt+\gamma\boldsymbol{z}_{t} \circ d\boldsymbol{W}_{t}$\pause\medskip{}
+          subject to $d\bm{z}_{t}=\left(\bm{\Omega}\bm{z}_{t}+\mu\bm{x}_{t}\right)dt+\gamma\bm{z}_{t} \circ d\bm{W}_{t}$\pause\medskip{}
     \item Firm $i$'s HJB equation:
           \[
-            \rho V^{i}\left(\boldsymbol{z}\right)=\max_{x_{i}}\left\{ \boldsymbol{z}^{T}\boldsymbol{Q}^{i}\boldsymbol{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\boldsymbol{z}}^{i}\left(\boldsymbol{z}\right)\left[\boldsymbol{\Omega}\boldsymbol{z}+\mu\boldsymbol{x}\right]+\frac{\gamma^{2}}{2}\boldsymbol{z}^{T}V_{\boldsymbol{zz}}^{i}\left(\boldsymbol{z}\right)\boldsymbol{z}\right\}
+            \rho V^{i}\left(\bm{z}\right)=\max_{x_{i}}\left\{ \bm{z}^{T}\bm{Q}^{i}\bm{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\bm{z}}^{i}\left(\bm{z}\right)\left[\bm{\Omega}\bm{z}+\mu\bm{x}\right]+\frac{\gamma^{2}}{2}\bm{z}^{T}V_{\bm{zz}}^{i}\left(\bm{z}\right)\bm{z}\right\}
           \]
   \end{itemize}
 \end{frame}
@@ -325,9 +330,9 @@
 
   \label{hjb}
   \begin{itemize}
-    \item Guess and verify $V^{i}\left(\boldsymbol{z}\right)=\boldsymbol{z}^{T}\boldsymbol{X}^{i}\boldsymbol{z}$
-          (for any $\boldsymbol{z}$)
-    \item $\boldsymbol{X}^{i}$ is the solution of stacked algebraic Riccati equations \hyperlink{riccati}{\beamerbutton{Riccati}}
+    \item Guess and verify $V^{i}\left(\bm{z}\right)=\bm{z}^{T}\bm{X}^{i}\bm{z}$
+          (for any $\bm{z}$) \medskip{}
+    \item $\bm{X}^{i}$ is the solution of stacked algebraic Riccati equations \hyperlink{riccati}{\beamerbutton{Riccati}} \medskip{}
     \item All public patenting firms in the US in our dataset $\simeq$1000
           firms $\Longrightarrow$ \\
           $1000^{3}=1$ billion undetermined coefficients (20 seconds on my laptop)\medskip{}
@@ -347,37 +352,37 @@
 %
 \begin{frame}{Balance Growth Path}
   \begin{itemize}
-    \item R\&D strategy: $x_{i,t}=\left(\mu \boldsymbol{X}_{i}^{i}\right)^{T}\boldsymbol{z}_{t}$
-          where $\boldsymbol{X}_{i}^{i}$ is the $i$ th column of $\boldsymbol{X}^{i}$
-    \item The law of motion is rewritten as $d\boldsymbol{z}_{t}=\textcolor{uclaBlue}{\boldsymbol{\Phi}}\boldsymbol{z}_{t}dt+\gamma\boldsymbol{z}_{t} \circ d\boldsymbol{W}_{t}$
+    \item R\&D strategy: $x_{i,t}=\left(\mu \bm{X}_{i}^{i}\right)^{T}\bm{z}_{t}$
+          where $\bm{X}_{i}^{i}$ is the $i$ th column of $\bm{X}^{i}$
+    \item The law of motion is rewritten as $d\bm{z}_{t}=\alert{\bm{\Phi}}\bm{z}_{t}dt+\gamma\bm{z}_{t} \circ d\bm{W}_{t}$
           where
           \[
-            \textcolor{uclaBlue}{\boldsymbol{\Phi}}\equiv\underbrace{\boldsymbol{\Omega}}_{\text{Tech Spillover}}+\underbrace{\mu^{2}\left[
-              \boldsymbol{X}_{1}^{1} \ \cdots \ \boldsymbol{X}_{n}^{n}\right]^{T}}_{\text{R\&D}}
+            \alert{\bm{\Phi}}\equiv\underbrace{\bm{\Omega}}_{\text{Tech Spillover}}+\underbrace{\mu^{2}\left[
+              \bm{X}_{1}^{1} \ \cdots \ \bm{X}_{n}^{n}\right]^{T}}_{\text{R\&D}}
           \]
           \vspace{-5mm}
   \end{itemize}
   \begin{thm*}
-    Consider the deterministic economy ($\gamma=0$). If \textcolor{uclaBlue}{$\boldsymbol{\Phi}$} is irreducible, then:
+    Consider the deterministic economy ($\gamma=0$). If \alert{$\bm{\Phi}$} is irreducible, then:
 
-    (i) There exists largest positive eigenvalue of \textcolor{uclaBlue}{$\boldsymbol{\Phi}$}, $g$, and
-    associated positive eigenvector, $\boldsymbol{z}^{*}$.
+    (i) There exists largest positive eigenvalue of \alert{$\bm{\Phi}$}, $g$, and
+    associated positive eigenvector, $\bm{z}^{*}$.
 
     (ii) There exists a globally stable BGP such that the knowledge capital
     growth rate of all firms is $g$, and the knowledge capital distribution
-    is a scalar multiple of $\boldsymbol{z}^{*}$.
+    is a scalar multiple of $\bm{z}^{*}$.
   \end{thm*}
   \begin{itemize}
     \item Proof: Perron--Frobenius Theorem
-    \item ``\textcolor{uclaBlue}{$\boldsymbol{\Phi}$} is irreducible'' $\Longleftrightarrow$ ``All firms are
+    \item ``\alert{$\bm{\Phi}$} is irreducible'' $\Longleftrightarrow$ ``All firms are
           directly or indirectly connected technologically''
   \end{itemize}
 \end{frame}
 %
 \begin{frame}{Intuition of Why the Model Has the BGP}
   \begin{itemize}
-    \item On the BGP, \textcolor{uclaBlue}{$\boldsymbol{a}_{t}$}, ${\color{uclaBlue}\boldsymbol{b}_{t}}$,
-          \textcolor{uclaBlue}{$\boldsymbol{z}_{t}$}, and ${\color{uclaBlue}\boldsymbol{q}_{t}}$
+    \item On the BGP, \alert{$\bm{a}_{t}$}, ${\color{uclaBlue}\bm{b}_{t}}$,
+          \alert{$\bm{z}_{t}$}, and ${\color{uclaBlue}\bm{q}_{t}}$
           grow at the same rate
   \end{itemize}
     \begin{center}
@@ -390,13 +395,79 @@
       \renewcommand{\arraystretch}{1.0}  % Reset to default spacing
       \par\end{center}
   \begin{itemize}
-    \item Linear and quadratic term in $\color{uclaBlue}\boldsymbol{q}_{t}$ of output grow at the same rate: \hyperlink{summary}{\beamerbutton{Equilibrium Summary}}
+    \item Linear and quadratic term in $\color{uclaBlue}\bm{q}_{t}$ of output grow at the same rate: \hyperlink{summary}{\beamerbutton{Equilibrium Summary}}
           \[
-            Y_{t}={\color{uclaBlue}\boldsymbol{q}_{t}^{T}\boldsymbol{b}_{t}}-\frac{1}{2}{\color{uclaBlue}\boldsymbol{q}_{t}^{T}}\boldsymbol{\Sigma}{\color{uclaBlue}\boldsymbol{q}_{t}}
+            Y_{t}={\color{uclaBlue}\bm{q}_{t}^{T}\bm{b}_{t}}-\frac{1}{2}{\color{uclaBlue}\bm{q}_{t}^{T}}\bm{\Sigma}{\color{uclaBlue}\bm{q}_{t}}
           \]
   \end{itemize}
 \end{frame}
-%
+
+\begin{frame}{Partial Equilibrium Diagram and BGP}
+  \label{diagram}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+      \pgfmathsetmacro{\b}{3}
+      \pgfmathsetmacro{\c}{1}
+      \pgfmathsetmacro{\qeq}{(\b - \c)/2}
+
+      % Axes
+      \draw[->] (0,0) -- (6,0) node[right] {$q_i$};
+      \draw[->] (0,0) -- (0,5) node[above] {$p_i$};
+
+      % Equilibrium price line
+      \draw[dashed] (0,{\b-\qeq}) -- (\qeq,{\b-\qeq});
+      \node[left] at (0,{\b-\qeq}) {$p_i^*$};
+
+      % Residual demand and marginal revenue
+      \draw[thick,blue] (0,\b) -- (\b,0) node[below] {};
+      \draw[thick,dotted,blue!70!black] (0,\b) -- ({\b/2},0); % MR
+
+      % Marginal cost
+      \draw[thick,dashed,red] (0,\c) -- (5.5,\c);
+      \node[left] at (0,\b) {$b_i-\sum_{j\neq i} \sigma_{ij} q_j$};
+      \node[left] at (0,\c) {$w/a_i$};
+
+      % Equilibrium quantity
+      \draw[dashed] (\qeq,0) -- (\qeq,\b-\qeq);
+      \node[below] at (\qeq,0) {$q_i^*$};
+    \end{tikzpicture}
+  \end{minipage}%
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+      \pgfmathsetmacro{\b}{3*1.5}
+      \pgfmathsetmacro{\c}{1*1.5}
+      \pgfmathsetmacro{\qeq}{(\b - \c)/2}
+
+      % Axes
+      \draw[->] (0,0) -- (6,0) node[right] {$q_i$};
+      \draw[->] (0,0) -- (0,5) node[above] {$p_i$};
+
+      % Residual demand and marginal revenue
+      \draw[thick,blue] (0,\b) -- (\b,0);
+      \draw[thick,dotted,blue!70!black] (0,\b) -- ({\b/2},0); % MR
+
+       % Equilibrium price line
+      \draw[dashed] (0,{\b-\qeq}) -- (\qeq,{\b-\qeq});
+      \node[left]  at (0,{\b-\qeq}) {$(1+g)p_i^*$};
+
+      % Marginal cost
+      \draw[thick,dashed,red] (0,\c) -- (5.5,\c);
+      \node[left] at (0,\b) {$(1+g)(b_i-\sum_{j\neq i} \sigma_{ij} q_j)$};
+      \node[left] at (0,\c) {$(1+g)w/a_i$};
+
+      % Equilibrium quantity
+      \draw[dashed] (\qeq,0) -- (\qeq,\b-\qeq);
+      \node[below] at (\qeq,0) {$(1+g)q_i^{*}$};
+    \end{tikzpicture}
+  \end{minipage}
+\begin{itemize}
+  \item $a_i$, $b_i$, $q_i$, $p_i$, and $w/a_i$ grow at the same rate of $g$
+  \item (i) (consumer surplus / producer surplus) and (ii) (cost / revenue) stay the same
+\end{itemize} \hyperlink{cournot}{\beamerbutton{Back}}
+\end{frame}
+
 \begin{frame}{Expected Growth Rate and Utility}
 
   \label{aggregation}
@@ -404,37 +475,36 @@
     \item Apply Ito's lemma:\hfill \hyperlink{Y_process}{\beamerbutton{Decomposition}}
     \[
     \begin{array}{cl}
-    \log Y_{t} & =\log\left(\boldsymbol{z}_{t}^{T}\boldsymbol{Q}\boldsymbol{z}_{t}\right)\\
-    d\boldsymbol{z}_{t} & =\boldsymbol{\Phi}\boldsymbol{z}_{t}dt+\gamma\boldsymbol{z}_{t} \circ d\boldsymbol{W}_{t}
+    \log Y_{t} & =\log\left(\bm{z}_{t}^{T}\bm{Q}\bm{z}_{t}\right)\\
+    d\bm{z}_{t} & =\bm{\Phi}\bm{z}_{t}dt+\gamma\bm{z}_{t} \circ d\bm{W}_{t}
     \end{array}
-    \Longrightarrow \quad \boldsymbol{E}_{t}\left[\left.g_{t}\right|\boldsymbol{z}_{t}\right]
+    \Longrightarrow \quad \bm{E}_{t}\left[\left.g_{t}\right|\bm{z}_{t}\right]
     \]
     \item Expected utility is expressed in quadratic form: \hfill \hyperlink{X}{\beamerbutton{X}}
           \[
-            \boldsymbol{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\boldsymbol{z}_{t}\right]=\boldsymbol{z}_{t}^{T}X\boldsymbol{z}_{t}
+            \bm{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\bm{z}_{t}\right]=\bm{z}_{t}^{T}X\bm{z}_{t}
           \]
     \item Solve the equilibrium once $\Longrightarrow$ Can compute expected
-          growth and utility for any $\boldsymbol{z}_{t}$
+          growth and utility for any $\bm{z}_{t}$
   \end{itemize}
 \end{frame}
 
 \section{Identification}
 
-\begin{frame}{Common Ownership $\boldsymbol{K}$}
+\begin{frame}{Common Ownership $\bm{K}$}
   \begin{itemize}
-    \item \citet{Backus2021-yt} construct a dataset on investors' holdings
-          based on Form 13F.
-    \item Baseline: \citet{Rotemberg1984-jz} proportional influence assumption. \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influence}}
+    \item \citet{Backus2021-yt} construct a dataset on investors' holdings based on Form 13F
+    \item Baseline: \citet{Rotemberg1984-jz} proportional influence \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influence}}
   \end{itemize}
   \begin{center}
     \includegraphics[width=7cm]{figures/kappa}
   \end{center}
 \end{frame}
 %
-\begin{frame}{Product Market Rivalry $\boldsymbol{\Sigma}$} 
+\begin{frame}{Product Market Rivalry $\bm{\Sigma}$} 
 
   \begin{itemize}
-    \item \label{product_identification} \citet{Hoberg2016-jm} estimates product similarity using business
+    \item \label{product_identification} \citet{Hoberg2016-jm} estimates product proximity using business
           descriptions in 10-K
           \medskip{}
     \item \citet{Pellegrino2024-dn} estimates $\alpha$ to align with the cross-price
@@ -442,12 +512,12 @@
   \end{itemize}
   \medskip{}
   \[
-    \underbrace{\sigma_{ij}}_{\text{substitutability}}=\alpha\times\text{product similarity b/w }i\text{ and }j\quad\left(i\neq j\right)
+    \underbrace{\sigma_{ij}}_{\text{substitutability}}=\alpha\times\text{product proximity b/w }i\text{ and }j\quad\left(i\neq j\right)
   \]
 
 \end{frame}
 %
-\begin{frame}{Technological Proximity $\widetilde{\boldsymbol{\Omega}}$}
+\begin{frame}{Technological Proximity $\widetilde{\bm{\Omega}}$}
   \begin{itemize}
     \item Technological profile of firm $i$
           \begin{itemize}
@@ -463,7 +533,7 @@
   \end{itemize}
 \end{frame}
 %
-\begin{frame}{Distribution of Knowledge Capital $\boldsymbol{z}_t$}
+\begin{frame}{Distribution of Knowledge Capital $\bm{z}_t$}
   \begin{table}[htbp]
     \centering
     \begin{tabular}{cl}
@@ -473,21 +543,21 @@
       $\pi_{i,t}$ 
         & Gross profit (before R\&D cost) 
           $=$ Revenue $-$ Cost of goods sold \\[6pt]
-      $\boldsymbol{q}_t$
+      $\bm{q}_t$
         &
           $\pi_{i,t}=\displaystyle\sum_{j}\kappa_{ij}\,\sigma_{ij}\,q_{i,t}\,q_{j,t}$ \\[6pt]
       $\zeta/L$
         & Matches sample firms’ cost share (average markup) \\[6pt]
-      $\boldsymbol{z}_t$
+      $\bm{z}_t$
         &
-          $\displaystyle \boldsymbol{q}_{t}
-           =\left\{2\frac{\zeta}{L}\boldsymbol{J}+\boldsymbol{\Sigma}+\boldsymbol{K}\circ\boldsymbol{\Sigma}\right\}^{-1}\boldsymbol{z}_{t}$ \\
+          $\displaystyle \bm{z}_{t}
+           =\left\{2\frac{\zeta}{L}\bm{J}+\bm{\Sigma}+\bm{K}\circ\bm{\Sigma}\right\}\bm{q}_{t}$ \\
       \bottomrule
     \end{tabular}
   \end{table}
 \end{frame}
 %
-\begin{frame}{Technology Spillover $\boldsymbol{\Omega}=\beta\times$Technological Proximity $\boldsymbol{\widetilde{\Omega}}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
+\begin{frame}{Technology Spillover $\bm{\Omega}=\beta\times$Technological Proximity $\bm{\widetilde{\Omega}}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
   
   {\footnotesize
   \vspace{-5mm}
@@ -545,9 +615,9 @@
         \toprule
         Notation                           & Description                                      & Value   & Source                                   \\
         \midrule
-        $\boldsymbol{\Sigma}$                   & Product proximity                                &         & Form 10-K, \citet{Hoberg2016-jm}          \\
-        $\boldsymbol{\widetilde{\Omega}}$       & Technological proximity                          &         & USPTO, Patent classification             \\
-        $\boldsymbol{K}$                        & Common ownership weights                         &         & Form 13F, \citet{Backus2021-yt}          \\
+        $\bm{\Sigma}$                   & Product proximity                                &         & Form 10-K, \citet{Hoberg2016-jm}          \\
+        $\bm{\widetilde{\Omega}}$       & Technological proximity                          &         & USPTO, Patent classification             \\
+        $\bm{K}$                        & Common ownership weights                         &         & Form 13-F, \citet{Backus2021-yt}          \\
         $\alpha$                           & Product proximity $\rightarrow$ Substitutability & 0.12    & \citet{Pellegrino2024-dn}                \\
         $\beta$                            & Technological proximity $\rightarrow$ Spillover  & 0.00014 & Estimate the law of motion               \\
         $\gamma$                           & St.d. of idiosyncratic shocks                    & 0.027   & Estimate the law of motion               \\
@@ -591,10 +661,10 @@
       Ownership Structure & Description \\
       \midrule
       Baseline            & Observed ownership structure in 2017 \\
-      Dispersed           & $\boldsymbol{K}^D=\boldsymbol{I}$ \\
-      Mean$=$1999         & $\kappa_{ij,2017}^{M1999}=\text{const}\times\kappa_{ij,2017}$ and $\boldsymbol{E}\left[\kappa_{ij,2017}^{M1999}\right]=\boldsymbol{E}\left[\kappa_{ij,1999}\right]$ for $j\neq i$\\
-      Uniform             & $\kappa_{ij,2017}^U=\boldsymbol{E}\left[\kappa_{ij, 2017}\right]$ for $j\neq i$ \\
-      Monopoly            & $\boldsymbol{K}^M=[1]$ \\
+      Dispersed           & $\bm{K}^D=\bm{I}$ \\
+      Mean$=$1999         & $\kappa_{ij,2017}^{M1999}=\text{const}\times\kappa_{ij,2017}$ and $\bm{E}\left[\kappa_{ij,2017}^{M1999}\right]=\bm{E}\left[\kappa_{ij,1999}\right]$ for $j\neq i$\\
+      Uniform             & $\kappa_{ij,2017}^U=\bm{E}\left[\kappa_{ij, 2017}\right]$ for $j\neq i$ \\
+      Monopoly            & $\bm{K}^M=\bm{1}$ \\
       \bottomrule
     \end{tabular}
     \renewcommand{\arraystretch}{1.0} % デフォルトに戻す
@@ -618,14 +688,14 @@
     Baseline 
       & 91.30 & 91.02 & 90.78 & 89.08 & 89.17 \\
     \midrule
-    \shortstack[t]{Only Business Steal \\ $\boldsymbol{\Omega}=[0]$} 
+    \shortstack[t]{Only Business Steal \\ $\bm{\Omega}=[0]$} 
       & \visible<2->{91.30} 
       & \visible<2->{91.02} 
       & \visible<2->{90.78} 
       & \visible<2->{89.08} 
       & \visible<2->{89.17} \\
     \midrule
-    \shortstack[t]{Only Tech Spill \\ $\boldsymbol{\Sigma}=\boldsymbol{I},\,\zeta/L=0$} 
+    \shortstack[t]{Only Tech Spill \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$} 
       & \visible<3->{75.00} 
       & \visible<3->{75.00} 
       & \visible<3->{75.00} 
@@ -657,14 +727,14 @@
     Baseline 
       & 26.16 & 25.90 & 25.56 & 22.36 & 19.36 \\
     \midrule
-    \shortstack[t]{Only Business Steal \\ $\boldsymbol{\Omega}=[0]$} 
+    \shortstack[t]{Only Business Steal \\ $\bm{\Omega}=[0]$} 
       & \visible<2->{28.15} 
       & \visible<2->{27.79} 
       & \visible<2->{27.07} 
       & \visible<2->{23.42} 
       & \visible<2->{19.80} \\
     \midrule
-    \shortstack[t]{Only Tech Spill \\ $\boldsymbol{\Sigma}=\boldsymbol{I},\,\zeta/L=0$} 
+    \shortstack[t]{Only Tech Spill \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$} 
       & \visible<3->{18.27} 
       & \visible<3->{18.34} 
       & \visible<3->{18.75} 
@@ -697,14 +767,14 @@
     Baseline 
       & 1.796 & 1.793 & 1.791 & 1.753 & 1.713 \\
     \midrule
-    \shortstack[t]{Only Business Steal \\ $\boldsymbol{\Omega}=[0]$} 
+    \shortstack[t]{Only Business Steal \\ $\bm{\Omega}=[0]$} 
       & \visible<2->{1.097} 
       & \visible<2->{1.094} 
       & \visible<2->{1.093} 
       & \visible<2->{1.062} 
       & \visible<2->{1.020} \\
     \midrule
-    \shortstack[t]{Only Tech Spill \\ $\boldsymbol{\Sigma}=\boldsymbol{I},\,\zeta/L=0$} 
+    \shortstack[t]{Only Tech Spill \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$} 
       & \visible<3->{2.051} 
       & \visible<3->{2.054} 
       & \visible<3->{2.068} 
@@ -740,14 +810,14 @@
     Baseline 
       & 87.72 & 87.42 & 87.16 & 85.25 & 85.18 \\
     \midrule
-    \shortstack[t]{Only Business Steal \\ $\boldsymbol{\Omega}=[0]$} 
+    \shortstack[t]{Only Business Steal \\ $\bm{\Omega}=[0]$} 
       & \visible<2->{88.83} 
       & \visible<2->{88.53} 
       & \visible<2->{88.30} 
       & \visible<2->{86.44} 
       & \visible<2->{86.41} \\
     \midrule
-    \shortstack[t]{Only Tech Spill \\ $\boldsymbol{\Sigma}=\boldsymbol{I},\,\zeta/L=0$} 
+    \shortstack[t]{Only Tech Spill \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$} 
       & \visible<3->{68.81} 
       & \visible<3->{68.82} 
       & \visible<3->{68.88} 
@@ -818,14 +888,14 @@
     Baseline 
       & 28.74  & 29.63  & 33.43 & 33.34 & 40.92 \\
     \midrule
-    \shortstack[t]{Only Business Steal \\ $\boldsymbol{\Omega}=[0]$} 
+    \shortstack[t]{Only Business Steal \\ $\bm{\Omega}=[0]$} 
       & \visible<2->{27.91} 
       & \visible<2->{28.80} 
       & \visible<2->{32.60} 
       & \visible<2->{33.51} 
       & \visible<2->{40.14} \\
     \midrule
-    \shortstack[t]{Only Tech Spill \\ $\boldsymbol{\Sigma}=\boldsymbol{I},\,\zeta/L=0$} 
+    \shortstack[t]{Only Tech Spill \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$} 
       & \visible<3->{64.82} 
       & \visible<3->{64.81} 
       & \visible<3->{64.76} 
@@ -845,7 +915,7 @@
 
 \begin{frame}{When Common Ownership Affects only R\&D Decisions}
   \begin{itemize}
-    \item Common ownership only influence R\&D decisions \citep{d-Aspremont1988-je}
+    \item Common ownership only influences R\&D decisions (cf. \cite{d-Aspremont1988-je})
   \end{itemize}
   \begin{center}
     \setlength{\tabcolsep}{3pt}
@@ -877,7 +947,7 @@
 \end{frame}
 
 
-\begin{frame}{Uniform R\&D Subsidy \hyperlink{optimal}{\beamerbutton{Social Optimum}}}
+\begin{frame}{Optimal Uniform R\&D Subsidy \hyperlink{optimal}{\beamerbutton{Social Optimum}}}
   \begin{center}
     \begin{figure}
       \centering{}\setcounter{subfigure}{0}\subfloat[Expected Growth]{\begin{centering}
@@ -891,8 +961,7 @@
     \par\end{center}
   \begin{itemize}
     \item Optimal rate is $s=$33\%, which increases $g$ by 0.25 pp (14\%)
-    \item CE Welfare loss relative to optimal R\&D allocation is reduced to
-          0.1\% (Initially 0.7\%)
+    %\item CE Welfare loss relative to optimal R\&D allocation is reduced to 0.1\% (Initially 0.7\%)
   \end{itemize}
 \end{frame}
 %
@@ -911,7 +980,7 @@
             \item Internalization of technology spillover effect $\Longrightarrow$ $g$ $\uparrow$
           \end{enumerate}
           \medskip{}
-    \item Potential application:
+    \item Potential applications:
           \begin{itemize}
             \item Chaebols in Korea
             \item Zaibatsu (pre-WWII) and cross-shareholding (late 20th century) in Japan
@@ -935,11 +1004,11 @@
       \toprule
       Microsoft                      &        \\
       \midrule
-      \textcolor{uclaBlue}{Vanguard}     & 9.20\% \\
-      \textcolor{uclaBlue}{Blackrock}    & 7.75\% \\
+      \alert{Vanguard}     & 9.20\% \\
+      \alert{Blackrock}    & 7.75\% \\
       Steven Ballmer                 & 4.48\% \\
-      \textcolor{uclaBlue}{State Street} & 3.97\% \\
-      \textcolor{uclaBlue}{Fidelity}     & 2.66\% \\
+      \alert{State Street} & 3.97\% \\
+      \alert{Fidelity}     & 2.66\% \\
       \bottomrule
     \end{tabular}
   \end{minipage}
@@ -951,10 +1020,10 @@
       \toprule
       Nvidia                         &        \\
       \midrule
-      \textcolor{uclaBlue}{Vanguard}     & 8.93\% \\
-      \textcolor{uclaBlue}{BlackRock}    & 7.74\% \\
-      \textcolor{uclaBlue}{Fidelity}     & 4.12\% \\
-      \textcolor{uclaBlue}{State Street} & 3.97\% \\
+      \alert{Vanguard}     & 8.93\% \\
+      \alert{BlackRock}    & 7.74\% \\
+      \alert{Fidelity}     & 4.12\% \\
+      \alert{State Street} & 3.97\% \\
       Jensen Huang                   & 3.80\% \\
       \bottomrule
     \end{tabular}
@@ -967,10 +1036,10 @@
       \toprule
       Apple                          &        \\
       \midrule
-      \textcolor{uclaBlue}{Vanguard}     & 9.29\% \\
-      \textcolor{uclaBlue}{Blackrock}    & 7.48\% \\
-      \textcolor{uclaBlue}{State Street} & 3.96\% \\
-      \textcolor{uclaBlue}{Fidelity}     & 2.27\% \\
+      \alert{Vanguard}     & 9.29\% \\
+      \alert{Blackrock}    & 7.48\% \\
+      \alert{State Street} & 3.96\% \\
+      \alert{Fidelity}     & 2.27\% \\
       Geode Capital                  & 2.26\% \\
       \bottomrule
     \end{tabular}
@@ -986,10 +1055,10 @@
       \toprule
       Google                         &        \\
       \midrule
-      \textcolor{uclaBlue}{Vanguard}     & 7.36\% \\
-      \textcolor{uclaBlue}{Blackrock}    & 6.47\% \\
-      \textcolor{uclaBlue}{State Street} & 3.39\% \\
-      \textcolor{uclaBlue}{Fidelity}     & 3.01\% \\
+      \alert{Vanguard}     & 7.36\% \\
+      \alert{Blackrock}    & 6.47\% \\
+      \alert{State Street} & 3.39\% \\
+      \alert{Fidelity}     & 3.01\% \\
       Sergey Brin                    & 2.99\% \\
       \bottomrule
     \end{tabular}
@@ -1003,10 +1072,10 @@
       Amazon                         &        \\
       \midrule
       Jeffrey Bezos                  & 8.58\% \\
-      \textcolor{uclaBlue}{Vanguard}     & 7.77\% \\
-      \textcolor{uclaBlue}{Blackrock}    & 6.50\% \\
-      \textcolor{uclaBlue}{State Street} & 3.44\% \\
-      \textcolor{uclaBlue}{Fidelity}     & 3.10\% \\
+      \alert{Vanguard}     & 7.77\% \\
+      \alert{Blackrock}    & 6.50\% \\
+      \alert{State Street} & 3.44\% \\
+      \alert{Fidelity}     & 3.10\% \\
       \bottomrule
     \end{tabular}
   \end{minipage}
@@ -1018,11 +1087,11 @@
       \toprule
       Meta                           &        \\
       \midrule
-      \textcolor{uclaBlue}{Vanguard}     & 7.55\% \\
-      \textcolor{uclaBlue}{Blackrock}    & 6.50\% \\
-      \textcolor{uclaBlue}{Fidelity}     & 5.38\% \\
+      \alert{Vanguard}     & 7.55\% \\
+      \alert{Blackrock}    & 6.50\% \\
+      \alert{Fidelity}     & 5.38\% \\
       Accel IX LP                    & 3.88\% \\
-      \textcolor{uclaBlue}{State Street} & 3.40\% \\
+      \alert{State Street} & 3.40\% \\
       \bottomrule
     \end{tabular}
   \end{minipage}
@@ -1091,8 +1160,6 @@
   \begin{center}
     \includegraphics[width=12cm]{figures/ownership_ratio_plot.png}
   \end{center}
-  \vfill % ボタンを下に配置するためのスペース
-  \hfill\hyperlink{identification_overview}{\beamerbutton{Back to Identification}} % <<< 145行目へのボタンを追加 (右寄せ)
 \end{frame}
 
 
@@ -1102,16 +1169,17 @@
     \item $o\in\left\{ 1,2,...,n_{o}\right\} $: owners
     \item $s_{io}$: the proportion of shares in firm $i$ owned by owner $o$
           where $\sum_{o}s_{io}=1$
-    \item $\widehat{V}_{i,t}$: value of firm $i$
-    \item $\widetilde{V}_{o,t}\equiv\sum_{i}s_{io}\widehat{V}_{i,t}$: value
+    \item $\widehat{V}_{i}$: value of firm $i$
+    \item $\widetilde{V}_{o}\equiv\sum_{i}s_{io}\widehat{V}_{i}$: value
           of owner $o$
     \item Firms' objective:
           \[
-            \sum_{o}s_{io}\widetilde{V}_{o,t}\propto\sum_{j}\kappa_{ij}\widehat{V}_{j,t}
+            \sum_{o}s_{io}\widetilde{V}_{o}\propto\sum_{j}\kappa_{ij}\widehat{V}_{j}
           \]
           where
           \[
-            \kappa_{ij}\equiv\boldsymbol{s}_{i}^{T}\boldsymbol{s}_{j}/\boldsymbol{s}_{i}^{T}\boldsymbol{s}_{i} \quad \text{where} \quad \boldsymbol{s}_{i}\equiv\left[s_{i1},...,s_{io},...,s_{in_{o}}\right]^{T}
+            \kappa_{ij}\equiv\frac{\bm{s}_{i}^{T}\bm{s}_{j}}{\bm{s}_{i}^{T}\bm{s}_{i}} = \cos\left( \bm{s}_{i}, \bm{s}_{j} \right)\sqrt{\frac{IHHI_j}{IHHI_i}}
+            \quad \text{where} \quad \bm{s}_{i}\equiv\left[s_{i1},...,s_{io},...,s_{in_{o}}\right]^{T}
           \]
   \end{itemize}
   \vfill % ボタンを下に配置するためのスペース
@@ -1122,7 +1190,7 @@
   \begin{itemize}
     \item Total surplus for product $i$:
           \[
-            ts_{i}(\boldsymbol{q},\boldsymbol{x}) = \pi_{i}(\boldsymbol{q}, \boldsymbol{x}) +  cs_{i}(\boldsymbol{q})= q_{i} \left[ b_{i} - \textcolor{uclaRed}{\frac{1}{2}}\sum_{j=1}^{n} \sigma_{ij} q_{j} - \overline{m}_{i} + \sum_{j=1}^{n} \omega_{ij} x_{j} \right] - \frac{1}{2}x_{i}^{2}
+            ts_{i}(\bm{q},\bm{x}) = \pi_{i}(\bm{q}, \bm{x}) +  cs_{i}(\bm{q})= q_{i} \left[ b_{i} - \textcolor{uclaRed}{\frac{1}{2}}\sum_{j=1}^{n} \sigma_{ij} q_{j} - \overline{m}_{i} + \sum_{j=1}^{n} \omega_{ij} x_{j} \right] - \frac{1}{2}x_{i}^{2}
           \]
   \end{itemize}
 \end{frame}
@@ -1152,15 +1220,15 @@
     \begin{itemize}
       \item Firms maximize common owner weighted profits:
             \[
-              \boldsymbol{x}^* = (\textcolor{uclaRed}{\boldsymbol{K}\circ\boldsymbol{\Omega}}) [\boldsymbol{\Sigma}+\textcolor{uclaBlue}{\boldsymbol{K} \circ \boldsymbol{\Sigma}} - \boldsymbol{\Omega}(\textcolor{uclaRed}{\boldsymbol{K}\circ\boldsymbol{\Omega}})]^{-1} (\boldsymbol{b} - \overline{\boldsymbol{m}})
+              \bm{x}^* = (\textcolor{uclaRed}{\bm{K}\circ\bm{\Omega}}) [\bm{\Sigma}+\alert{\bm{K} \circ \bm{\Sigma}} - \bm{\Omega}(\textcolor{uclaRed}{\bm{K}\circ\bm{\Omega}})]^{-1} (\bm{b} - \overline{\bm{m}})
             \]
       \item Firms maximize common owner weighted total surplus ($\star$):
             \[
-              \boldsymbol{x}^*_{TS} = (\textcolor{uclaRed}{\boldsymbol{K}\circ\boldsymbol{\Omega}}) \left[ \textcolor{uclaGreen}{\frac{1}{2}} (\boldsymbol{\Sigma} + \textcolor{uclaBlue}{\boldsymbol{K} \circ \boldsymbol{\Sigma}}) - \boldsymbol{\Omega} (\textcolor{uclaRed}{\boldsymbol{K}\circ\boldsymbol{\Omega}}) \right]^{-1} (\boldsymbol{b} - \overline{\boldsymbol{m}})
+              \bm{x}^*_{TS} = (\textcolor{uclaRed}{\bm{K}\circ\bm{\Omega}}) \left[ \textcolor{uclaGreen}{\frac{1}{2}} (\bm{\Sigma} + \alert{\bm{K} \circ \bm{\Sigma}}) - \bm{\Omega} (\textcolor{uclaRed}{\bm{K}\circ\bm{\Omega}}) \right]^{-1} (\bm{b} - \overline{\bm{m}})
             \]
-      \item  $\boldsymbol{K}=[1]$ in ($\star$) $\Longrightarrow$ Social Optimum
+      \item  $\bm{K}=[1]$ in ($\star$) $\Longrightarrow$ Social Optimum
             \medskip{}
-      \item Externalities: (i) \textcolor{uclaGreen}{Appropriability}, (ii) \textcolor{uclaBlue}{Business stealing}, (iii) \textcolor{uclaRed}{Technology spillover}
+      \item Externalities: (i) \textcolor{uclaGreen}{Appropriability}, (ii) \alert{Business stealing}, (iii) \textcolor{uclaRed}{Technology spillover}
     \end{itemize}
 \end{frame}
 
@@ -1234,7 +1302,7 @@
           \]
     \item Inverse demand:
           \[
-            \frac{\boldsymbol{p}}{P}=\boldsymbol{b}-\boldsymbol{\Sigma}\boldsymbol{q}
+            \frac{\bm{p}}{P}=\bm{b}-\bm{\Sigma}\bm{q}
           \]
     \item Inverse cross price elasticity of demand:
           \[
@@ -1242,28 +1310,28 @@
           \]
     \item Cross price elasticity of demand:
           \[
-            \frac{\partial\log q_{i}}{\partial\log p_{j}}=-\frac{p_{j}}{q_{i}}(\boldsymbol{\Sigma}^{-1})_{ij}
+            \frac{\partial\log q_{i}}{\partial\log p_{j}}=-\frac{p_{j}}{q_{i}}(\bm{\Sigma}^{-1})_{ij}
           \]
   \end{itemize}
 \end{frame}
 %
 \begin{frame}{Static Profits}
   \begin{itemize}
-    \item \label{Q} Gross profit: $\frac{\pi_{i,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$
-    \item Firms choose labor productivity and product quality: $\zeta a_{i,t}=\sqrt{\zeta\frac{w_{t}}{P_{t}}}$,
-          $b_{i,t}=z_{i,t}-\sqrt{\zeta\frac{w_{t}}{P_{t}}}$
-    \item Labor market clearing: $L=\sum_{i}\frac{q_{i,t}}{a_{i,t}}$ $\Longrightarrow$$\sqrt{\zeta\frac{w_{t}}{P_{t}}}=\frac{\zeta}{L}\sum_{i}q_{i,t}$
-    \item $\boldsymbol{q}_{t}=\boldsymbol{N}\boldsymbol{z}_{t}$ where $N\equiv\left\{ 2\frac{\zeta}{L}\boldsymbol{J}+\boldsymbol{\Sigma}+\boldsymbol{K}\circ\boldsymbol{\Sigma}\right\} ^{-1}$
-    \item $\boldsymbol{N}_{i}$: the $i$ th row of $\boldsymbol{N}$
+    \item \label{Q} Gross profit: $\pi_{i,t}=\sum_{j}\kappa_{ij}\sigma_{ij}q_{i,t}q_{j,t}$
+    \item Firms choose labor productivity and product quality: $\zeta a_{i,t}=\sqrt{\zeta w_{t}}$,
+        $b_{i,t}=z_{i,t}-\sqrt{\zeta w_{t}}$
+    \item Labor market clearing: $L=\sum_{i}\frac{q_{i,t}}{a_{i,t}}$ $\Longrightarrow$$\sqrt{\zeta w_{t}}=\frac{\zeta}{L}\sum_{i}q_{i,t}$
+    \item $\bm{q}_{t}=\bm{N}\bm{z}_{t}$ where $N\equiv\left\{ 2\frac{\zeta}{L}\bm{J}+\bm{\Sigma}+\bm{K}\circ\bm{\Sigma}\right\} ^{-1}$
+    \item $\bm{N}_{i}$: the $i$ th row of $\bm{N}$
     \item Ownership weighted profit:
           {\small
           \[
-            \sum_{j}\kappa_{ij}\frac{\pi_{j,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sum_{h}\kappa_{jh}\sigma_{jh}q_{j,t}q_{h,t}=\boldsymbol{z}_{t}^{T}\boldsymbol{Q}^{i}\boldsymbol{z}_{t}
+            \sum_{j}\kappa_{ij}\frac{\pi_{j,t}}{P_{t}}=\sum_{j}\kappa_{ij}\sum_{h}\kappa_{jh}\sigma_{jh}q_{j,t}q_{h,t}=\bm{z}_{t}^{T}\bm{Q}^{i}\bm{z}_{t}
           \]}
           where
           {\small
           \[
-            \boldsymbol{Q}^{i}=\frac{1}{2}\sum_{j}\kappa_{ij}\sum_{h}\kappa_{jh}\sigma_{jh}\left(N_{j}^{T}N_{h}+N_{h}^{T}N_{j}\right)
+            \bm{Q}^{i}=\frac{1}{2}\sum_{j}\kappa_{ij}\sum_{h}\kappa_{jh}\sigma_{jh}\left(N_{j}^{T}N_{h}+N_{h}^{T}N_{j}\right)
           \]
           }
           \hyperlink{cournot}{\beamerbutton{Back}}
@@ -1272,28 +1340,29 @@
 %
 \begin{frame}{Riccati Equations}
   \begin{itemize}
-    \item  \label{riccati} $V^{i}\left(\boldsymbol{z}\right)=\boldsymbol{z}^{T}\boldsymbol{X}^{i}\boldsymbol{z}$ where
-          $\boldsymbol{X}^{i}$ is the solution of the stacked Riccati equation
+    \item  \label{riccati} $V^{i}\left(\bm{z}\right)=\bm{z}^{T}\bm{X}^{i}\bm{z}$ where
+          $\bm{X}^{i}$ is the solution of the stacked Riccati equation
           {\small
           \[
-            0=\boldsymbol{Q}^{i}-\mu^{2}\sum_{j}\kappa_{ij}\boldsymbol{X}_{j}^{j}\left(\boldsymbol{X}_{j}^{j}\right)^{T}+\left(\boldsymbol{\Phi}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\boldsymbol{I}\right)^{T}\boldsymbol{X}^{i}+\boldsymbol{X}^{i}\left(\boldsymbol{\Phi}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\boldsymbol{I}\right)
+            0=\bm{Q}^{i}-\mu^{2}\sum_{j}\kappa_{ij}\bm{X}_{j}^{j}\left(\bm{X}_{j}^{j}\right)^{T}+\left(\bm{\Phi}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\bm{I}\right)^{T}\bm{X}^{i}+\bm{X}^{i}\left(\bm{\Phi}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\bm{I}\right)
           \]
           }
           \begin{itemize}
-            \item $\boldsymbol{X}_{i}^{i}\equiv$ the $i$ th column of $\boldsymbol{X}^{i}$
-            \item $\boldsymbol{\Phi}\equiv\boldsymbol{\Omega}+\mu^{2}\left[\begin{array}{ccc}
-              \boldsymbol{X}_{1}^{1} & \cdots & \boldsymbol{X}_{n}^{n}\end{array}\right]^{T}$
+            \item $\bm{X}_{i}^{i}\equiv$ the $i$ th column of $\bm{X}^{i}$
+            \item $\bm{\Phi}\equiv\bm{\Omega}+\mu^{2}\left[\begin{array}{ccc}
+              \bm{X}_{1}^{1} & \cdots & \bm{X}_{n}^{n}\end{array}\right]^{T}$
           \end{itemize} \medskip{}
     \item Algorithm: Given $\left[\begin{array}{ccc}
-                \boldsymbol{X}_{\tau}^{1} & \cdots & \boldsymbol{X}_{\tau}^{n}\end{array}\right]$, update $\left[\begin{array}{ccc}
-                \boldsymbol{X}_{\tau-\Delta}^{1} & \cdots & \boldsymbol{X}_{\tau-\Delta}^{n}\end{array}\right]$ by
+                \bm{X}_{\tau}^{1} & \cdots & \bm{X}_{\tau}^{n}\end{array}\right]$, update $\left[\begin{array}{ccc}
+                \bm{X}_{\tau-\Delta}^{1} & \cdots & \bm{X}_{\tau-\Delta}^{n}\end{array}\right]$ by
           {\small
           \[
-            -\frac{\boldsymbol{X}_{\tau}^{i}-\boldsymbol{X}_{\tau-\Delta}^{i}}{\Delta}=\boldsymbol{Q}^{i}-\mu^{2}\sum_{j}\kappa_{ij}\boldsymbol{X}_{j,\tau}^{j}\left(\boldsymbol{X}_{j,\tau}^{j}\right)^{T}+\left(\boldsymbol{\Phi}_{\tau}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\boldsymbol{I}\right)^{T}\boldsymbol{X}_{\tau}^{i}+\boldsymbol{X}_{\tau}^{i}\left(\boldsymbol{\Phi}_{\tau}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)
+            -\frac{\bm{X}_{\tau}^{i}-\bm{X}_{\tau-\Delta}^{i}}{\Delta}=\bm{Q}^{i}-\mu^{2}\sum_{j}\kappa_{ij}\bm{X}_{j,\tau}^{j}\left(\bm{X}_{j,\tau}^{j}\right)^{T}+\left(\bm{\Phi}_{\tau}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\bm{I}\right)^{T}\bm{X}_{\tau}^{i}+\bm{X}_{\tau}^{i}\left(\bm{\Phi}_{\tau}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)
           \]}
   \end{itemize}
   \hyperlink{hjb}{\beamerbutton{Back}}
 \end{frame}
+
 %
 \begin{frame}{Summary of Equilibrium}
   \begin{center}
@@ -1301,14 +1370,14 @@
     \begin{tabular}{ll}
       Description                     & Expression\tabularnewline
       \hline
-      Production strategy             & $\boldsymbol{q}_{t}=N\boldsymbol{z}_{t}$\tabularnewline
-      R\&D strategy                   & $\boldsymbol{x}_{t}=\mu\tilde{X}\boldsymbol{z}_{t}$\tabularnewline
-      Law of motion                   & $d\boldsymbol{z}_{t}=\left(\Omega\boldsymbol{z}_{t}+\mu\boldsymbol{x}_{t}\right)dt+\gamma\boldsymbol{z}_{t}dW_{t}$\tabularnewline
-      Profit of final producers       & $\Pi_{t}^{F}/P_{t}=\boldsymbol{q}_{t}^{T}\left(\frac{1}{2}\Sigma\right)\boldsymbol{q}_{t}$\tabularnewline
-      Total operating profit of firms & $\Pi_{t}/P_{t}=\boldsymbol{q}_{t}^{T}\left(\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)\right)\boldsymbol{q}_{t}$\tabularnewline
-      Labor income                    & $w_{t}L/P_{t}=\boldsymbol{q}_{t}^{T}\left(\frac{\zeta}{L}J\right)\boldsymbol{q}_{t}$\tabularnewline
-      Output                          & $Y_{t}=\boldsymbol{q}_{t}^{T}\left(\frac{\zeta}{L}J+\frac{1}{2}\Sigma+\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)\right)\boldsymbol{q}_{t}$\tabularnewline
-      Consumption                     & $C_{t}=Y_{t}-\boldsymbol{x}_{t}^{T}\boldsymbol{x}_{t}$\tabularnewline
+      Production strategy             & $\bm{q}_{t}=N\bm{z}_{t}$\tabularnewline
+      R\&D strategy                   & $\bm{x}_{t}=\mu\tilde{X}\bm{z}_{t}$\tabularnewline
+      Law of motion                   & $d\bm{z}_{t}=\left(\Omega\bm{z}_{t}+\mu\bm{x}_{t}\right)dt+\gamma\bm{z}_{t}dW_{t}$\tabularnewline
+      Profit of final producers       & $\Pi_{t}^{F}/P_{t}=\bm{q}_{t}^{T}\left(\frac{1}{2}\Sigma\right)\bm{q}_{t}$\tabularnewline
+      Total operating profit of firms & $\Pi_{t}/P_{t}=\bm{q}_{t}^{T}\left(\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)\right)\bm{q}_{t}$\tabularnewline
+      Labor income                    & $w_{t}L/P_{t}=\bm{q}_{t}^{T}\left(\frac{\zeta}{L}J\right)\bm{q}_{t}$\tabularnewline
+      Output                          & $Y_{t}=\bm{q}_{t}^{T}\left(\frac{\zeta}{L}J+\frac{1}{2}\Sigma+\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)\right)\bm{q}_{t}$\tabularnewline
+      Consumption                     & $C_{t}=Y_{t}-\bm{x}_{t}^{T}\bm{x}_{t}$\tabularnewline
     \end{tabular}
     \par\end{center}
 
@@ -1319,13 +1388,13 @@
 
   \label{X}
   \begin{itemize}
-    \item Output: $Y_{t}=\boldsymbol{q}_{t}^{T}Q\boldsymbol{q}_{t}$ where
+    \item Output: $Y_{t}=\bm{q}_{t}^{T}Q\bm{q}_{t}$ where
           \[
             Q=\frac{\zeta}{L}J+\frac{1}{2}\Sigma+\frac{1}{2}\Sigma\circ\left(K+K^{T}\right)
           \]
     \item Expected utility:
           \[
-            V\left(\boldsymbol{z}_{t}\right)\equiv\boldsymbol{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\boldsymbol{z}_{t}\right]=\boldsymbol{z}_{t}^{T}X\boldsymbol{z}_{t}
+            V\left(\bm{z}_{t}\right)\equiv\bm{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\bm{z}_{t}\right]=\bm{z}_{t}^{T}X\bm{z}_{t}
           \]
           where $X$ is the solution of the Lyapunov equation (obtained from
           households' HJB equation):
@@ -1340,19 +1409,19 @@
 
   \label{optimal}
   \begin{itemize}
-    \item Static optimal allocation: $\boldsymbol{q}_{t}^{*}=N^{*}\boldsymbol{z}_{t}\quad\text{where}\quad N^{*}\equiv\left\{ 2\frac{\zeta}{L}J+\Sigma\right\} ^{-1}$
-    \item Optimal output: $Y_{t}^{*}=\boldsymbol{z}_{t}^{T}Q^{*}\boldsymbol{z}_{t}$
+    \item Static optimal allocation: $\bm{q}_{t}^{*}=N^{*}\bm{z}_{t}\quad\text{where}\quad N^{*}\equiv\left\{ 2\frac{\zeta}{L}J+\Sigma\right\} ^{-1}$
+    \item Optimal output: $Y_{t}^{*}=\bm{z}_{t}^{T}Q^{*}\bm{z}_{t}$
           where $Q^{*}=\frac{1}{2}N^{*}$
     \item Optimal expected utility:
           \[
-            V^{*}\left(\boldsymbol{z}_{t}\right)\equiv\boldsymbol{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\boldsymbol{z}_{t}\right]=\boldsymbol{z}_{t}^{T}X^{*}\boldsymbol{z}_{t},
+            V^{*}\left(\bm{z}_{t}\right)\equiv\bm{E}_{t}\left[\left.\int_{t}^{\infty}\exp\left(-\rho s\right)C_{s}ds\right|\bm{z}_{t}\right]=\bm{z}_{t}^{T}X^{*}\bm{z}_{t},
           \]
           where $X^{*}$ is the solution of the Riccati equation (obtained
           from planner's HJB equation):
           \[
             0=Q^{*}-\mu^{2}\left(X^{*}\right)^{2}+X^{*}\left(\Phi^{*}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)+\left(\Phi^{*}-\frac{1}{2}\left(\rho-\gamma^{2}\right)I\right)X^{*}
           \]
-    \item Optimal R\&D: $\boldsymbol{x}_{t}^{*}=\mu X^{*}\boldsymbol{z}_{t}$
+    \item Optimal R\&D: $\bm{x}_{t}^{*}=\mu X^{*}\bm{z}_{t}$
     \item Optimal technology transition matrix: $\Phi^{*}=\Omega+\mu^{2}X^{*}$
   \end{itemize}
   \hyperlink{aggregation}{\beamerbutton{Back}}
@@ -1362,25 +1431,23 @@
 
   \label{Y_process}
   \begin{itemize}
-    \item Applying It's lemma, {\footnotesize
+    \item Applying Itô's lemma, {\footnotesize
           \[
-            d\log Y_{t}=\left[\frac{\boldsymbol{z}_{t}^{T}\left(Q\Phi+\Phi^{T}Q\right)\boldsymbol{z}_{t}}{Y_{t}}+\gamma^{2}\left\{ \frac{\sum_{i}z_{i,t}^{2}Q_{ii}}{Y_{t}}-\frac{2\boldsymbol{z}_{t}^{T}Q\ \text{diag}\left(\boldsymbol{z}_{t}^{2}\right)Q\boldsymbol{z}_{t}}{Y_{t}^{2}}\right\} \right]dt+\frac{2\gamma\boldsymbol{z}_{t}^{T}Q\ \text{diag}\left(\boldsymbol{z}_{t}\right)}{Y_{t}}dW_{t}
+            d\log Y_{t}=\left[\frac{\bm{z}_{t}^{T}\left(Q\Phi+\Phi^{T}Q\right)\bm{z}_{t}}{Y_{t}}+\gamma^{2}\left\{ \frac{\sum_{i}z_{i,t}^{2}Q_{ii}}{Y_{t}}-\frac{2\bm{z}_{t}^{T}Q\operatorname{diag}\left(\bm{z}_{t}^{2}\right)Q\bm{z}_{t}}{Y_{t}^{2}}\right\} \right]dt+\frac{2\gamma\bm{z}_{t}^{T}Q\operatorname{diag}\left(\bm{z}_{t}\right)}{Y_{t}}dW_{t}
           \]
-          }where $Y_{t}=\boldsymbol{z}_{t}^{T}Q\boldsymbol{z}_{t}$ and $\Phi=\Omega+\mu^{2}\widetilde{X}$
+          }where $Y_{t}=\bm{z}_{t}^{T}Q\bm{z}_{t}$ and $\Phi=\Omega+\mu^{2}\widetilde{X}$
   \end{itemize}
-  \begin{center}
-    \begin{tabular}{cc}
-      \hline
-      \hline Description & Expression\tabularnewline
-      \hline
-      Tech Spillover     & $\boldsymbol{z}_{t}^{T}\left(Q\Omega+\Omega Q\right)\boldsymbol{z}_{t}/Y_{t}$\tabularnewline
-      R\&D               & $\mu^{2}\boldsymbol{z}_{t}^{T}\left(Q\widetilde{X}+\widetilde{X}^{T}Q\right)\boldsymbol{z}_{t}/Y_{t}$\tabularnewline
-      Ito                & $\gamma^{2}\left\{ \sum_{i}z_{i,t}^{2}Q_{ii}/Y_{t}-2\boldsymbol{z}_{t}^{T}Q\text{diag}\left(\boldsymbol{z}_{t}^{2}\right)Q\boldsymbol{z}_{t}/Y_{t}^{2}\right\} $\tabularnewline
-      \hline
-      Total              & $\boldsymbol{E}\left[d\log Y_{t}\right]$\tabularnewline
-      \hline
-    \end{tabular}
-    \par\end{center}
+    \begin{center}
+      \begin{tabular}{l l}
+        \toprule
+        Tech Spillover       & $\displaystyle \frac{\bm{z}_{t}^{T}\left(Q\Omega+\Omega Q\right)\bm{z}_{t}}{Y_{t}}$ \\
+        R\&D Contribution    & $\displaystyle \frac{\mu^{2}\bm{z}_{t}^{T}\left(Q\widetilde{X}+\widetilde{X}^{T}Q\right)\bm{z}_{t}}{Y_{t}}$ \\
+        Itô Correction       & $\displaystyle \gamma^{2}\left\{ \frac{\sum_{i}z_{i,t}^{2}Q_{ii}}{Y_{t}} - \frac{2\bm{z}_{t}^{T}Q\operatorname{diag}\left(\bm{z}_{t}^{2}\right)Q\bm{z}_{t}}{Y_{t}^{2}} \right\}$ \\
+        \midrule
+        Total                & $\bm{E}\left[d\log Y_{t}\right]$ \\
+        \bottomrule
+      \end{tabular}
+    \end{center}
 \end{frame}
 %
 \begin{frame}{Number of Sample Firms}
