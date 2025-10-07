@@ -1,7 +1,7 @@
 \documentclass[
   10pt,
   aspectratio=169,   % 16:9 Widescreen
-  %åhandout           % Uncomment for handout mode (no overlays)
+  %handout           % Uncomment for handout mode (no overlays)
 ]{beamer}
 
 % ==============================
@@ -51,6 +51,12 @@
 
 \useoutertheme{smoothbars}
 
+\mode<handout>{
+  \useoutertheme{default}            % Remove header
+  \setbeamertemplate{headline}{      % Overwrite headline template
+    \vskip0.9cm                      % Adjust to the same height as smoothbars
+  }
+}
 %\useoutertheme{default}
 %\setbeamertemplate{headline}{\vskip1.3cm}
 
@@ -177,7 +183,6 @@
 \section{Model}
 
 \begin{frame}{Demand and Technology}
-  \label{static_game}
   \begin{itemize}
     \item Firm $i\in \left\{1,\ldots,n\right\}$ has knowledge capital $z_{i,t}$ and produces a single differentiated product
           \medskip{}\pause
@@ -248,6 +253,7 @@
 \section{Equilibrium}
 
 \begin{frame}{Static Cournot Game}
+  \label{static_game}
   \begin{itemize}
     \item Firm $i$'s static objective is given by:
           \[
@@ -268,11 +274,11 @@
           \]
           subject to $\dot{\bm{z}}_{t}=\bm{\Omega}\bm{z}_{t}+\mu\bm{x}_{t}-\delta\bm{z}_{t}$
           \pause\medskip{}
-    \item Static objective: $\sum_{j}\kappa_{ij}\pi_{j,t}=\bm{z}_{t}^{T}\bm{Q}^{i}\bm{z}_{t}$ \hyperlink{Q}{\beamerbutton{Q}} \medskip{}
+    \item Gross profit: $\sum_{j}\kappa_{ij}\pi_{j,t}=\bm{z}_{t}^{T}\bm{Q}^{i}\bm{z}_{t}$ \hyperlink{Q}{\beamerbutton{Q}} \medskip{}
     \item R\&D cost: $d_{i,t}=x_{i,t}^2$\medskip{} \pause
     \item Firm $i$'s HJB equation:
           \[
-            \rho V^{i}\left(\bm{z}\right)=\max_{x_{i}}\left\{ \bm{z}^{T}\bm{Q}^{i}\bm{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\bm{z}}^{i}\left(\bm{z}\right)\left[\bm{\Omega}\bm{z}+\mu\bm{x}\right]\right\}
+            \rho V^{i}\left(\bm{z}\right)=\max_{x_{i}}\left\{ \bm{z}^{T}\bm{Q}^{i}\bm{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\bm{z}}^{i}\left(\bm{z}\right)\left[\bm{\Omega}\bm{z}+\mu\bm{x} - \delta\bm{z} \right]\right\}
           \]
   \end{itemize}
 \end{frame}
@@ -286,21 +292,21 @@
     \item $\bm{X}^{i}$ is the solution of stacked algebraic Riccati equations
 
           \hyperlink{riccati}{\beamerbutton{Riccati Equations}}\medskip{}\pause
-    \item Public \& patenting firms in the U.S. in our dataset $\approx 700$
+    \item Public \& patenting firms in the U.S. in our dataset $> 700$
           firms $\Longrightarrow$ \\
-          $700^{3}=343$ million undetermined coefficients ($< 1$ min on my laptop)\medskip{}
-  \end{itemize}
+          $\underbrace{700\times700}_{\text{size of } \bm{X}^{i}} \times \underbrace{700}_{n}=343\,\text{million}$ undetermined coefficients ($< 1$ min on my laptop)\medskip{}
   \begin{center}
     \begin{tabular}{@{}p{5cm}ccc@{}}
       \toprule
       Oligopolistic Schumpeterian & Computation time & \# of firms   & Productivity space \\
       \midrule
-      \citet{Cavenaile2023-lo}    & $O(2^n)$         & 4             & 6-grid             \\
-      Our model                   & $O(n^4)$         & $\approx$700 & Continuous         \\
+      \citet{Cavenaile2023-lo}    & $O(2^n)$         & 4             & 6 grid             \\
+      Our model                   & $O(n^4)$         & $>$700 & Continuous         \\
       \bottomrule
     \end{tabular}
   \end{center}
-
+  \hyperlink{negative_rd_and_output}{\beamerbutton{Transition}}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{BGP}
@@ -385,7 +391,8 @@
   \begin{itemize}
     \item $a_i$, $b_i$, $q_i(=a_i l_i)$, $p_i$, and $w/a_i$ grow at the same rate $g$
     \item (i) (consumer surplus / producer surplus) and (ii) (cost / revenue) stay the same
-  \end{itemize} \hyperlink{cournot}{\beamerbutton{Back}}
+    \item Demand elasticity is constant on BGP despite linear demand
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Lifetime Utility}
@@ -399,6 +406,10 @@
 
           \hyperlink{X}{\beamerbutton{$X$}}
     \item Solve the equilibrium once $\Longrightarrow$ we can compute lifetime utility for any initial $\bm{z}_{t}$
+    \medskip{}
+    \item This property holds even if we introduce idiosyncratic / aggregate shocks
+    \medskip{}
+    \item In the exercise, we focus on the transition dynamics starting from the observed initial $\bm{z}_{t}$
   \end{itemize}
 \end{frame}
 
@@ -528,7 +539,7 @@
       $\alpha$                  & Product proximity $\rightarrow$ Substitutability & 0.120 & \citet{Pellegrino2024-dn}                     \\
       $\beta$                   & Technological proximity $\rightarrow$ Spillovers & 0.024 & Estimated from the law of motion              \\
       $\zeta/L$                 & Labor-augmenting efficiency                      & 0.004 & Compustat, Cost of goods sold                 \\
-      $\rho$                    & Discount rate                                    & 0.100 & $>$ risk-free rates, $<$ private R\&D returns \\
+      $\rho$                    & Discount rate                                    & 0.100 & \\
       $\mu$                     & R\&D efficiency                                  & 0.066 & 2.6\% R\&D share (moment match)               \\
       $\delta$                  & Depreciation rate                                & 0.017 & 1.2\% economic growth rate (moment match)     \\
       \bottomrule
@@ -555,6 +566,8 @@
 \begin{frame}{Model vs. Data: Firm-level Growth Rates}
   \begin{itemize}
     \item Data: Average growth rate of $z_{i,t}$ between 2010 and 2017
+    \medskip{}
+    \item Model: Networks and initial knowledge capital in 2010
   \end{itemize}
   \medskip{}
   \begin{center}
@@ -606,7 +619,7 @@
      & Monopoly                                                                       \\
     \midrule
     Baseline
-     & 40.48                                          & 38.68 & 31.56 & 28.26 & 21.39 \\
+     & 40.48                                          & \textcolor{uclaBlue}{38.68} & 31.56 & \textcolor{uclaBlue}{28.26} & 21.39 \\
     \midrule
     \shortstack[t]{Only Business Steal                                                \\ $\bm{\Omega}=[0]$}
      & \visible<2->{52.04}
@@ -646,23 +659,20 @@
                                       & 40.48                                          & 38.68               & 31.56               & 28.26               & 21.39               \\
     \midrule
     \shortstack[l]{Economic Growth Rate (\%)}
-                                      & \visible<2->{1.32}                             & \visible<2->{1.31}  & \visible<2->{1.24}  & \visible<2->{1.20}  & \visible<2->{1.11}  \\
+                                      & \visible<2->{1.32}                             & \visible<2->{\textcolor{uclaBlue}{1.31}}  & \visible<2->{1.24}  & \visible<2->{\textcolor{uclaBlue}{1.20}}  & \visible<2->{1.11}  \\
     \midrule
     \shortstack[l]{Welfare (Optimal R\&D: 100)}
-                                      & \visible<3->{94.91}                            & \visible<3->{94.86} & \visible<3->{94.52} & \visible<3->{94.35} & \visible<3->{93.47} \\
+                                      & \visible<3->{94.91}                            & \visible<3->{\textcolor{uclaBlue}{94.86}} & \visible<3->{94.52} & \visible<3->{\textcolor{uclaBlue}{94.35}} & \visible<3->{93.47} \\
     \midrule
     \shortstack[l]{Firm Value Share (\%)}
                                       & \visible<4->{26.63}                            & \visible<4->{26.72} & \visible<4->{27.20} & \visible<4->{27.24} & \visible<4->{27.82} \\
     \bottomrule
   \end{tabular}
+  \medskip{}
   \begin{itemize}
     \item The rise of common ownership from 1999 to 2017 $\Longrightarrow$ $g$ $\downarrow$ by 0.11 p.p., CE welfare $\downarrow$ by 0.54\%
   \end{itemize}
 \end{frame}
-
-% (Merged into single slide above)
-
-% (Merged into single slide above)
 
 \begin{frame}{When Common Ownership Affects Both R\&D and Production}
   \begin{center}
@@ -675,7 +685,7 @@
       \shortstack[l]{Output (Dispersed: 100)}
        & 100.00                                  & 100.00 & 97.26 \\
       \shortstack[l]{Total R\&D (Dispersed: 100)}
-       & 100.00                                  & 69.81  & 86.36 \\
+       & 100.00                                  & \textcolor{uclaBlue}{69.81}  & \textcolor{uclaBlue}{86.36} \\
       \shortstack[l]{Economic Growth Rate (\%)}
        & 1.323                                   & 1.200  & 1.288 \\
       \shortstack[l]{Welfare (Dispersed: 100)}
@@ -685,14 +695,9 @@
       \bottomrule
     \end{tabular}
   \end{center}
-
+  \medskip{}
   \begin{itemize}
-    \item Common \& Common:
-          \begin{itemize}
-            \item Intermediate R\&D expenditure and growth rate
-            \item Lowest welfare
-            \item Highest firm value share
-          \end{itemize}
+    \item Less product market competition $\Longrightarrow$ Private return on R\&D $\uparrow$
   \end{itemize}
 \end{frame}
 
@@ -706,8 +711,30 @@
     \end{figure}
   \end{center}
   \begin{itemize}
-    \item Optimal rate is $s=43\%$, which increases $g$ by 0.57 pp and CE welfare by 1.4\%.
+    \item Optimal rate is $s=43\%$, which increases $g$ by 0.57 pp and CE welfare by 1.36\%
+    \item c.f. Welfare gains from optimal R\&D allocation: 6.0\% 
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Which Firms' R\&D Should be Subsidized?}
+
+    \begin{center}
+      \setlength{\tabcolsep}{6pt}
+      \begin{tabular}{lcc}
+        \hline\hline
+                         & Private R\&D $x$ & Social / Private value of R\&D \\
+        \hline
+        Initial knowledge capital $z$              & $\begin{array}{c}\text{0.122}^{***}\\(\text{0.000848})\end{array}$ & $\begin{array}{c}\text{-0.000212}\\(\text{0.000158})\end{array}$ \\
+        Ownership structure centrality & $\begin{array}{c}\text{-7.16}^{***}\\(\text{0.239})\end{array}$ & $\begin{array}{c}\textcolor{uclaBlue}{\text{0.580}^{***}}\\(\text{0.0446})\end{array}$ \\
+        Product market centrality & $\begin{array}{c}\text{-16.4}^{***}\\(\text{0.286})\end{array}$ & $\begin{array}{c}\textcolor{uclaBlue}{\text{-1.06}^{***}}\\(\text{0.0532})\end{array}$ \\
+        Technology spillover centrality & $\begin{array}{c}\text{5.45}^{***}\\(\text{0.423})\end{array}$ & $\begin{array}{c}\textcolor{uclaBlue}{\text{1.48}^{***}}\\(\text{0.0788})\end{array}$ \\
+        Intercept        & $\begin{array}{c}\text{-22.4}^{***}\\(\text{0.255})\end{array}$ & $\begin{array}{c}\text{0.900}^{***}\\(\text{0.0475})\end{array}$ \\
+        \hline
+        Observations     & \multicolumn{1}{c}{740} & \multicolumn{1}{c}{740} \\
+        $R^2$            & \multicolumn{1}{c}{0.976} & \multicolumn{1}{c}{0.555} \\
+        \hline\hline
+      \end{tabular}
+    \end{center}
 \end{frame}
 
 \section{Conclusion}
@@ -726,8 +753,7 @@
           \medskip{}
     \item Potential applications:
           \begin{itemize}
-            \item Chaebols (Korea)
-            \item Zaibatsu (Japan)
+            \item Conglomerate: e.g., Chaebols (Korea), Zaibatsu / Keiretsu (Japan)
             \item FDI and international technology diffusion
             \item Technology licensing
           \end{itemize}
@@ -921,13 +947,12 @@
                     \item[+] Interaction term between common ownership and technology proximity
                     \item[--] Interaction term between common ownership and product proximity
                   \end{itemize}
-          \end{itemize} \medskip{}\pause
+          \end{itemize} \medskip{}
     \item \cite{Kini2024-kd}: DiD that exploits mergers between financial institutions
           \begin{itemize}
             \item Dependent variables: Investments, new product development
                   \begin{itemize}
                     \item[+] Post (merger) $\times$ treatment (common owner) $\times$ technology proximity
-                    \item[--] Post (merger) $\times$ treatment (common owner) $\times$ HHI
                   \end{itemize}
           \end{itemize}
   \end{itemize}
@@ -1001,12 +1026,12 @@
   \label{static_equilibrium}
   \begin{itemize}
     \item Equilibrium quantities:
-          \[q_i^* = \frac{1}{2} z_i - \sqrt{\zeta w_t} - \frac{1}{2}\sum_{j \neq i} (\sigma_{ij} + \kappa_{ij} \sigma_{ij}) q_j^* \] \pause
-    \item Assume $\{q^*_{j}\}_{j\neq i}$ are held constant \pause
+          \[q_i^* = \frac{1}{2} z_i - \sqrt{\zeta w_t} - \frac{1}{2}\sum_{j \neq i} (\sigma_{ij} + \kappa_{ij} \sigma_{ij}) q_j^* \]
+    \item Assume $\{q^*_{j}\}_{j\neq i}$ are held constant 
     \item By the Envelope Theorem, the marginal value of knowledge capital (R\&D incentive) is given by:
           \[
             \frac{\partial \phi_i^*}{\partial z_i} = q_i^*
-          \]\pause
+          \]
     \item Greater overlap between ownership and product-market rivalry networks $\Longrightarrow$ R\&D $\downarrow$
           \[  \frac{\partial^2 (\partial \phi_i^* / \partial z_i)}{\partial \kappa_{ij} \partial \sigma_{ij}} = \frac{\partial^2  q_i^*}{\partial \kappa_{ij} \partial \sigma_{ij}}= -\frac{1}{2}q_j^* < 0\]
   \end{itemize}
@@ -1075,6 +1100,33 @@
     \end{tabular}
   \end{center}
   \hyperlink{aggregation}{\beamerbutton{Back}}
+\end{frame}
+
+\begin{frame}{Example: Symmetric Equilibrium}
+  \begin{block}{Assumption}
+    \label{symmetric}
+    \begin{itemize}
+      \item No common ownership, symmetric product substitutability, symmetric technology spillover:\\ $\kappa_{ij} = 0$, $\sigma_{ij} = \sigma, \omega_{ij} = \omega \quad  \forall i \neq j$
+    \end{itemize}
+  \end{block}
+  \begin{itemize}
+    \item R\&D strategy:
+          $
+            x_{i,t}^* = \mu \left( \tilde{x}_1 z_{i,t} + \tilde{x}_2 \sum_{j \neq i} z_j \right)
+          $
+          \begin{itemize}
+            \item $\tilde{x}_1$: market size effect ($>0$)
+            \item $\tilde{x}_2$: strategic substitutability ($<0$) / complementarity ($>0$)
+          \end{itemize} \medskip{}
+    \item Growth rate:
+          $g =  \underbrace{(n-1)\omega}_{\text{Tech Spillover}} + \underbrace{\mu^2\left(\tilde{x}_1 + (n-1)\tilde{x}_2\right)}_{\text{R\&D}}$ \medskip{}
+    \item Stability (irreducibility) requires
+          $\omega + \mu^2 \tilde{x}_2 > 0$
+          \begin{itemize}
+            \item Tech spillover ($\omega$) must be strong relative to strategic substitutability ($\tilde{x}_2<0$)
+          \end{itemize}
+  \end{itemize}
+  \hyperlink{bgp}{\beamerbutton{Back}}
 \end{frame}
 
 \begin{frame}{Output and Expected Utility}
@@ -1168,6 +1220,26 @@
   \end{center}
 \end{frame}
 
+\begin{frame}{Correlation Across Networks}
+  \label{network_correlations}
+  \begin{center}
+    \begin{tabular}{lrrr}
+      \toprule
+             & $K$      & $\Sigma$       & $\Omega$      \\
+      \midrule
+      $K$  & 1.0000     & -0.0035     & 0.0115     \\
+      $\Sigma$  & -0.0035    & 1.0000      & 0.2542     \\
+      $\Omega$  & 0.0115     & 0.2542      & 1.0000     \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \begin{itemize}
+    \item $K$: Ownership network
+    \item $\Sigma$: Product substitutability network
+    \item $\Omega$: Technological proximity network
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[t]{Microeconometric Estimates vs.\ GHL \citep{Pellegrino2024-dn} (1/2)}
   \label{micro_vs_ghl}
   \begin{center}
@@ -1223,15 +1295,15 @@
         State tax credit component \\
         of R\&D user cost
       \end{tabular}   & $\begin{array}{c}
-                             -1.163320^{***} \\
-                             (0.293931)
+                             -1.16^{***} \\
+                             (0.29)
                            \end{array}$\tabularnewline
       \begin{tabular}[t]{@{}l@{}}
         Federal tax credit component \\
         of R\&D user cost
       \end{tabular} & $\begin{array}{c}
-                           -34.298135^{***} \\
-                           (3.649001)
+                           -34.29^{***} \\
+                           (3.64)
                          \end{array}$\tabularnewline
       \hline
       Firm fixed effects              & $\checkmark$\tabularnewline
@@ -1251,6 +1323,7 @@
 \end{frame}
 
 \begin{frame}{Negative R\&D and Output}
+  \label{negative_rd_and_output}
   \begin{itemize}
     \item Issue with the model: negative output and R\&D
           \begin{itemize}
@@ -1268,6 +1341,7 @@
   \begin{center}
     \includegraphics[width=0.8\textwidth]{figures/transition_path_analysis.png}
   \end{center}
+  \hyperlink{hjb}{\beamerbutton{Back}}
 \end{frame}
 
 \begin{frame}{Alternative Corporate Governance Models: \\ \citet{Ederer2024-rw}}
