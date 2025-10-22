@@ -396,29 +396,6 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Intuition of Externality}
-  \label{static_equilibrium}
-  \begin{itemize}
-    \item Assume firms choose static variables $\left\{a_{i,t}, b_{i,t}, q_{i,t}\right\}$ to maximize static profits \pause
-    \item Equilibrium quantity $q_i = \frac{1}{2} z_i - \frac{1}{2}\sum_{k \neq i} \sigma_{ik} q_k - \sqrt{\zeta w_t}$ and profit $\pi_i = q_i^2$ \pause
-  \end{itemize}
-  \begin{align*}
-    \text{Tech Spillover Externalities:} \quad &
-    \frac{\partial \dot{z}_j}{\partial z_i} = \omega_{ij}, \quad
-    \frac{\partial \pi_j}{\partial z_j} = 2 q_j \frac{\partial q_j}{\partial z_j} = q_j \\
-    & z_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \omega_{ij} \text{ is large}}   z_j \ \uparrow \quad \Longrightarrow \quad \pi_j \ \uparrow
-  \end{align*}\pause
-  \begin{align*}
-    \text{Business Stealing Externalities:} \quad &
-    \frac{\partial \pi_j}{\partial z_i} = 2 q_j \frac{\partial q_j}{\partial z_i}
-    = 2 q_j \left(-\frac{1}{2}\sigma_{ji}\frac{\partial q_i}{\partial z_i}\right)
-    = -\frac{1}{2}\sigma_{ji} q_j \\
-    & z_i \ \uparrow \quad \Longrightarrow \quad q_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \sigma_{ij} \text{ is large}} q_j \ \downarrow \quad \Longrightarrow \quad \pi_j  \downarrow
-  \end{align*}
-  %hyperlink{static_game}{\beamerbutton{Back}}
-\end{frame}
-
-
 \begin{frame}{BGP}
   \begin{itemize}
     \label{bgp}
@@ -548,6 +525,28 @@
           \]\hyperlink{micro_vs_ghl}{\beamerbutton{micro estimates}}
   \end{itemize}
 
+\end{frame}
+
+\begin{frame}{Intuition of Externality}
+  \label{static_equilibrium}
+  \begin{itemize}
+    \item Assume firms choose static variables $\left\{a_{i,t}, b_{i,t}, q_{i,t}\right\}$ to maximize static profits \pause
+    \item Equilibrium quantity $q_i = \frac{1}{2} z_i - \frac{1}{2}\sum_{k \neq i} \sigma_{ik} q_k - \sqrt{\zeta w_t}$ and profit $\pi_i = q_i^2$ \pause
+  \end{itemize}
+  \begin{align*}
+    \text{Tech Spillover Externalities:} \quad &
+    \frac{\partial \dot{z}_j}{\partial z_i} = \omega_{ij}, \quad
+    \frac{\partial \pi_j}{\partial z_j} = 2 q_j \frac{\partial q_j}{\partial z_j} = q_j \\
+    & z_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \omega_{ij} \text{ is large}}   z_j \ \uparrow \quad \Longrightarrow \quad \pi_j \ \uparrow
+  \end{align*}\pause
+  \begin{align*}
+    \text{Business Stealing Externalities:} \quad &
+    \frac{\partial \pi_j}{\partial z_i} = 2 q_j \frac{\partial q_j}{\partial z_i}
+    = 2 q_j \left(-\frac{1}{2}\sigma_{ji}\frac{\partial q_i}{\partial z_i}\right)
+    = -\frac{1}{2}\sigma_{ji} q_j \\
+    & z_i \ \uparrow \quad \Longrightarrow \quad q_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \sigma_{ij} \text{ is large}} q_j \ \downarrow \quad \Longrightarrow \quad \pi_j  \downarrow
+  \end{align*}
+  %hyperlink{static_game}{\beamerbutton{Back}}
 \end{frame}
 
 \begin{frame}{Technological Proximity $\widetilde{\bm{\Omega}}$}
