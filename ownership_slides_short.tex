@@ -49,12 +49,9 @@
 \setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
 \setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
 
-\useoutertheme{smoothbars}
-
 \mode<handout>{
   \useoutertheme{default}            % Remove header
   \setbeamertemplate{headline}{      % Overwrite headline template
-    \vskip0.9cm                      % Adjust to the same height as smoothbars
   }
 }
 %\useoutertheme{default}
@@ -75,6 +72,7 @@
 \setbeamercolor{enumerate item}{fg=uclaBlue}
 \setbeamercolor{button}{bg=uclaBlue}
 \setbeamercolor{alerted text}{fg=uclaBlue}
+\addtobeamertemplate{frametitle}{\vspace*{0.25cm}}{}
 
 % =====================================================================
 % TITLE & AUTHOR
@@ -100,99 +98,193 @@
             \item BlackRock, Vanguard, and State Street exercise about 30\% of the votes at S\&P 500 firms
           \end{itemize}
           \medskip{} \pause
-    \item Such concentration has led to a large literature on common ownership
-    \begin{itemize}
-      \item Implications for innovation: \citet{Lopez2019-sl, Kini2024-kd, Anton2024-pw}
-    \end{itemize}
+    \item Such concentration has led to a large literature and policy debates on common ownership
+          \begin{itemize}
+            \item Implications for innovation: \citet{Lopez2019-sl, Kini2024-kd, Anton2024-pw}
+            \item Merger Guidelines raise concerns about the impact of common ownership on R\&D \hyperlink{guidelines}{\beamerbutton{Merger Guidelines}}
+          \end{itemize}
           \medskip{}\pause
-   %\item It has also led to active debates among antitrust agencies \hyperlink{guidelines}{\beamerbutton{Merger Guidelines}}
-   %\medskip{} \pause
-    \item Common ownership facilitates the internalization of inter-firm externalities: \\ \citet{Rotemberg1984-jz, Azar2022-cn, Ederer2024-rw}
+    \item Common ownership facilitates the internalization of inter-firm externalities
+          \begin{itemize}
+            \item \citet{Rotemberg1984-jz, Azar2021-uh, Ederer2024-rw}
+          \end{itemize}
           \medskip{} \pause
-    \item Two inter-firm externalities of innovation in Shumpeterian growth model:
+    \item Two inter-firm externalities of innovation \citep{Aghion1992-zz,Bloom2013-pn}:
           \begin{itemize}
             \item[$-$] \alert{Business-stealing effect}
             \item[$+$] \alert{Technology spillover effect}
           \end{itemize}
           \medskip{} \pause
-    \item What is \alert{the aggregate effects} of common ownership on R\&D, growth, and welfare?
+    \item \alert{The aggregate effects of common ownership on R\&D allocation and growth remain unknown}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Quantitative Schumpeterian Growth Model with Ownership Structure}
+\begin{frame}{Quantitative Endogenous Growth Model with Ownership Structure}
   \begin{itemize}
-    \item Existing endogenous growth models are not suited for the analysis of common ownership across many firms/industries
+    \item Common ownership and technology spillovers span across industries $\Longrightarrow$ \\
+          Firms internalize intra- and inter-industry externalities
           \begin{itemize}
-            \item Monopolistic competition w/o strategic interaction \citep{Romer1990-cw,Klette2004-gz}
-            \item Markov perfect equilibrium with 2--4 firms \citep{Aghion2001-yc,Cavenaile2023-lo}
+            \item Innovation networks: \citet{Scherer1982-zz,Acemoglu2016-hk,Liu2024-bt}
           \end{itemize}
           \medskip{}\pause
-    \item My framework is based on a new class of endogenous growth model developed by \citet{Hopenhayn2024-ya}
+    \item In canonical endogenous growth models, each industry is infinitesimally small $\Longrightarrow$ \\
+          if any, strategic interactions occur only within an industry
           \begin{itemize}
-            \item Hundreds or thousands of oligopolists engage in a dynamic R\&D game
+            \item Monopolistic competition: \citet{Romer1990-cw,Klette2004-gz}
+            \item Oligopoly with 2--4 firms in each industry: \citet{Aghion2001-yc,Cavenaile2023-lo}
+          \end{itemize}
+          \medskip{}\pause
+    \item My framework is based on the endogenous growth model by \citet{Hopenhayn2024-ya}
+          \begin{itemize}
+            \item \alert{Hundreds or thousands of oligopolists} engage in a dynamic R\&D game
+            \item \alert{Product market rivalry networks} \citep{Pellegrino2024-dn} and \alert{innovation networks}
             \item LQ differential game avoids the curse of dimensionality
-            \item Two networks that govern the two externalities of innovation
-                  \begin{itemize}
-                    \item \alert{Product market rivalry networks} \citep{Pellegrino2024-dn}
-                    \item \alert{Technology spillover networks} \citep{Bloom2013-pn}
-                  \end{itemize}
           \end{itemize}
           \medskip{}\pause
-    \item This paper incorporates \alert{ownership structure networks} into endogenous growth model
-          \begin{itemize}
-            \item Overlap of networks determines the internalization of the two externalities
-          \end{itemize}
+    \item This paper incorporates \alert{ownership networks} into \citet{Hopenhayn2024-ya} $\Longrightarrow$
+          \\ Overlap of networks determines the internalization of the two externalities
   \end{itemize}
 \end{frame}
 
-
-\begin{frame}{Identification and Findings}
+\begin{frame}{Model Environment}
   \begin{itemize}
-    \item Identify networks for publicly listed patenting firms in the U.S. ($>$700 firms)
+    \item Continuous time \medskip{}\pause
+    \item Many granular firms \medskip{}\pause
+    \item Markov perfect equilibrium \medskip{}\pause
+    \item Each firm produces a single differentiated product and engages in Cournot competition \medskip{}\pause
+    \item Each firm invests in R\&D to accumulate knowledge capital $z_{i,t}$ \medskip{}\pause
+    \item Strategic interaction through three (exogenous) inter-firm networks
+          \medskip
+          \begin{center}
+            \begin{tabular}{l c l}
+              \toprule
+              Network        & Notation                      & Measurement                                           \\
+              \midrule
+              Ownership      & $\bm{K} = [\kappa_{ij}]$      & Weight firm $i$ places on firm $j$'s value            \\
+              \addlinespace
+              Product market & $\bm{\Sigma} = [\sigma_{ij}]$ & Substitutability between firms $i$ and $j$'s products \\
+              \addlinespace
+              Innovation     & $\bm{\Omega} = [\omega_{ij}]$ & Technology spillover through $z_{i,t}$ and $z_{j,t}$  \\
+              \bottomrule
+            \end{tabular}
+          \end{center}
+          \medskip
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Key Properties of the Model}
+  \begin{itemize}
+    \item (Stochastic) Balanced growth path with endogenous growth rate
+          \medskip{}
+    \item<2-> More overlap in $\bm{K}$ and $\bm{\Sigma}$ $\Longrightarrow$ internalize business-stealing effects $\Longrightarrow$ R\&D $\downarrow$
+          \medskip{}
+    \item<3-> More overlap in $\bm{K}$ and $\bm{\Omega}$ $\Longrightarrow$ internalize technology spillovers $\Longrightarrow$ R\&D $\uparrow$
+          \medskip{}
   \end{itemize}
   \begin{center}
-    \begin{tabular}{l p{8.5cm}}
+    \begin{tabular}{l c l}
       \toprule
-      Network                & Measurement                                              \\
+      Network        & Notation                      & Measurement                                           \\
       \midrule
-      Ownership structure    & common ownership weights \citep{Backus2021-yt} \\ & Institutional investor shareholdings from 13F filings \\
+      Ownership      & $\bm{K} = [\kappa_{ij}]$      & Weight firm $i$ places on firm $j$'s value            \\
       \addlinespace
-      Product-market rivalry & Product proximity \citep{Hoberg2016-jm}:                 \\
-                             & Text analysis of business descriptions in 10-K filings           \\
+      Product market & $\bm{\Sigma} = [\sigma_{ij}]$ & Substitutability between firms $i$ and $j$'s products \\
       \addlinespace
-      Technology spillovers  & Technology proximity \citep{Jaffe1986-yz}:               \\
-                             & Patent classifications                          \\
+      Innovation     & $\bm{\Omega} = [\omega_{ij}]$ & Technology spillover through $z_{i,t}$ and $z_{j,t}$  \\
       \bottomrule
     \end{tabular}
   \end{center}
-  \medskip{}\pause
+\end{frame}
+
+
+\begin{frame}{Identification of Networks}
   \begin{itemize}
-    \item Commonly owned firms that are close in ...
+    \item Identify networks for publicly listed patenting firms in the U.S. ($>$700 firms)
+  \end{itemize}
+  \medskip{}
+  \begin{center}
+    \begin{tabular}{l c p{7.8cm}}
+      \toprule
+      Network        & Notation                      & Measurement                                 \\
+      \midrule
+      Ownership      & $\bm{K} = [\kappa_{ij}]$      & Institutional investor shareholdings        \\
+      \addlinespace
+      Product market & $\bm{\Sigma} = [\sigma_{ij}]$ & Business descriptions \citep{Hoberg2016-jm} \\
+      \addlinespace
+      Innovation     & $\bm{\Omega} = [\omega_{ij}]$ & Patent classifications \citep{Jaffe1986-yz} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Impact of Common Ownership on R\&D and Production}
+  \begin{center}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{@{}lccc@{}}
+      \toprule
+      \multicolumn{1}{l}{Production ownership structure} & \alt<1,3>{\alert{Dispersed}}{Dispersed} & \alt<1,2>{\alert{Dispersed}}{Dispersed} & \alt<2,3>{\alert{Common}}{Common} \\
+      \multicolumn{1}{l}{R\&D ownership structure}       & \alt<1,3>{\alert{Dispersed}}{Dispersed} & \alt<1,2>{\alert{Common}}{Common}       & \alt<2,3>{\alert{Common}}{Common} \\
+      \midrule
+      \shortstack[l]{Total Output (Dispersed: 100)}
+                                                         & 100                                     & 100                                     & 97.3                              \\
+      \alert{\shortstack[l]{Total R\&D (Dispersed: 100)}}
+                                                         & \alt<1,3>{\alert{100}}{100}
+                                                         & \alt<1,2>{\alert{69.8}}{69.8}
+                                                         & \alt<2,3>{\alert{86.4}}{86.4}                                                                                         \\
+      \shortstack[l]{Economic Growth Rate (\%)}
+                                                         & 1.32                                    & 1.20                                    & 1.29                              \\
+      \shortstack[l]{CE Welfare (Dispersed: 100)}
+                                                         & 100                                     & 99.4                                    & 97.3                              \\
+      \shortstack[l]{Firm Value Share (\%)}
+                                                         & 26.6                                    & 27.2                                    & 34.1                              \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \medskip{}
+  \begin{itemize}
+    \item<1-> \alert<1>{Internalization of business-stealing $>$ technology spillovers}\medskip{}
+    \item<2-> \alert<2>{Less product market competition $\Longrightarrow$ Private return on R\&D $\uparrow$}\medskip{}
+    \item<3-> \alert<3>{Internalization of business-stealing $>$ technology spillovers $+$ less product market competition}
+  \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\label{conclusion}
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item Quantitative Schumpeterian growth model with ownership structure
           \begin{itemize}
-            \item product space $\Longrightarrow$ internalize business-stealing effect $\Longrightarrow$ R\&D $\downarrow$
-            \item technology space $\Longrightarrow$ internalize technology spillovers $\Longrightarrow$ R\&D $\uparrow$
+            \item Utilizes micro data and computational capabilities
           \end{itemize}
-          \medskip{}\pause
-    \item The rise of common ownership from 1999 to 2017 $\Longrightarrow$ $g$ $\downarrow$ by 0.11 p.p., welfare $\downarrow$ by 0.54\%
+          \medskip{}
+    \item Common ownership in the U.S.:
+          \begin{enumerate}
+            \item Internalization of business-stealing effect $\Longrightarrow$ $g$ $\downarrow\downarrow$
+            \item Internalization of technology spillover effect $\Longrightarrow$ $g$ $\uparrow$
+          \end{enumerate}
+          \medskip{}
+    \item Potential applications:
           \begin{itemize}
-            \item \alert{Internalization of business-stealing $>$ Internalization of technology spillover}
+            \item M\&A / FDI
+            \item Conglomerate / Cross-shareholdings (e.g. Japan, Korea, Germany, AI companies \hyperlink{ai}{\beamerbutton{AI}})
           \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Related Literature}
   \begin{itemize}
-    \item Competition \& Innovation: \\
-          {\footnotesize\citet{d-Aspremont1988-je,Kamien1992-la,Aghion2001-yc,Aghion2005-vw,Acemoglu2012-bj,Aghion2013-nq,Bloom2013-pn,Lopez2019-sl,Peters2020-sd,Akcigit2021-ns,Akcigit2023-zl,Liu2022-iw,Cavenaile2023-lo}, \textbf{\citet{Hopenhayn2024-ya}}}\\
-          \alert{Endogenous growth model with ownership structure networks}
-          \medskip{}\pause
-    \item Hedonic Demand / Empirical IO: \\
-          {\footnotesize\citet{Lancaster1966-sg,Rosen1974-ep,Berry1995-lx,Nevo2001-ja}, \textbf{\citet{Pellegrino2024-dn,Ederer2024-rw}}}\\
-          \alert{Dynamic general equilibrium / R\&D}
-          \medskip{}\pause
-    \item Oligopoly / Common Ownership / Market Power: \\
-          {\footnotesize\citet{Rubinstein1983-pi,Rotemberg1984-jz,Neary2003-sn,Atkeson2008-zc,Gutierrez2017-wl,He2017-ix,Azar2018-cc,Azar2022-cn,Autor2020-mr,Baqaee2020-eb,De_Loecker2020-jn,Azar2021-uh,Edmond2023-bg}, \textbf{\citet{Anton2023-ej,Anton2024-pw,Kini2024-kd}}} \\
-          \alert{Aggregate implications of common ownership for R\&D allocation and growth}
+    \item Competition and Innovation: \\
+          {\footnotesize\citet{d-Aspremont1988-je,Kamien1992-la,Ericson1995-dq,Aghion2001-yc,Aghion2005-vw,Acemoglu2012-bj,Aghion2013-nq,Bloom2013-pn,Lopez2019-sl,Peters2020-sd,Akcigit2021-ns,Akcigit2023-zl,Cavenaile2023-lo}, \textbf{\citet{Hopenhayn2024-ya}}}\\
+          \alert{Endogenous growth model with ownership networks}
+          \medskip{}
+    \item Common Ownership: \\
+          {\footnotesize\citet{Rubinstein1983-pi,Rotemberg1984-jz,Gutierrez2017-wl,He2017-ix,Azar2018-cc,Azar2022-cn,Azar2021-uh,Anton2023-ej}, \textbf{\citet{Kini2024-kd,Anton2024-pw}}} \\
+          \alert{Macroeconomic implications of common ownership for R\&D allocation and growth}
+          \medskip{}
+    \item Oligopoly / Hedonic Demand: \\
+          {\footnotesize\citet{Lancaster1966-sg,Rosen1974-ep,Berry1995-lx,Nevo2001-ja,Neary2003-sn,Atkeson2008-zc,Autor2020-mr}, \textbf{\citet{Pellegrino2024-dn,Ederer2024-rw}}}\\
+          \alert{Dynamic general equilibrium model / R\&D / technology spillovers}
   \end{itemize}
 \end{frame}
 
@@ -200,35 +292,37 @@
 
 \begin{frame}{Preference and Production Technology (1/2)}
   \begin{itemize}
+    \item Continuous time \medskip{}
     \item Risk-neutral representative household:
           \[
             U_t = \int_{t}^{\infty}\exp\left(-\rho (s - t)\right)C_{s}ds
           \]
-          \pause
+
     \item Production labor is inelastically supplied
-          \medskip{}\pause
+          \medskip{}
     \item Final goods are used for consumption and R\&D
-          \medskip{}\pause
+          \medskip{}
     \item Firm $i\in \left\{1,\ldots,n\right\}$ produces a single differentiated intermediate good
-          \medskip{}\pause
+          \medskip{}
     \item Linear-quadratic aggregator \citep{Pellegrino2024-dn}:
           \[
             Y_{t}=\bm{q}_{t}^{T}\bm{b}_{t}-\frac{1}{2}\bm{q}_{t}^{T}\bm{\Sigma}\bm{q}_{t}
           \]\vspace{-1.5em}
           \begin{itemize}
-            \item \alert{$\bm{\Sigma}=\left[\sigma_{ij}\right]$: product-market rivalry matrix (networks) $\quad (\sigma_{ii} = 1)$}
+            \item $\bm{b}_{t}=\left[b_{1,t},...,b_{n,t}\right]^{T}$: product quality vector (endogenous)
+            \item \alert{$\bm{\Sigma}=\left[\sigma_{ij}\right]$: product-market rivalry matrix (exogenous) $\quad (\sigma_{ii} = 1)$}
           \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Preference and Production Technology (2/2)}
   \begin{itemize}
-    \item Final goods price is normalized to 1\medskip{} \pause
-    \item Linear inverse demand: \[p_{i,t}=b_{i,t}-\sum_{j\neq i}\sigma_{ij}q_{j,t} - q_{i,t}\] \pause
-    \item CRS production technology: \[q_{i,t}=a_{i,t}l_{i,t}\] \pause
+    \item Final goods price is normalized to 1\medskip{}
+    \item Linear inverse demand: \[p_{i,t}=b_{i,t}-\sum_{j\neq i}\sigma_{ij}q_{j,t} - q_{i,t}\]
+    \item CRS intermediate-good production technology: \[q_{i,t}=a_{i,t}l_{i,t}\]
     \item Each firm $i$ has knowledge capital $z_{i,t}$
-          \medskip{} \pause
-    \item Firms allocates knowledge capital to improve labor productivity and product quality:
+          \medskip{}
+    \item Firms allocate knowledge capital to improve labor productivity and product quality:
           \[
             \zeta a_{i,t}+b_{i,t}=z_{i,t}
           \]
@@ -240,16 +334,16 @@
     \dot{\bm{z}}_{t}=\underbrace{\bm{\Omega}\bm{z}_{t}}_{\text{Tech Spillover}}+\underbrace{\mu\bm{x}_{t}}_{\text{R\&D}}-\underbrace{\delta\bm{z}_{t}}_{\text{Depreciation}}
   \]
   \begin{itemize}
-    \item \alert{$\bm{\Omega}=\left[\omega_{ij}\right]$: technology spillover matrix (networks)}\medskip{} \pause
+    \item \alert{$\bm{\Omega}=\left[\omega_{ij}\right]$: technology spillover matrix / innovation networks}\medskip{}
     \item $x_{i,t}=\sqrt{d_{i,t}}$
           \begin{itemize}
             \item $d_{i,t}$: R\&D input in terms of final good
             \item Innovation elasticity $d\log\left(\text{firm value}\right)/d \log\left(\text{R\&D cost}\right) = 0.5$
           \end{itemize}
-          \medskip{} \pause
+          \medskip{}
     \item $\mu$, $\delta$: positive scalars
-          \medskip{} \pause
-    \item Can incorporate idiosyncratic \& aggregate shocks (not today)
+          \medskip{}
+    \item Can incorporate (idiosyncratic / aggregate) shocks (not today)
   \end{itemize}
 \end{frame}
 
@@ -257,9 +351,9 @@
   \begin{itemize}
     \item Final good market clearing:
           \[
-            C_{t}+\underbrace{\sum_{i}d_{i,t}}_{\text{R\&D input}}=Y_{t}
+            Y_{t} = C_{t}+\underbrace{\sum_{i}d_{i,t}}_{\text{R\&D input}}
           \]
-          \pause
+
     \item Inelastic production labor supply:
           \[
             L=\sum_{i}l_{i,t}
@@ -267,12 +361,12 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Common Ownership Weights (Networks)}
+\begin{frame}{Ownership Networks: Common Ownership Weights}
   \label{ownership_weight}
   \begin{itemize}
     \item \alert{$\bm{K}=\left[\kappa_{ij}\right]$: common ownership weights that firm $i$ places on the value of firm $j$ $\quad (\kappa_{ii} = 1)$}
-          \medskip{} \pause
-    \item More overlapping ownership between firms $i$ and $j$ $\Longrightarrow$ higher $\kappa_{ij}$  \medskip{} \pause
+          \medskip{}
+    \item More overlapping ownership between firms $i$ and $j$ $\Longrightarrow$ higher $\kappa_{ij}$  \medskip{}
     \item $\bm{K}=\bm{I}$: dispersed ownership (each firm maximizes its own value)
           \medskip{}
     \item $\bm{K}=\bm{1}_{n \times n}$: monopoly (maximizes total producer surplus)
@@ -282,15 +376,15 @@
 \begin{frame}{Proportional Influence \citep{Rotemberg1984-jz} }
   \label{rotemberg}
   \begin{itemize}
-    \item Baseline corporate governance assumption to map shareholding data to $\alert{\kappa_{ij}}$ \pause
-    \item $o\in\left\{ 1,2,...,n_{o}\right\} $: owners \pause
-    \item $s_{io}$: the proportion of shares in firm $i$ owned by owner $o$ where $\sum_{o}s_{io}=1$ \pause
+    \item Baseline corporate governance assumption to map shareholding data to $\alert{\kappa_{ij}}$
+    \item $o\in\left\{ 1,2,...,n_{o}\right\} $: owners
+    \item $s_{io}$: the proportion of shares in firm $i$ owned by owner $o$ where $\sum_{o}s_{io}=1$
     \item $\widehat{V}_{i}$: value of firm $i$
-    \item $\widetilde{V}_{o}\equiv\sum_{i}s_{io}\widehat{V}_{i}$: value of owner $o$ \pause
+    \item $\widetilde{V}_{o}\equiv\sum_{i}s_{io}\widehat{V}_{i}$: value of owner $o$
     \item Firm $i$'s objective:
           \[
             \sum_{o}s_{io}\widetilde{V}_{o}\propto\sum_{j}\alert{\kappa_{ij}}\widehat{V}_{j}
-          \] \pause
+          \]
           where
           \[
             \alert{\kappa_{ij}}\equiv\frac{\bm{s}_{i}^{T}\bm{s}_{j}}{\bm{s}_{i}^{T}\bm{s}_{i}} = \cos\left( \bm{s}_{i}, \bm{s}_{j} \right)\sqrt{\frac{\text{Investor HHI}_j}{\text{Investor HHI}_i}}
@@ -306,14 +400,14 @@
   \begin{itemize}
     \item Given other firms' strategies, firm $i$ chooses $\left\{a_{i,t}, b_{i,t}, q_{i,t}, x_{i,t}\right\}_{t\geq0}$ to maximize
           \[
-            \max_{\left\{a_{i,t}, b_{i,t}, q_{i,t}, x_{i,t}\right\}_{t\geq0}}\quad V^{i}\left(\bm{z}_{0}\right)\equiv\int_{0}^{\infty}\exp\left(-\rho t\right) \sum_{j}\kappa_{ij}\left(\underbrace{\pi_{j,t}}_{\text{Gross Profit}}-\underbrace{d_{j,t}}_{\text{R\&D Cost}}\right) dt
-          \] \pause
+            \max_{\left\{a_{i,t}, b_{i,t}, q_{i,t}, x_{i,t}\right\}_{t\geq0}}\quad V_{i}\left(\bm{z}_{0}\right)\equiv\int_{0}^{\infty}\exp\left(-\rho t\right) \sum_{j}\kappa_{ij}\left(\underbrace{\pi_{j,t}}_{\text{Gross Profit}}-\underbrace{d_{j,t}}_{\text{R\&D Cost}}\right) dt
+          \]
     \item Markov perfect equilibrium can be solved by the following steps:
           \medskip{}
           \begin{enumerate}
             \item \alert{Static Game:} For each $t$, choose $\left\{a_{i,t}, b_{i,t}, q_{i,t}\right\}$ to maximize $\sum_{j} \kappa_{ij} \pi_{j,t}$.
                   \medskip{}
-            \item \alert{Dynamic Game:} Given the static strategy profile, choose $\left\{x_{i,t}\right\}$ to maximize $V^{i}\left(\bm{z}_{0}\right)$
+            \item \alert{Dynamic Game:} Given the static strategy profile, choose $\left\{x_{i,t}\right\}$ to maximize $V_{i}\left(\bm{z}_{0}\right)$
           \end{enumerate}
   \end{itemize}
 \end{frame}
@@ -324,9 +418,9 @@
     \item Firm $i$'s static objective is given by:
           \[
             \sum_{j} \kappa_{ij} \pi_{j,t}
-          \] \pause
+          \]
           where the profit (before R\&D cost) of firm $i$ is given by:
-          \[\pi_{i,t} = p_{i,t} q_{i,t} - w_t l_{i,t} = q_{i,t} \left( b_{i,t} - \sum_{j\neq i} \sigma_{ij} q_{j,t} - q_{i,t} - \frac{w_t}{a_{i,t}} \right)\] \pause
+          \[\pi_{i,t} = p_{i,t} q_{i,t} - w_t l_{i,t} = q_{i,t} \left( b_{i,t} - \sum_{j\neq i} \sigma_{ij} q_{j,t} - q_{i,t} - \frac{w_t}{a_{i,t}} \right)\]
           \begin{assumption*}
             Given $w_t$, $z_{i,t}$, and $\left\{a_{j,t}, b_{j,t}, q_{j,t}\right\}_{j\neq i}$ and $\zeta a_{i,t} + b_{i,t} = z_{i,t}$, firm $i$ chooses $a_{i,t}$, $b_{i,t}$, and $q_{i,t}$ to maximize $\sum_{j} \kappa_{ij} \pi_{j,t}$
           \end{assumption*}
@@ -338,12 +432,12 @@
 %  \label{static_equilibrium}
 %  \begin{itemize}
 %    \item Equilibrium quantities:
-%          \[q_i^* = \frac{1}{2} z_i - \sqrt{\zeta w_t} - \frac{1}{2}\sum_{j \neq i} (\sigma_{ij} + \kappa_{ij} \sigma_{ij}) q_j^* \] \pause
+%          \[q_i^* = \frac{1}{2} z_i - \sqrt{\zeta w_t} - \frac{1}{2}\sum_{j \neq i} (\sigma_{ij} + \kappa_{ij} \sigma_{ij}) q_j^* \] 
 %    \item Assume $\{q^*_{j}\}_{j\neq i}$ are held constant. 
 %          \\ Then, by the Envelope Theorem, the marginal value of knowledge capital (R\&D incentive) is
 %          \[
 %            \frac{\partial}{\partial z_i}\left(\sum_{j} \kappa_{ij} \pi_{j,t}\right) = q_i^*,
-%          \] \pause
+%          \] 
 %          \\ and greater overlap between ownership and product-market rivalry networks reduces it:
 %          \[\frac{\partial^2  q_i^*}{\partial \kappa_{ij} \partial \sigma_{ij}}= -\frac{1}{2}q_j^* < 0\]
 %  \end{itemize}
@@ -355,17 +449,17 @@
   \begin{itemize}
     \item Given other firms' R\&D $\left\{ x_{j,t}\right\}_{j\neq i,\,t\geq0}$, firm $i$ chooses R\&D $\left\{ x_{i,t}\right\}_{t\geq0}$ to maximize
           \[
-            \max_{\left\{ x_{i,t}\right\}_{t\geq0}}\quad V^{i}\left(\bm{z}_{0}\right)\equiv\int_{0}^{\infty}\exp\left(-\rho t\right) \sum_{j}\kappa_{ij}\left(\pi_{j,t}-d_{j,t}\right) dt
+            \max_{\left\{ x_{i,t}\right\}_{t\geq0}}\quad V_{i}\left(\bm{z}_{0}\right)\equiv\int_{0}^{\infty}\exp\left(-\rho t\right) \sum_{j}\kappa_{ij}\left(\pi_{j,t}-d_{j,t}\right) dt
           \]
           \begin{itemize}
             \item Gross profit: $\sum_{j}\kappa_{ij}\pi_{j,t}=\bm{z}_{t}^{T}\bm{Q}^{i}\bm{z}_{t}$ \hyperlink{Q}{\beamerbutton{Q}} \medskip{}
             \item R\&D cost: $\sum_{j} \kappa_{ij} d_{j,t}= \sum_{j} \kappa_{ij} x_{j,t}^2$ \medskip{}
             \item Law of motion: $\dot{\bm{z}}_{t}=\bm{\Omega}\bm{z}_{t}+\mu\bm{x}_{t}-\delta\bm{z}_{t}$
           \end{itemize}
-          \medskip{} \pause
+          \medskip{}
     \item Firm $i$'s HJB equation:
           \[
-            \rho V^{i}\left(\bm{z}\right)=\max_{x_{i}}\left\{ \bm{z}^{T}\bm{Q}^{i}\bm{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\bm{z}}^{i}\left(\bm{z}\right)\left[\bm{\Omega}\bm{z}+\mu\bm{x} - \delta\bm{z} \right]\right\}
+            \rho V_{i}\left(\bm{z}\right)=\max_{x_{i}}\left\{ \bm{z}^{T}\bm{Q}^{i}\bm{z}-\sum_{j}\kappa_{ij}x_{j}^{2}+V_{\bm{z}}^{i}\left(\bm{z}\right)\left[\bm{\Omega}\bm{z}+\mu\bm{x} - \delta\bm{z} \right]\right\}
           \]
   \end{itemize}
 \end{frame}
@@ -374,21 +468,21 @@
 
   \label{hjb}
   \begin{itemize}
-    \item Guess and verify $V^{i}\left(\bm{z}\right)=\bm{z}^{T}\bm{X}^{i}\bm{z}$
+    \item Guess and verify $V_{i}\left(\bm{z}\right)=\bm{z}^{T}\bm{X}^{i}\bm{z}$
           (for any $\bm{z}$) \medskip{}
     \item $\bm{X}^{i}$ is the solution of stacked algebraic Riccati equations
 
-          \hyperlink{riccati}{\beamerbutton{Riccati Equations}}\medskip{}\pause
+          \hyperlink{riccati}{\beamerbutton{Riccati Equations}}\medskip{}
     \item Public \& patenting firms in the U.S. in our dataset $> 700$
           firms $\Longrightarrow$ \\
-          $\underbrace{700\times700}_{\text{size of } \bm{X}^{i}} \times \underbrace{700}_{n}=343\,\text{million}$ undetermined coefficients ($< 1$ min on my laptop)\medskip{} \pause
+          $\underbrace{700\times700}_{\text{size of } \bm{X}^{i}} \times \underbrace{700}_{n}=343\,\text{million}$ undetermined coefficients ($< 1$ min on my laptop)\medskip{}
           \begin{center}
-            \begin{tabular}{@{}p{5cm}ccc@{}}
+            \begin{tabular}{@{}lccc@{}}
               \toprule
-              Oligopolistic Schumpeterian & Computation time & \# of firms & Productivity space \\
+              \shortstack{Schumpeterian growth model                    \\ with oligopolistic competition}& Computation time & \shortstack{\# of firms\\in each game} & Productivity space \\
               \midrule
-              \citet{Cavenaile2023-lo}    & $O(2^n)$         & 4           & 6 grid             \\
-              Our model                   & $O(n^4)$         & $>$700      & Continuous         \\
+              \citet{Cavenaile2023-lo} & $O(2^n)$ & 4      & 6 grid     \\
+              HO (2025), This paper    & $O(n^4)$ & $>$700 & Continuous \\
               \bottomrule
             \end{tabular}
           \end{center}
@@ -406,7 +500,7 @@
             \alert{\bm{\Phi}}\equiv\underbrace{\bm{\Omega}}_{\text{Tech Spillover}}+\underbrace{\mu^{2}\bm{\widetilde{X}}}_{\text{R\&D}} -\underbrace{\delta\bm{I}}_{\text{Depreciation}}
           \]
           \vspace{-7mm}
-  \end{itemize}\pause
+  \end{itemize}
   \begin{theorem*}
     If \alert{$\bm{\Phi}$} is irreducible, then:
 
@@ -477,7 +571,7 @@
   \end{minipage}
   \begin{itemize}
     \item $a_i$, $b_i$, $q_i(=a_i l_i)$, $p_i$, and $w/a_i$ grow at the same rate $g$
-    \item (i) (consumer surplus / producer surplus) and (ii) (cost / revenue) stay the same
+    \item (i) (consumer surplus / producer surplus) and (ii) markup stay the same
     \item Demand elasticity is constant on BGP despite linear demand
   \end{itemize}
 \end{frame}
@@ -494,39 +588,17 @@
           \hyperlink{X}{\beamerbutton{$X$}}
     \item Solve the equilibrium once $\Longrightarrow$ we can compute lifetime utility for any initial $\bm{z}_{t}$
           \medskip{}
-    \item This property holds even if we introduce idiosyncratic / aggregate shocks
+    \item This property holds for expected utility even if we introduce (idiosyncratic / aggregate) shocks
           \medskip{}
     \item In the exercise, we focus on the transition dynamics starting from the observed initial $\bm{z}_{t}$
   \end{itemize}
-\end{frame}
-
-\begin{frame}{Intuition of Externality}
-  \label{static_equilibrium}
-  \begin{itemize}
-    \item Assume firms choose static variables $\left\{a_{i,t}, b_{i,t}, q_{i,t}\right\}$ to maximize static profits \pause
-    \item Equilibrium quantity $q_i = \frac{1}{2} z_i - \frac{1}{2}\sum_{k \neq i} \sigma_{ik} q_k - \sqrt{\zeta w_t}$ and profit $\pi_i = q_i^2$ \pause
-  \end{itemize}
-  \begin{align*}
-    \text{Tech Spillover Externalities:} \quad &
-    \frac{\partial \dot{z}_j}{\partial z_i} = \omega_{ij}, \quad
-    \frac{\partial \pi_j}{\partial z_j} = 2 q_j \frac{\partial q_j}{\partial z_j} = q_j \\
-    & z_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \omega_{ij} \text{ is large}}   z_j \ \uparrow \quad \Longrightarrow \quad \pi_j \ \uparrow
-  \end{align*}\pause
-  \begin{align*}
-    \text{Business Stealing Externalities:} \quad &
-    \frac{\partial \pi_j}{\partial z_i} = 2 q_j \frac{\partial q_j}{\partial z_i}
-    = 2 q_j \left(-\frac{1}{2}\sigma_{ji}\frac{\partial q_i}{\partial z_i}\right)
-    = -\frac{1}{2}\sigma_{ji} q_j \\
-    & z_i \ \uparrow \quad \Longrightarrow \quad q_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \sigma_{ij} \text{ is large}} q_j \ \downarrow \quad \Longrightarrow \quad \pi_j  \downarrow
-  \end{align*}
-  %hyperlink{static_game}{\beamerbutton{Back}}
 \end{frame}
 
 \section{Identification}
 
 \begin{frame}{Common Ownership Weights $\bm{K}$}
   \begin{itemize}
-    \item \citet{Backus2021-yt} construct a dataset on investors' holdings based on Form 13F
+    \item \citet{Backus2021-yt} construct a dataset on institutional investors' holdings based on Form 13F
     \item Baseline: proportional influence \citep{Rotemberg1984-jz} \hfill\hyperlink{rotemberg}{\beamerbutton{Proportional Influence}}
   \end{itemize}
   \begin{center}
@@ -556,7 +628,7 @@
             \item The vector of the share of patents held by firm $i$ in each technology class
             \item Baseline: group-level patent classifications ($\approx 4000$), five years window
           \end{itemize}
-          \medskip{} \pause
+          \medskip{}
     \item \citet{Jaffe1986-yz} technological proximity measure $\tilde{\omega}_{ij}$:
           \begin{itemize}
             \item Cosine similarity of the technological profiles between firms $i$ and $j$
@@ -570,15 +642,22 @@
     \centering
     \begin{tabular}{cl}
       \toprule
-      Variables                 & Identification                                                                                                                            \\
+      Variables   & Identification                                                                                                              \\
       \midrule
-      \visible<1->{$\pi_{i,t}$} & \visible<1->{Gross profit (before R\&D cost) $=$ Revenue $-$ Cost of goods sold}                                                          \\[6pt]
-      \visible<2->{$\bm{q}_t$}  & \visible<2->{\(\pi_{i,t}=\displaystyle\sum_{j}\kappa_{ij}\,\sigma_{ij}\,q_{i,t}\,q_{j,t}\)}                                               \\[6pt]
-      \visible<3->{$\zeta/L$}   & \visible<3->{Matches sample firms' cost share (average markup)}                                                                           \\[6pt]
-      \visible<4->{$\bm{z}_t$}  & \visible<4->{\(\displaystyle \bm{z}_{t}=\left\{2\frac{\zeta}{L}\bm{1}_{n\times n}+\bm{\Sigma}+\bm{K}\circ\bm{\Sigma}\right\}\bm{q}_{t}\)} \\
+      $\pi_{i,t}$ & Gross profit (before R\&D cost) $=$ Revenue $-$ Cost of goods sold                                                          \\[6pt]
+      $\bm{q}_t$  & \(\pi_{i,t}=\displaystyle\sum_{j}\kappa_{ij}\,\sigma_{ij}\,q_{i,t}\,q_{j,t}\)                                               \\[6pt]
+      $\zeta/L$   & Matches sample firms' cost share (average markup)                                                                           \\[6pt]
+      $\bm{z}_t$  & \(\displaystyle \bm{z}_{t}=\left\{2\frac{\zeta}{L}\bm{1}_{n\times n}+\bm{\Sigma}+\bm{K}\circ\bm{\Sigma}\right\}\bm{q}_{t}\) \\
       \bottomrule
     \end{tabular}
   \end{table}
+  \begin{itemize}
+    \item Observed $\bm{z}_{t}$ is used to
+          \begin{enumerate}
+            \item estimate the law of motion of knowledge capital, and
+            \item identify the initial distribution of knowledge capital
+          \end{enumerate}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Technology Spillover $\bm{\Omega}=\beta\times$Technological Proximity $\bm{\widetilde{\Omega}}$ \hyperlink{first_stage}{\beamerbutton{First Stage}}}
@@ -589,7 +668,7 @@
       =\beta\sum_{j\neq i}\tilde{\omega}_{ij,t} \frac{z_{j,t}}{z_{i,t}}
       +\text{Controls}_{i,t}
       +\epsilon_{i,t}
-    \] \pause
+    \]
     \begin{center}
       \setlength{\tabcolsep}{6pt} % Adjust column spacing
       \begin{tabular}{lccc}
@@ -646,7 +725,7 @@
       \bottomrule
     \end{tabular}
   \end{table}
-  \hyperlink{network_correlation}{\beamerbutton{Network Correlation}}
+  \hyperlink{network_correlations}{\beamerbutton{Network Correlation}}
 \end{frame}
 
 \begin{frame}{Model vs. Data: Firm-level Profits, Sales, and R\&D}
@@ -677,7 +756,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Comparison with \cite{Anton2024-pw}}
+\begin{frame}{Model vs. Data: Comparison with \cite{Anton2024-pw}}
   \begin{itemize}
     \item \citet{Anton2024-pw} estimates the effect of interaction b/w common ownership and technology/product proximity on R\&D
   \end{itemize}
@@ -691,23 +770,23 @@
     \footnotesize
     \begin{tabular}{@{}l l l l l@{}}
       \toprule
-      & $\text{R\&D}_{it}$  & $A_{it}$          & $G_{it}$         & Sample period \\
+                          & $\text{R\&D}_{it}$   & $A_{it}$          & $G_{it}$          & Sample period \\
       \midrule
-      \cite{Anton2024-pw} & Observed R\&D & Assets            & R\&D stocks        & 1985--2015    \\
-      Our model           & Model-generated R\&D& Knowledge capital & Knowledge capital & 1999--2017    \\
+      \cite{Anton2024-pw} & Observed R\&D        & Assets            & R\&D stocks       & 1985--2015    \\
+      Our model           & Model-generated R\&D & Knowledge capital & Knowledge capital & 1999--2017    \\
       \bottomrule
     \end{tabular}
   \end{table}
-  \pause
+
   \begin{table}[h]
     \centering
     \footnotesize
     \begin{tabular}{@{}l cc@{}}
       \toprule
-                                                                                             & \cite{Anton2024-pw}           & Our model \\
+                                                                                             & \cite{Anton2024-pw}         & Our model \\
       \midrule
-      $\log \left(\sum_{j \neq i} \kappa_{ijt} \text{tech proximity}_{ijt} G_{jt}\right)$    & \shortstack{$0.00513^{**}$ \\ $(0.00226)$} & \shortstack{$0.00194^{***}$ \\ $(0.000272)$} \\
-      $\log \left(\sum_{j \neq i} \kappa_{ijt} \text{product proximity}_{ijt} G_{jt}\right)$ & \shortstack{$-0.00457^{**}$ \\ $(0.00222)$} & \shortstack{$-0.00547^{***}$ \\ $(0.000693)$} \\
+      $\log \left(\sum_{j \neq i} \kappa_{ijt} \text{tech proximity}_{ijt} G_{jt}\right)$    & \shortstack{$0.00513^{**}$              \\ $(0.00226)$} & \shortstack{$0.00194^{***}$ \\ $(0.000272)$} \\
+      $\log \left(\sum_{j \neq i} \kappa_{ijt} \text{product proximity}_{ijt} G_{jt}\right)$ & \shortstack{$-0.00457^{**}$             \\ $(0.00222)$} & \shortstack{$-0.00547^{***}$ \\ $(0.000693)$} \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -721,13 +800,12 @@
     \renewcommand{\arraystretch}{1.5} % 行間を広げる
     \begin{tabular}{ll}
       \toprule
-      Ownership Structure       & Description                                                                                                                                                                           \\
+      Ownership Structure & Description                                                                                                                                                             \\
       \midrule
-      \visible<1->{Baseline}    & \visible<1->{Observed common ownership structure in 2017}                                                                                                                             \\
-      \visible<2->{Dispersed}   & \visible<2->{$\bm{K}^D=\bm{I}$}                                                                                                                                                       \\
-      \visible<3->{Mean$=$1999} & \visible<3->{\(\kappa_{ij,2017}^{M1999}=\text{const}\times\kappa_{ij,2017}\) and \(\bm{E}\left[\kappa_{ij,2017}^{M1999}\right]=\bm{E}\left[\kappa_{ij,1999}\right]\) for \(j\neq i\)} \\
-      \visible<4->{Uniform}     & \visible<4->{\(\kappa_{ij,2017}^U=\bm{E}\left[\kappa_{ij, 2017}\right]\) for \(j\neq i\)}                                                                                             \\
-      \visible<5->{Monopoly}    & \visible<5->{$\bm{K}^M=\bm{1}_{n\times n}$}                                                                                                                                           \\
+      Baseline            & Observed common ownership structure in 2017                                                                                                                             \\
+      Mean$=$1999         & \(\kappa_{ij,2017}^{M1999}=\text{const}\times\kappa_{ij,2017}\) and \(\bm{E}\left[\kappa_{ij,2017}^{M1999}\right]=\bm{E}\left[\kappa_{ij,1999}\right]\) for \(j\neq i\) \\
+      Dispersed           & $\bm{K}^D=\bm{I}$                                                                                                                                                       \\
+      Monopoly            & $\bm{K}^M=\bm{1}_{n\times n}$                                                                                                                                           \\
       \bottomrule
     \end{tabular}
     \renewcommand{\arraystretch}{1.0}
@@ -742,36 +820,33 @@
             \item Product-market competition: firms maximize gross profits (dispersed ownership)
           \end{itemize}
   \end{itemize}
-  \medskip{}\pause
+  \medskip{}
   \begin{center}
     \setlength{\tabcolsep}{3pt}
-    \begin{tabular}{@{} c *{5}{c} @{}}
+    \begin{tabular}{@{} c *{4}{c} @{}}
       \toprule
-      \multirow{2}{*}{\shortstack[t]{Total R\&D in 2017                                                                      \\ (Optimal R\&D: 100)}}
-       & \multicolumn{5}{c}{Ownership Structure}                                                                             \\
-      \cmidrule(lr){2-6}
-       & Dispersed
-       & Mean$=$1999
-       & Uniform
-       & Baseline
-       & Monopoly                                                                                                            \\
+      \multirow{2}{*}{\shortstack[t]{Total R\&D in 2017                                                               \\ (Optimal R\&D: 100)}}
+           & \multicolumn{4}{c}{Ownership Structure}                                                                  \\
+      \cmidrule(lr){2-5}
+           & Dispersed
+           & Mean$=$1999
+           & Baseline
+           & Monopoly                                                                                                 \\
       \midrule
-      Baseline
-       & 40.48                                   & \textcolor{uclaBlue}{38.68} & 31.56 & \textcolor{uclaBlue}{28.26} & 21.39 \\
+
+      Both & 40.5                                    & \textcolor{uclaBlue}{38.7} & \textcolor{uclaBlue}{28.3} & 21.4 \\
       \midrule
-      \shortstack[t]{Only Business Steal                                                                                     \\ $\bm{\Omega}=[0]$}
-       & \visible<3->{52.04}
-       & \visible<3->{49.73}
-       & \visible<3->{41.51}
-       & \visible<3->{36.40}
-       & \visible<3->{30.69}                                                                                                 \\
+      \shortstack[t]{Only Business Steal                                                                              \\ $\bm{\Omega}=[0]$}
+           & 52.0
+           & 49.7
+           & 36.4
+           & 30.7                                                                                                     \\
       \midrule
-      \shortstack[t]{Only Tech Spill                                                                                         \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$}
-       & \visible<4->{13.61}
-       & \visible<4->{14.25}
-       & \visible<4->{18.33}
-       & \visible<4->{19.33}
-       & \visible<4->{27.77}                                                                                                 \\
+      \shortstack[t]{Only Tech Spill                                                                                  \\ $\bm{\Sigma}=\bm{I},\,\zeta/L=0$}
+           & 13.6
+           & 14.3
+           & 19.3
+           & 27.8                                                                                                     \\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -785,61 +860,33 @@
   \label{results}
   \centering
   \setlength{\tabcolsep}{3pt}
-  \begin{tabular}{@{} c *{5}{c} @{}}
+  \begin{tabular}{@{} c *{4}{c} @{}}
     \toprule
-    \multirow{2}{*}{\shortstack[t]{}} & \multicolumn{5}{c}{Ownership Structure}                                                                                                                                     \\
-    \cmidrule(lr){2-6}
+    \multirow{2}{*}{\shortstack[t]{}} & \multicolumn{4}{c}{Ownership Structure}                                                                  \\
+    \cmidrule(lr){2-5}
                                       & Dispersed
                                       & Mean$=$1999
-                                      & Uniform
                                       & Baseline
-                                      & Monopoly                                                                                                                                                                    \\
+                                      & Monopoly                                                                                                 \\
     \midrule
     \shortstack[l]{Total R\&D (Optimal R\&D: 100)}
-                                      & 40.48                                   & 38.68                                     & 31.56               & 28.26                                     & 21.39               \\
+                                      & 40.5                                    & 38.7                       & 28.3                       & 21.4 \\
     \midrule
     \shortstack[l]{Economic Growth Rate (\%)}
-                                      & \visible<2->{1.32}                      & \visible<2->{\textcolor{uclaBlue}{1.31}}  & \visible<2->{1.24}  & \visible<2->{\textcolor{uclaBlue}{1.20}}  & \visible<2->{1.11}  \\
+                                      & 1.32                                    & \textcolor{uclaBlue}{1.31} & \textcolor{uclaBlue}{1.20} & 1.11 \\
     \midrule
     \shortstack[l]{CE Welfare (Optimal R\&D: 100)}
-                                      & \visible<3->{94.91}                     & \visible<3->{\textcolor{uclaBlue}{94.86}} & \visible<3->{94.52} & \visible<3->{\textcolor{uclaBlue}{94.35}} & \visible<3->{93.47} \\
+                                      & 94.9                                    & \textcolor{uclaBlue}{94.9} & \textcolor{uclaBlue}{94.4} & 93.5 \\
     \midrule
     \shortstack[l]{Firm Value Share (\%)}
-                                      & \visible<4->{26.63}                     & \visible<4->{26.72}                       & \visible<4->{27.20} & \visible<4->{27.24}                       & \visible<4->{27.82} \\
+                                      & 26.6                                    & 26.7                       & 27.2                       & 27.8 \\
     \bottomrule
   \end{tabular}
   \medskip{}
   \begin{itemize}
-    \item The rise of common ownership from 1999 to 2017 $\Longrightarrow$ \visible<2->{$g$ $\downarrow$ by 0.11 p.p.,} \visible<3->{CE welfare $\downarrow$ by 0.54\%}
+    \item The rise of common ownership from 1999 to 2017 $\Longrightarrow$ $g$ $\downarrow$ by 0.11 p.p., CE welfare $\downarrow$ by 0.54\%
           \medskip{}
-    %\item The results are qualitatively the same under different corporate governance assumptions \hyperlink{corporate_governance}{\beamerbutton{Corporate Governance Assumptions}}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{When Common Ownership Affects Both R\&D and Production}
-  \begin{center}
-    \setlength{\tabcolsep}{3pt}
-    \begin{tabular}{@{}lccc@{}}
-      \toprule
-      \multicolumn{1}{l}{Production ownership structure} & Dispersed & Dispersed                   & Common                      \\
-      \multicolumn{1}{l}{R\&D ownership structure}       & Dispersed & Common                      & Common                      \\
-      \midrule
-      \shortstack[l]{Total Output (Dispersed: 100)}
-                                                         & 100.00    & 100.00                      & 97.26                       \\
-      \shortstack[l]{Total R\&D (Dispersed: 100)}
-                                                         & 100.00    & \textcolor{uclaBlue}{69.81} & \textcolor{uclaBlue}{86.36} \\
-      \shortstack[l]{Economic Growth Rate (\%)}
-                                                         & 1.323     & 1.200                       & 1.288                       \\
-      \shortstack[l]{CE Welfare (Dispersed: 100)}
-                                                         & 100.00    & 99.41                       & 97.28                       \\
-      \shortstack[l]{Firm Value Share (\%)}
-                                                         & 26.63     & 27.24                       & 34.10                       \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  \medskip{}
-  \begin{itemize}
-    \item Less product market competition $\Longrightarrow$ Private return on R\&D $\uparrow$
+          %\item The results are qualitatively the same under different corporate governance assumptions \hyperlink{corporate_governance}{\beamerbutton{Corporate Governance Assumptions}}
   \end{itemize}
 \end{frame}
 
@@ -853,7 +900,7 @@
     \end{figure}
   \end{center}
   \begin{itemize}
-    \item Optimal rate is $s=43\%$, which increases $g$ by 0.57 pp and CE welfare by 1.36\%
+    \item Optimal rate is $s=$ 43\%, which increases $g$ by 0.57 pp and CE welfare by 1.4\%
     \item c.f. Welfare gains from optimal R\&D allocation: 6.0\%
   \end{itemize}
 \end{frame}
@@ -864,16 +911,16 @@
     \setlength{\tabcolsep}{6pt}
     \begin{tabular}{lcc}
       \hline\hline
-                                      & Private R\&D $x$                                                   & Social / Private value of R\&D                                                              \\
+                                      & Private R\&D $x$                                                 & Social / Private value of R\&D                                                             \\
       \hline
-      Initial knowledge capital $z$   & $\begin{array}{c}\text{0.122}^{***}\\(\text{0.000848})\end{array}$ & $\begin{array}{c}\text{-0.000212}\\(\text{0.000158})\end{array}$                            \\
-      Product market centrality       & $\begin{array}{c}\text{-16.4}^{***}\\(\text{0.286})\end{array}$    & $\begin{array}{c}\textcolor{uclaBlue}{\text{-1.06}^{***}}\\(\text{0.0532})\end{array}$ \\
-      Technology spillover centrality & $\begin{array}{c}\text{5.45}^{***}\\(\text{0.423})\end{array}$     & $\begin{array}{c}\textcolor{uclaBlue}{\text{1.48}^{***}}\\(\text{0.0788})\end{array}$ \\
-      Ownership structure centrality  & $\begin{array}{c}\text{-7.16}^{***}\\(\text{0.239})\end{array}$    & $\begin{array}{c}\textcolor{uclaBlue}{\text{0.580}^{***}}\\(\text{0.0446})\end{array}$ \\
-      Intercept                       & $\begin{array}{c}\text{-22.4}^{***}\\(\text{0.255})\end{array}$    & $\begin{array}{c}\text{0.900}^{***}\\(\text{0.0475})\end{array}$                            \\
+      Initial knowledge capital $z$   & $\begin{array}{c}\text{0.12}^{***}\\(\text{0.00085})\end{array}$ & $\begin{array}{c}\text{-0.00021}\\(\text{0.00016})\end{array}$                             \\
+      Product market centrality       & $\begin{array}{c}\text{-16}^{***}\\(\text{0.29})\end{array}$     & $\begin{array}{c}\textcolor{uclaBlue}{\text{-1.1}^{***}}\\(\text{0.053})\end{array}$ \\
+      Technology spillover centrality & $\begin{array}{c}\text{5.5}^{***}\\(\text{0.42})\end{array}$     & $\begin{array}{c}\textcolor{uclaBlue}{\text{1.5}^{***}}\\(\text{0.079})\end{array}$ \\
+      Ownership structure centrality  & $\begin{array}{c}\text{-7.2}^{***}\\(\text{0.24})\end{array}$    & $\begin{array}{c}\textcolor{uclaBlue}{\text{0.58}^{***}}\\(\text{0.045})\end{array}$ \\
+      Intercept                       & $\begin{array}{c}\text{-22}^{***}\\(\text{0.26})\end{array}$     & $\begin{array}{c}\text{0.90}^{***}\\(\text{0.048})\end{array}$                             \\
       \hline
-      Observations                    & \multicolumn{1}{c}{740}                                            & \multicolumn{1}{c}{740}                                                                     \\
-      $R^2$                           & \multicolumn{1}{c}{0.976}                                          & \multicolumn{1}{c}{0.555}                                                                   \\
+      Observations                    & \multicolumn{1}{c}{740}                                          & \multicolumn{1}{c}{740}                                                                    \\
+      $R^2$                           & \multicolumn{1}{c}{0.98}                                         & \multicolumn{1}{c}{0.56}                                                                   \\
       \hline\hline
     \end{tabular}
   \end{center}
@@ -883,77 +930,51 @@
 \begin{frame}{Alternative Corporate Governance Models}
   \label{corporate_governance}
   \begin{enumerate}
-    \item Dispersed onwership: $\kappa_{ij}=0 \quad(i\neq j)$
-    \medskip{}
+    \item Dispersed onwership: $\kappa^D_{ij}=0 \quad(i\neq j)$
+          \medskip{}
     \item Baseline proportional influence: $\kappa_{ij}=\frac{\sum_{o} s_{io}s_{jo}}{\sum_{o}s_{io}^2}$ \medskip{}
     \item Super-proportional influence: $\kappa^{SP}_{ij}=\frac{\sum_{o}\gamma_{io}s_{io}s_{jo}}{\sum_{o}\gamma_{io}s_{io}^2}$ where $\gamma_{io}=\sqrt{s_{io}}$
-          \medskip{}\pause
+          \medskip{}
     \item Blockholder influence: $\kappa^{BH}_{ij}=\frac{\sum_{o}b_{io}s_{io}s_{jo}}{\sum_{o}s_{io}^2}\quad(i\neq j),$ where $b_{io}=1$ if $s_{io}>5\%$
-          \medskip{}\pause
-    \item Structural estimation in the airline industry by \citet{Azar2021-mb}: $\kappa^{AR}_{ij} = \tau_{i}\kappa_{ij}\quad(i\neq j)$ 
-    \begin{enumerate}
-      \item Uniform: $\tau = 0.29$
-      \item Firm-specific: $\tau_{i}=\frac{\exp\left[\theta_{0}+\log\left(\text{Investor HHI}_{i}\right)\right]}{1+\exp\left[\theta_{0}+\log\left(\text{Investor HHI}_{i}\right)\right]}$ where $\theta_{0}=2.68$
-    \end{enumerate}
+          \medskip{}
+    \item Structural estimation in the airline industry by \citet{Azar2021-mb}: $\kappa^{AR}_{ij} = \tau_{i}\kappa_{ij}\quad(i\neq j)$
+          \begin{enumerate}
+            \item Uniform: $\tau = 0.29$
+            \item Firm-specific: $\tau_{i}=\frac{\exp\left[\theta_{0}+\log\left(\text{Investor HHI}_{i}\right)\right]}{1+\exp\left[\theta_{0}+\log\left(\text{Investor HHI}_{i}\right)\right]}$ where $\theta_{0}=2.68$
+          \end{enumerate}
   \end{enumerate}
 \end{frame}
 
 \begin{frame}{Alternative Corporate Governance Models}
 
   {\footnotesize
-  \begin{center}
-  \begin{tabular}{@{}lcccccc@{}}
-    \toprule
-     & \multicolumn{6}{c}{Ownership Structure}                                         \\
-    \midrule
-     & \shortstack{Dispersed                                                                   \\ Ownership}
-     & \shortstack{Baseline:                                                                   \\ Proportional \\ Influence}
-     & \shortstack{Super                                                                       \\ Proportional \\ Influence}
-     & \shortstack{Blockholder                                                                 \\ Influence}
-     &  \shortstack{AR  \\ Uniform}
-     & \shortstack{AR \\ Firm-Specific} \\
-    \midrule
-    \shortstack[l]{Total R\&D Expenditure}
-     & 100.00                                          & \textcolor{uclaBlue}{69.81} &\textcolor{uclaBlue}{68.97} & \textcolor{uclaBlue}{77.45} & \textcolor{uclaBlue}{90.32} & \textcolor{uclaBlue}{90.41} \\
-    \shortstack[l]{Growth Rate (\%) }
-     & 1.323                                           & 1.200 & 1.194 & 1.234 & 1.287 & 1.289 \\
-    \shortstack[l]{CE Welfare}
-     & 100.00                                          & 99.41 & 99.37 & 99.59 & 99.86 & 99.86 \\
-    \shortstack[l]{Firm Value Share (\%) }
-     & 26.63                                           & 27.24 & 27.24 & 27.09 & 26.82 & 26.84 \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
+    \begin{center}
+      \begin{tabular}{@{}lcccccc@{}}
+        \toprule
+         & \multicolumn{6}{c}{Ownership Structure}                                                                                                                                                  \\
+        \midrule
+         & \shortstack{Dispersed                                                                                                                                                                    \\ Ownership}
+         & \shortstack{Baseline:                                                                                                                                                                    \\ Proportional \\ Influence}
+         & \shortstack{Super                                                                                                                                                                        \\ Proportional \\ Influence}
+         & \shortstack{Blockholder                                                                                                                                                                  \\ Influence}
+         & \shortstack{AR                                                                                                                                                                           \\ Uniform}
+         & \shortstack{AR                                                                                                                                                                           \\ Firm-Specific} \\
+        \midrule
+        \shortstack[l]{Total R\&D Expenditure}
+         & 100                                     & \textcolor{uclaBlue}{69.8} & \textcolor{uclaBlue}{69.0} & \textcolor{uclaBlue}{77.5} & \textcolor{uclaBlue}{90.3} & \textcolor{uclaBlue}{90.4} \\
+        \shortstack[l]{Growth Rate (\%) }
+         & 1.32                                    & 1.20                       & 1.19                       & 1.23                       & 1.29                       & 1.29                       \\
+        \shortstack[l]{CE Welfare}
+         & 100                                     & 99.4                       & 99.4                       & 99.6                       & 99.9                       & 99.9                       \\
+        \shortstack[l]{Firm Value Share (\%) }
+         & 26.6                                    & 27.2                       & 27.2                       & 27.1                       & 26.8                       & 26.8                       \\
+        \bottomrule
+      \end{tabular}
+    \end{center}
   }
   \medskip{}
   \begin{itemize}
     \item Internalization of business-stealing $>$ internalization of technology spillovers
-  \end{itemize}
-\end{frame}
-
-\section{Conclusion}
-\label{conclusion}
-\begin{frame}{Conclusion}
-  \begin{itemize}
-    \item Quantitative Schumpeterian growth model with ownership structure
-          \begin{itemize}
-            \item Utilizes micro data and computational capabilities
-          \end{itemize}
-          \medskip{}
-    \item Common ownership in the U.S.:
-          \begin{enumerate}
-            \item Internalization of business-stealing effect $\Longrightarrow$ $g$ $\downarrow\downarrow$
-            \item Internalization of technology spillover effect $\Longrightarrow$ $g$ $\uparrow$
-          \end{enumerate}
-          \medskip{}
-    \item Potential applications:
-          \begin{itemize}
-            \item M\&A
-            \item Conglomerate (e.g. Korea)
-            \item Cross-shareholdings (e.g. Japan, Germany, AI companies \hyperlink{ai}{\beamerbutton{AI}})
-            \item FDI and international technology diffusion
-            \item Technology licensing
-          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -1066,7 +1087,7 @@
 \begin{frame}{Merger Guidelines \hyperlink{intro}{\beamerbutton{Back}}}
   \label{guidelines}
   \begin{quote}
-    ``For example, \alert{the partial owner may decide not to develop a new product feature} to win market share from the firm in which it has acquired an interest, because doing so will reduce the value of its investment in its rival.''
+    ``For example, \alert{the partial owner may decide not to develop a new product feature} to win market share from the firm in which it has acquired an interest, \alert{because doing so will reduce the value of its investment in its rival. }''
   \end{quote}
   \medskip{}
   2023 Merger Guidelines by the U.S. Department of Justice and the Federal Trade Commission
@@ -1200,7 +1221,7 @@
   \begin{itemize}
     \item Firms choose labor productivity and product quality: $\zeta a_{i,t}=\sqrt{\zeta w_{t}}$, $b_{i,t}=z_{i,t}-\sqrt{\zeta w_{t}}$
     \item Labor market clearing: $L=\sum_{i}\frac{q_{i,t}}{a_{i,t}}$ $\Longrightarrow$$\sqrt{\zeta w_{t}}=\frac{\zeta}{L}\sum_{i}q_{i,t}$
-    \item $\bm{q}_{t}=\bm{N}\bm{z}_{t}$ where $\bm{N}\equiv\left\{ 2\frac{\zeta}{L}\bm{J}+\bm{\Sigma}+\bm{K}\circ\bm{\Sigma}\right\} ^{-1}$
+    \item $\bm{q}_{t}=\bm{N}\bm{z}_{t}$ where $\bm{N}\equiv\left\{ 2\frac{\zeta}{L}\bm{1}_{n\times n}+\bm{\Sigma}+\bm{K}\circ\bm{\Sigma}\right\} ^{-1}$
     \item $\bm{N}_{i}$: the $i$th row of $\bm{N}$
     \item Ownership weighted profit:
           {\small
@@ -1216,10 +1237,32 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Intuition of Externality}
+  \label{static_equilibrium}
+  \begin{itemize}
+    \item Assume firms choose static variables $\left\{a_{i,t}, b_{i,t}, q_{i,t}\right\}$ to maximize static profits
+    \item Equilibrium quantity $q_i = \frac{1}{2} z_i - \frac{1}{2}\sum_{k \neq i} \sigma_{ik} q_k - \sqrt{\zeta w_t}$ and profit $\pi_i = q_i^2$
+  \end{itemize}
+  \begin{align*}
+    \text{Tech Spillover Externalities:} \quad &
+    \frac{\partial \dot{z}_j}{\partial z_i} = \omega_{ij}, \quad
+    \frac{\partial \pi_j}{\partial z_j} = 2 q_j \frac{\partial q_j}{\partial z_j} = q_j                                                                                                                     \\
+                                               & z_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \omega_{ij} \text{ is large}}   z_j \ \uparrow \quad \Longrightarrow \quad \pi_j \ \uparrow
+  \end{align*}
+  \begin{align*}
+    \text{Business Stealing Externalities:} \quad &
+    \frac{\partial \pi_j}{\partial z_i} = 2 q_j \frac{\partial q_j}{\partial z_i}
+    = 2 q_j \left(-\frac{1}{2}\sigma_{ji}\frac{\partial q_i}{\partial z_i}\right)
+    = -\frac{1}{2}\sigma_{ji} q_j                                                                                                                                                                                                                          \\
+                                                  & z_i \ \uparrow \quad \Longrightarrow \quad q_i \ \uparrow \underbrace{\Longrightarrow}_{\text{strong if } \sigma_{ij} \text{ is large}} q_j \ \downarrow \quad \Longrightarrow \quad \pi_j  \downarrow
+  \end{align*}
+  %hyperlink{static_game}{\beamerbutton{Back}}
+\end{frame}
+
 \begin{frame}{Riccati Equations}
   \label{riccati}
   \begin{itemize}
-    \item $V^{i}\left(\bm{z}\right)=\bm{z}^{T}\bm{X}^{i}\bm{z}$ where $\bm{X}^{i}$ is the solution of the stacked Riccati equation
+    \item $V_{i}\left(\bm{z}\right)=\bm{z}^{T}\bm{X}^{i}\bm{z}$ where $\bm{X}^{i}$ is the solution of the stacked Riccati equation
             {\small
               \[
                 0=\bm{Q}^{i}-\mu^{2}\sum_{j}\kappa_{ij}\bm{X}_{j}^{j}\left(\bm{X}_{j}^{j}\right)^{T}+\left(\bm{\Phi}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\bm{I}\right)^{T}\bm{X}^{i}+\bm{X}^{i}\left(\bm{\Phi}-\frac{1}{2}\left(\rho-\gamma^{2}\right)\bm{I}\right)
@@ -1250,8 +1293,8 @@
       Law of motion                   & $d\bm{z}_{t}=\left(\bm{\Omega}\bm{z}_{t}+\mu\bm{x}_{t}\right)dt+\gamma\bm{z}_{t}dW_{t}$\tabularnewline
       Profit of final producers       & $\Pi_{t}^{F}/P_{t}=\bm{q}_{t}^{T}\left(\frac{1}{2}\bm{\Sigma}\right)\bm{q}_{t}$\tabularnewline
       Total operating profit of firms & $\Pi_{t}/P_{t}=\bm{q}_{t}^{T}\left(\frac{1}{2}\bm{\Sigma}\circ\left(\bm{K}+\bm{K}^{T}\right)\right)\bm{q}_{t}$\tabularnewline
-      Labor income                    & $w_{t}L/P_{t}=\bm{q}_{t}^{T}\left(\frac{\zeta}{L}\bm{J}\right)\bm{q}_{t}$\tabularnewline
-      Output                          & $Y_{t}=\bm{q}_{t}^{T}\left(\frac{\zeta}{L}\bm{J}+\frac{1}{2}\bm{\Sigma}+\frac{1}{2}\bm{\Sigma}\circ\left(\bm{K}+\bm{K}^{T}\right)\right)\bm{q}_{t}$\tabularnewline
+      Labor income                    & $w_{t}L/P_{t}=\bm{q}_{t}^{T}\left(\frac{\zeta}{L}\bm{1}_{n\times n}\right)\bm{q}_{t}$\tabularnewline
+      Output                          & $Y_{t}=\bm{q}_{t}^{T}\left(\frac{\zeta}{L}\bm{1}_{n\times n}+\frac{1}{2}\bm{\Sigma}+\frac{1}{2}\bm{\Sigma}\circ\left(\bm{K}+\bm{K}^{T}\right)\right)\bm{q}_{t}$\tabularnewline
       Consumption                     & $C_{t}=Y_{t}-\bm{x}_{t}^{T}\bm{x}_{t}$\tabularnewline
     \end{tabular}
   \end{center}
@@ -1290,7 +1333,7 @@
   \begin{itemize}
     \item Output: $Y_{t}=\bm{q}_{t}^{T}\bm{Q}\bm{q}_{t}$ where
           \[
-            \bm{Q}=\frac{\zeta}{L}\bm{J}+\frac{1}{2}\bm{\Sigma}+\frac{1}{2}\bm{\Sigma}\circ\left(\bm{K}+\bm{K}^{T}\right)
+            \bm{Q}=\frac{\zeta}{L}\bm{1}_{n\times n}+\frac{1}{2}\bm{\Sigma}+\frac{1}{2}\bm{\Sigma}\circ\left(\bm{K}+\bm{K}^{T}\right)
           \]
     \item Expected utility:
           \[
@@ -1307,7 +1350,7 @@
 \begin{frame}{Social Optimum}
   \label{optimal}
   \begin{itemize}
-    \item Static optimal allocation: $\bm{q}_{t}^{*}=\bm{N}^{*}\bm{z}_{t}\quad\text{where}\quad \bm{N}^{*}\equiv\left\{ 2\frac{\zeta}{L}\bm{J}+\bm{\Sigma}\right\} ^{-1}$
+    \item Static optimal allocation: $\bm{q}_{t}^{*}=\bm{N}^{*}\bm{z}_{t}\quad\text{where}\quad \bm{N}^{*}\equiv\left\{ 2\frac{\zeta}{L}\bm{1}_{n\times n}+\bm{\Sigma}\right\} ^{-1}$
     \item Optimal output: $Y_{t}^{*}=\bm{z}_{t}^{T}\bm{Q}^{*}\bm{z}_{t}$ where $\bm{Q}^{*}=\frac{1}{2}\bm{N}^{*}$
     \item Optimal expected utility:
           \[
